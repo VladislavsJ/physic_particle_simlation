@@ -229,6 +229,15 @@ ParticleSimulator_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ParticleSimulator_SOURCE_DIR:STATIC=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0
 
+//Value Computed by CMake
+PhysicsBalls_BINARY_DIR:STATIC=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests
+
+//Value Computed by CMake
+PhysicsBalls_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+PhysicsBalls_SOURCE_DIR:STATIC=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests
+
 //The directory containing a CMake configuration file for SFML.
 SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
 

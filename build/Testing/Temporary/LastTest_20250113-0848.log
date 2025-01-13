@@ -1,13 +1,13 @@
-Start testing: Jan 13 11:40 EET
+Start testing: Jan 13 13:10 EET
 ----------------------------------------------------------
 1/1 Testing: tests
 1/1 Test: tests
 Command: "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests"
 Directory: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests
-"tests" start time: Jan 13 11:40 EET
+"tests" start time: Jan 13 13:10 EET
 Output:
 ----------------------------------------------------------
-[==========] Running 4 tests from 2 test suites.
+[==========] Running 9 tests from 3 test suites.
 [----------] Global test environment set-up.
 [----------] 3 tests from GlobalVarTest
 [ RUN      ] GlobalVarTest.GravityTest
@@ -18,20 +18,49 @@ Output:
 [       OK ] GlobalVarTest.ParticleSizeTest (0 ms)
 [----------] 3 tests from GlobalVarTest (0 ms total)
 
+[----------] 5 tests from ParticleSystemTest
+[ RUN      ] ParticleSystemTest.AddParticle
+[       OK ] ParticleSystemTest.AddParticle (0 ms)
+[ RUN      ] ParticleSystemTest.ParticlesAtDifferentLocations
+[       OK ] ParticleSystemTest.ParticlesAtDifferentLocations (0 ms)
+[ RUN      ] ParticleSystemTest.TouchingParticles
+[       OK ] ParticleSystemTest.TouchingParticles (0 ms)
+[ RUN      ] ParticleSystemTest.OverlappingParticles
+[       OK ] ParticleSystemTest.OverlappingParticles (0 ms)
+[ RUN      ] ParticleSystemTest.ParticlesAtBorders
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:66: Failure
+Expected: (ps.getParticles()[0].getVelocity().x) > (0), actual: -1 vs 0
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:67: Failure
+Expected: (ps.getParticles()[1].getVelocity().x) < (0), actual: 1 vs 0
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:68: Failure
+Expected: (ps.getParticles()[2].getVelocity().y) > (0), actual: -0.0199999809 vs 0
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:69: Failure
+Expected: (ps.getParticles()[3].getVelocity().y) < (0), actual: 1.98 vs 0
+
+[  FAILED  ] ParticleSystemTest.ParticlesAtBorders (0 ms)
+[----------] 5 tests from ParticleSystemTest (0 ms total)
+
 [----------] 1 test from SampleTest
 [ RUN      ] SampleTest.Example
 [       OK ] SampleTest.Example (0 ms)
 [----------] 1 test from SampleTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 2 test suites ran. (0 ms total)
-[  PASSED  ] 4 tests.
+[==========] 9 tests from 3 test suites ran. (0 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ParticleSystemTest.ParticlesAtBorders
+
+ 1 FAILED TEST
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Passed.
-"tests" end time: Jan 13 11:40 EET
+Test Failed.
+"tests" end time: Jan 13 13:10 EET
 "tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 13 11:40 EET
+End testing: Jan 13 13:10 EET

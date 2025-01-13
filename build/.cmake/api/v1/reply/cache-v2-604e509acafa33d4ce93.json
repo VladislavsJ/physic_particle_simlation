@@ -1230,6 +1230,42 @@
 			"value" : "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0"
 		},
 		{
+			"name" : "PhysicsBalls_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests"
+		},
+		{
+			"name" : "PhysicsBalls_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "PhysicsBalls_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests"
+		},
+		{
 			"name" : "SFML_DIR",
 			"properties" : 
 			[

@@ -140,6 +140,78 @@ tests/fast:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+__/src/Particle.o: __/src/Particle.cpp.o
+.PHONY : __/src/Particle.o
+
+# target to build an object file
+__/src/Particle.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o
+.PHONY : __/src/Particle.cpp.o
+
+__/src/Particle.i: __/src/Particle.cpp.i
+.PHONY : __/src/Particle.i
+
+# target to preprocess a source file
+__/src/Particle.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.i
+.PHONY : __/src/Particle.cpp.i
+
+__/src/Particle.s: __/src/Particle.cpp.s
+.PHONY : __/src/Particle.s
+
+# target to generate assembly for a file
+__/src/Particle.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.s
+.PHONY : __/src/Particle.cpp.s
+
+__/src/ParticleSystem.o: __/src/ParticleSystem.cpp.o
+.PHONY : __/src/ParticleSystem.o
+
+# target to build an object file
+__/src/ParticleSystem.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o
+.PHONY : __/src/ParticleSystem.cpp.o
+
+__/src/ParticleSystem.i: __/src/ParticleSystem.cpp.i
+.PHONY : __/src/ParticleSystem.i
+
+# target to preprocess a source file
+__/src/ParticleSystem.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.i
+.PHONY : __/src/ParticleSystem.cpp.i
+
+__/src/ParticleSystem.s: __/src/ParticleSystem.cpp.s
+.PHONY : __/src/ParticleSystem.s
+
+# target to generate assembly for a file
+__/src/ParticleSystem.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.s
+.PHONY : __/src/ParticleSystem.cpp.s
+
+__/src/Physics.o: __/src/Physics.cpp.o
+.PHONY : __/src/Physics.o
+
+# target to build an object file
+__/src/Physics.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o
+.PHONY : __/src/Physics.cpp.o
+
+__/src/Physics.i: __/src/Physics.cpp.i
+.PHONY : __/src/Physics.i
+
+# target to preprocess a source file
+__/src/Physics.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.i
+.PHONY : __/src/Physics.cpp.i
+
+__/src/Physics.s: __/src/Physics.cpp.s
+.PHONY : __/src/Physics.s
+
+# target to generate assembly for a file
+__/src/Physics.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.s
+.PHONY : __/src/Physics.cpp.s
+
 testGlobalVar.o: testGlobalVar.cpp.o
 .PHONY : testGlobalVar.o
 
@@ -188,6 +260,30 @@ test_Particles.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Particles.cpp.s
 .PHONY : test_Particles.cpp.s
 
+test_complete_system.o: test_complete_system.cpp.o
+.PHONY : test_complete_system.o
+
+# target to build an object file
+test_complete_system.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_complete_system.cpp.o
+.PHONY : test_complete_system.cpp.o
+
+test_complete_system.i: test_complete_system.cpp.i
+.PHONY : test_complete_system.i
+
+# target to preprocess a source file
+test_complete_system.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_complete_system.cpp.i
+.PHONY : test_complete_system.cpp.i
+
+test_complete_system.s: test_complete_system.cpp.s
+.PHONY : test_complete_system.s
+
+# target to generate assembly for a file
+test_complete_system.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_complete_system.cpp.s
+.PHONY : test_complete_system.cpp.s
+
 test_main.o: test_main.cpp.o
 .PHONY : test_main.o
 
@@ -222,12 +318,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... tests"
+	@echo "... __/src/Particle.o"
+	@echo "... __/src/Particle.i"
+	@echo "... __/src/Particle.s"
+	@echo "... __/src/ParticleSystem.o"
+	@echo "... __/src/ParticleSystem.i"
+	@echo "... __/src/ParticleSystem.s"
+	@echo "... __/src/Physics.o"
+	@echo "... __/src/Physics.i"
+	@echo "... __/src/Physics.s"
 	@echo "... testGlobalVar.o"
 	@echo "... testGlobalVar.i"
 	@echo "... testGlobalVar.s"
 	@echo "... test_Particles.o"
 	@echo "... test_Particles.i"
 	@echo "... test_Particles.s"
+	@echo "... test_complete_system.o"
+	@echo "... test_complete_system.i"
+	@echo "... test_complete_system.s"
 	@echo "... test_main.o"
 	@echo "... test_main.i"
 	@echo "... test_main.s"

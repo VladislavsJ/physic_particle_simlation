@@ -1,4 +1,4 @@
-CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o: \
+tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp \
  /usr/include/stdc-predef.h \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \

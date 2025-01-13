@@ -8,8 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp" "tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp" "tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp" "tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/testGlobalVar.cpp" "tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_Particles.cpp" "tests/CMakeFiles/tests.dir/test_Particles.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_Particles.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp" "tests/CMakeFiles/tests.dir/test_complete_system.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_complete_system.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_main.cpp" "tests/CMakeFiles/tests.dir/test_main.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_main.cpp.o.d"
   )
 

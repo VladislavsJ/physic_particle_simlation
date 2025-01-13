@@ -30,7 +30,7 @@
 						"string" : "3.10"
 					},
 					"parentIndex" : 0,
-					"projectIndex" : 0,
+					"projectIndex" : 1,
 					"source" : "tests",
 					"targetIndexes" : 
 					[
@@ -42,15 +42,29 @@
 			"projects" : 
 			[
 				{
+					"childIndexes" : 
+					[
+						1
+					],
 					"directoryIndexes" : 
 					[
-						0,
-						1
+						0
 					],
 					"name" : "ParticleSimulator",
 					"targetIndexes" : 
 					[
-						0,
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "PhysicsBalls",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
 						1
 					]
 				}
@@ -67,9 +81,9 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "tests::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-tests-Debug-71cc71e940717a9cfa2c.json",
+					"jsonFile" : "target-tests-Debug-3b0808f43560742c93f7.json",
 					"name" : "tests",
-					"projectIndex" : 0
+					"projectIndex" : 1
 				}
 			]
 		}
