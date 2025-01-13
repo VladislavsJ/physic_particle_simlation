@@ -152,6 +152,30 @@ tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+src/BorderInfo.o: src/BorderInfo.cpp.o
+.PHONY : src/BorderInfo.o
+
+# target to build an object file
+src/BorderInfo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o
+.PHONY : src/BorderInfo.cpp.o
+
+src/BorderInfo.i: src/BorderInfo.cpp.i
+.PHONY : src/BorderInfo.i
+
+# target to preprocess a source file
+src/BorderInfo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.i
+.PHONY : src/BorderInfo.cpp.i
+
+src/BorderInfo.s: src/BorderInfo.cpp.s
+.PHONY : src/BorderInfo.s
+
+# target to generate assembly for a file
+src/BorderInfo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.s
+.PHONY : src/BorderInfo.cpp.s
+
 src/Particle.o: src/Particle.cpp.o
 .PHONY : src/Particle.o
 
@@ -283,6 +307,9 @@ help:
 	@echo "... test"
 	@echo "... ParticleSimulator"
 	@echo "... tests"
+	@echo "... src/BorderInfo.o"
+	@echo "... src/BorderInfo.i"
+	@echo "... src/BorderInfo.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"

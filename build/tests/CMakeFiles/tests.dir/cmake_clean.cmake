@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o"
+  "CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o.d"
   "CMakeFiles/tests.dir/__/src/Particle.cpp.o"
   "CMakeFiles/tests.dir/__/src/Particle.cpp.o.d"
   "CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o"

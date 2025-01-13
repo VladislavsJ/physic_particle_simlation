@@ -238,7 +238,8 @@ CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o: \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
+ /usr/include/c++/13/cstdint /usr/include/c++/13/iostream \
+ /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /usr/include/c++/13/iostream /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp

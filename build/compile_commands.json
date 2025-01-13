@@ -1,6 +1,12 @@
 [
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp",
+  "output": "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
   "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "output": "CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o"
@@ -70,5 +76,11 @@
   "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/__/src/Physics.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp",
   "output": "tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
+  "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp",
+  "output": "tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o"
 }
 ]

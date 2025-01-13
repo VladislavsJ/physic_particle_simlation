@@ -24,6 +24,7 @@ add_executable(tests
     ../src/ParticleSystem.cpp
     ../src/Vector2D.hpp  # Removed if header-only
     ../src/Physics.cpp
+    ../src/BorderInfo.cpp
 )
 
 # Link libraries

@@ -1,10 +1,11 @@
 #include "Particle.hpp"
-
 Particle::Particle(Vector2D position, Vector2D velocity, float radius, float charge)
     : m_position(position),
       m_velocity(velocity),
       m_radius(radius),
-      m_charge(charge)
+      m_charge(charge),
+    border()
+
 {
 }
 

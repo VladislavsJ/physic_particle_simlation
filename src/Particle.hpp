@@ -1,6 +1,6 @@
 #ifndef PARTICLE_H
 #define PARTICLE_H
-
+#include "BorderInfo.hpp"
  #include "Vector2D.hpp"
 //TODO LIST
 //TODO0: high risk, should be fixed, checked before use
@@ -22,7 +22,7 @@ public:
     Vector2D getVelocity() const;
     float    getRadius()   const;
     float    getCharge()   const;
-
+    
     // Setters
     void setPosition(const Vector2D& pos);
     void setVelocity(const Vector2D& vel);
@@ -37,6 +37,7 @@ private:
     float    m_radius;
     float    m_charge;
     int type;//TODO3: for different particles types
+    BorderInfo border;
 };
 
 #endif // PARTICLE_H

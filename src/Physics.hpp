@@ -14,6 +14,8 @@ namespace Physics {
     void applyGravity(Particle& p, float deltaTime);
     //void applyChargeForces(std::vector<Particle>& particles, float deltaTime);
     void handleCollisions(std::vector<Particle>& particles);
+    void check_Borders(Particle p, int fieldSizeX, int fieldSizeY); // check if particle is at the border
+    // now it checks which border, left right, top or bottom
 
 }
 

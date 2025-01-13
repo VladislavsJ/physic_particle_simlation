@@ -140,6 +140,30 @@ tests/fast:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+__/src/BorderInfo.o: __/src/BorderInfo.cpp.o
+.PHONY : __/src/BorderInfo.o
+
+# target to build an object file
+__/src/BorderInfo.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o
+.PHONY : __/src/BorderInfo.cpp.o
+
+__/src/BorderInfo.i: __/src/BorderInfo.cpp.i
+.PHONY : __/src/BorderInfo.i
+
+# target to preprocess a source file
+__/src/BorderInfo.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.i
+.PHONY : __/src/BorderInfo.cpp.i
+
+__/src/BorderInfo.s: __/src/BorderInfo.cpp.s
+.PHONY : __/src/BorderInfo.s
+
+# target to generate assembly for a file
+__/src/BorderInfo.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.s
+.PHONY : __/src/BorderInfo.cpp.s
+
 __/src/Particle.o: __/src/Particle.cpp.o
 .PHONY : __/src/Particle.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... tests"
+	@echo "... __/src/BorderInfo.o"
+	@echo "... __/src/BorderInfo.i"
+	@echo "... __/src/BorderInfo.s"
 	@echo "... __/src/Particle.o"
 	@echo "... __/src/Particle.i"
 	@echo "... __/src/Particle.s"

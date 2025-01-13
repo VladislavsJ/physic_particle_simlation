@@ -1,10 +1,10 @@
-Start testing: Jan 13 13:10 EET
+Start testing: Jan 13 19:36 EET
 ----------------------------------------------------------
 1/1 Testing: tests
 1/1 Test: tests
 Command: "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests"
 Directory: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests
-"tests" start time: Jan 13 13:10 EET
+"tests" start time: Jan 13 19:36 EET
 Output:
 ----------------------------------------------------------
 [==========] Running 9 tests from 3 test suites.
@@ -28,16 +28,17 @@ Output:
 [ RUN      ] ParticleSystemTest.OverlappingParticles
 [       OK ] ParticleSystemTest.OverlappingParticles (0 ms)
 [ RUN      ] ParticleSystemTest.ParticlesAtBorders
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:66: Failure
+WILL fail until border check is implemented
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:67: Failure
 Expected: (ps.getParticles()[0].getVelocity().x) > (0), actual: -1 vs 0
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:67: Failure
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:68: Failure
 Expected: (ps.getParticles()[1].getVelocity().x) < (0), actual: 1 vs 0
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:68: Failure
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:69: Failure
 Expected: (ps.getParticles()[2].getVelocity().y) > (0), actual: -0.0199999809 vs 0
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:69: Failure
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp:70: Failure
 Expected: (ps.getParticles()[3].getVelocity().y) < (0), actual: 1.98 vs 0
 
 [  FAILED  ] ParticleSystemTest.ParticlesAtBorders (0 ms)
@@ -59,8 +60,8 @@ Expected: (ps.getParticles()[3].getVelocity().y) < (0), actual: 1.98 vs 0
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Failed.
-"tests" end time: Jan 13 13:10 EET
+"tests" end time: Jan 13 19:36 EET
 "tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 13 13:10 EET
+End testing: Jan 13 19:36 EET

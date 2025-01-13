@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp" "tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp" "tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp" "tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp" "tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o.d"
