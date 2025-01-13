@@ -18,6 +18,8 @@ void ParticleSystem::update(float deltaTime) {
 
     // 4. Handle collisions
     Physics::handleCollisions(m_particles);
+
+    
 }
 
 std::vector<Particle>& ParticleSystem::getParticles() {

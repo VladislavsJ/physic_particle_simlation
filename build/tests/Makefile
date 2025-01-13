@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/bu
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -116,6 +126,92 @@ depend:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+tests/CMakeFiles/tests.dir/rule:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/tests.dir/rule
+.PHONY : tests/CMakeFiles/tests.dir/rule
+
+# Convenience name for target.
+tests: tests/CMakeFiles/tests.dir/rule
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+testGlobalVar.o: testGlobalVar.cpp.o
+.PHONY : testGlobalVar.o
+
+# target to build an object file
+testGlobalVar.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o
+.PHONY : testGlobalVar.cpp.o
+
+testGlobalVar.i: testGlobalVar.cpp.i
+.PHONY : testGlobalVar.i
+
+# target to preprocess a source file
+testGlobalVar.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/testGlobalVar.cpp.i
+.PHONY : testGlobalVar.cpp.i
+
+testGlobalVar.s: testGlobalVar.cpp.s
+.PHONY : testGlobalVar.s
+
+# target to generate assembly for a file
+testGlobalVar.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/testGlobalVar.cpp.s
+.PHONY : testGlobalVar.cpp.s
+
+test_Particles.o: test_Particles.cpp.o
+.PHONY : test_Particles.o
+
+# target to build an object file
+test_Particles.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Particles.cpp.o
+.PHONY : test_Particles.cpp.o
+
+test_Particles.i: test_Particles.cpp.i
+.PHONY : test_Particles.i
+
+# target to preprocess a source file
+test_Particles.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Particles.cpp.i
+.PHONY : test_Particles.cpp.i
+
+test_Particles.s: test_Particles.cpp.s
+.PHONY : test_Particles.s
+
+# target to generate assembly for a file
+test_Particles.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Particles.cpp.s
+.PHONY : test_Particles.cpp.s
+
+test_main.o: test_main.cpp.o
+.PHONY : test_main.o
+
+# target to build an object file
+test_main.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_main.cpp.o
+.PHONY : test_main.cpp.o
+
+test_main.i: test_main.cpp.i
+.PHONY : test_main.i
+
+# target to preprocess a source file
+test_main.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_main.cpp.i
+.PHONY : test_main.cpp.i
+
+test_main.s: test_main.cpp.s
+.PHONY : test_main.s
+
+# target to generate assembly for a file
+test_main.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_main.cpp.s
+.PHONY : test_main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +220,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... tests"
+	@echo "... testGlobalVar.o"
+	@echo "... testGlobalVar.i"
+	@echo "... testGlobalVar.s"
+	@echo "... test_Particles.o"
+	@echo "... test_Particles.i"
+	@echo "... test_Particles.s"
+	@echo "... test_main.o"
+	@echo "... test_main.i"
+	@echo "... test_main.s"
 .PHONY : help
 
 

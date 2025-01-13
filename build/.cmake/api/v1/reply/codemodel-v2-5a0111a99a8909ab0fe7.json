@@ -10,7 +10,7 @@
 					[
 						1
 					],
-					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -24,17 +24,21 @@
 				},
 				{
 					"build" : "tests",
-					"jsonFile" : "directory-tests-Release-b01f6abb0ab61427ef3b.json",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
-					"source" : "tests"
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						1
+					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -46,7 +50,8 @@
 					"name" : "ParticleSimulator",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -55,8 +60,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ParticleSimulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ParticleSimulator-Release-2258005df7ce0893e029.json",
+					"jsonFile" : "target-ParticleSimulator-Debug-4265f04356df47a7c133.json",
 					"name" : "ParticleSimulator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "tests::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-tests-Debug-71cc71e940717a9cfa2c.json",
+					"name" : "tests",
 					"projectIndex" : 0
 				}
 			]

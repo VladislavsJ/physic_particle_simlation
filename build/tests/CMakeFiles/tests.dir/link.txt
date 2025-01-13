@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/tests.dir/testGlobalVar.cpp.o CMakeFiles/tests.dir/test_Particles.cpp.o CMakeFiles/tests.dir/test_main.cpp.o -o tests  -lpthread /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 
