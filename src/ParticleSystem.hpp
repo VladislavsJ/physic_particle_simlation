@@ -5,6 +5,8 @@
 #include "Particle.hpp"
 #include "global_var.hpp"
 
+extern GlobalVar &gv;
+
 class ParticleSystem {
 public:
     void addParticle(const Particle& particle);
@@ -13,6 +15,7 @@ public:
     void update(float deltaTime); // all physics calculations are done here
     
     bool checkCollision(const Particle& p1, const Particle& p2) const;
+    void update_border_state();
     // Accessors
     std::vector<Particle>& getParticles();
     const std::vector<Particle>& getParticles() const;

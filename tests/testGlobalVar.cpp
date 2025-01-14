@@ -21,3 +21,10 @@ TEST(GlobalVarTest, ParticleSizeTest) {
     instance.setParticleSize(0.25);
     EXPECT_DOUBLE_EQ(0.25, instance.getParticleSize());
 }
+//GlobalVar &gv = GlobalVar::getInstance();//TODO0 does gv is the same for every file?
+TEST(GlobalVarTest, GlobalVarInstance) {
+    GlobalVar& instance = GlobalVar::getInstance();
+    instance.setGravity(12.66);
+    GlobalVar& instance2 = GlobalVar::getInstance();
+    EXPECT_EQ(&instance, &instance2);
+}

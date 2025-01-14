@@ -8,9 +8,17 @@ class GlobalVar {
 public:
     static GlobalVar& getInstance() {
         static GlobalVar instance;
+        instance.init();
         return instance;
     }
+    void init() {
+        //TODO0: init the non specified variables
+        gravity = 9.8;
+        fieldSizeX_Y[0] = 350;
+        fieldSizeX_Y[1] = 350;
+        particleR = 0.1;
 
+    }
     double getGravity() const { return gravity; }
     void setGravity(double g) { gravity = g; }
     int getFieldSizeX() const { return fieldSizeX_Y[0]; }
@@ -20,9 +28,15 @@ public:
     void setParticleSize(double size) { particleR = size; }
 
 private:
-    double gravity = 9.8;
-    int fieldSizeX_Y[2] = { 400, 400 };
-    double particleR= 0.1;
+    GlobalVar() = default;
+    
+    GlobalVar(const GlobalVar&) = delete;
+    GlobalVar& operator=(const GlobalVar&) = delete;
+
+    ~GlobalVar() = default;
+    double gravity;
+    int fieldSizeX_Y[2] ;
+    double particleR;
     
     // Prevent external instantiation
     //TODO3:

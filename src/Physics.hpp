@@ -4,6 +4,7 @@
 #include <vector>
 #include "Particle.hpp"
 #include "global_var.hpp"
+#include "BorderInfo.hpp"
 
 namespace Physics {
 

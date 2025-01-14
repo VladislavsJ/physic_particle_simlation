@@ -3,8 +3,9 @@
 
 #include <cstdint>
 #include <iostream>
-
+#include "Vector2D.hpp"
 // Enum to define the borders with bit positions
+//WHY uint8? and not 4 bools? its efficient and something unusual
 enum Border : uint8_t {
     BORDER_NONE   = 0x00,        // No border
     BORDER_TOP    = 0x08,        // Top border (bit 3)
@@ -42,6 +43,11 @@ public:
 
     // Display  (debug)
     void display() const;
+    //   p.border.check_Borders(p.getPosition, gv.getFieldSizeX(), gv.getFieldSizeY());
+    void update_border_state(Vector2D pos, int fieldSizeX, int fieldSizeY, int fieldstartX = 0, int fieldstartY = 0);
+    
+
+
 };
 
 #endif // BORDER_INFO_HPP

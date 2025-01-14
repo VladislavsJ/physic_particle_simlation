@@ -7,7 +7,7 @@ ParticleSimulatorTests 0 0
 ParticleSimulatorTests 0 0
 ParticleSimulatorTests 0 0
 ParticleSimulatorTests 0 0
-tests 17 0.00272695
+tests 18 0.00278155
 testGlobalVar.cpp 8 0.00257474
 ---
 tests

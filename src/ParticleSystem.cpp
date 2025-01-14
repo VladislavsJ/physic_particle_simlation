@@ -1,7 +1,8 @@
 #include "ParticleSystem.hpp"
 #include "Physics.hpp"
+#include "global_var.hpp"
 #include <cmath>
-
+extern GlobalVar &gv;
 void ParticleSystem::addParticle(const Particle& particle) {
     m_particles.push_back(particle);
 }
@@ -19,9 +20,24 @@ void ParticleSystem::update(float deltaTime) {
 
     // 4. Handle collisions
     Physics::handleCollisions(m_particles);
-
-
 }
+void ParticleSystem::update_border_state() {
+    for (auto& p : m_particles) {
+        p.border.update_border_state(p.getPosition(), gv.getFieldSizeX(), gv.getFieldSizeY());
+        if (p.border.isAnyBorderSet()) {
+            p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
+            //TODO2: different border handling
+            if (p.border.isBorderSet(BORDER_BOTTOM)) { //touched
+               // p.setVelocity(Vector2D(0,0));
+            }
+        }
+
+
+
+
+    }
+}
+
 bool ParticleSystem::checkCollision(const Particle& p1, const Particle& p2) const {
     float r1 = p1.getRadius();
     float r2 = p2.getRadius();

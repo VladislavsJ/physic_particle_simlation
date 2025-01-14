@@ -2,6 +2,7 @@
 #include <cmath>
 GlobalVar &gv = GlobalVar::getInstance();
 namespace Physics {
+
     float GRAVITY = gv.getGravity();
     //float CONTRACTION_FORCE // TODO2: Implement this
     //particles should contract to each other if they have different charge

@@ -32,12 +32,25 @@ bool BorderInfo::isAnyBorderSet() const {
     return (data & ANY_BORDER_MASK) != 0;
 }
 
+
 uint8_t BorderInfo::getRawData() const {
     return data;
 }
 
 void BorderInfo::setRawData(uint8_t raw) {
     data = raw;
+}
+void BorderInfo::update_border_state(Vector2D pos, int fieldSizeX, int fieldSizeY, int fieldstartX, int fieldstartY) {
+    if (pos.x <= fieldstartX) {
+        setBorder(BORDER_LEFT);
+    } else if (pos.x >= fieldSizeX) {
+        setBorder(BORDER_RIGHT);
+    }
+    if (pos.y <= fieldstartY) {
+        setBorder(BORDER_TOP);
+    } else if (pos.y >= fieldSizeY) {
+        setBorder(BORDER_BOTTOM);
+    }
 }
 
 // Display (debugging)

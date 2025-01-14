@@ -27,17 +27,20 @@ public:
     void setPosition(const Vector2D& pos);
     void setVelocity(const Vector2D& vel);
     void setCharge(float c);
+    void limit_coordinates(int fieldSizeX, int fieldSizeY, int fieldstartX = 0, int fieldstartY = 0);
+    //More like bug hider, if particle is out of the field, it will be set to the border
+    //TODO3: limit_coordinates should not be needed at all
 
     // Update method
     void update(float deltaTime);
-
+public:
+    BorderInfo border;
 private:
     Vector2D m_position;
     Vector2D m_velocity;
     float    m_radius;
     float    m_charge;
     int type;//TODO3: for different particles types
-    BorderInfo border;
 };
 
 #endif // PARTICLE_H
