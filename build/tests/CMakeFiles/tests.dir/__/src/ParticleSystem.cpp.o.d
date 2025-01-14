@@ -161,8 +161,6 @@ tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -185,4 +183,6 @@ tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp
