@@ -2,7 +2,7 @@
 
 // Example Test Case
 TEST(SampleTest, Example) {
-    EXPECT_EQ(1 + 1, 2);
+    EXPECT_EQ(1 + 1, 3);
 }
 
 int main(int argc, char **argv) {

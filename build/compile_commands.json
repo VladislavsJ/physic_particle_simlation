@@ -61,6 +61,12 @@
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
+  "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/test_physics.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp",
+  "output": "tests/CMakeFiles/tests.dir/test_physics.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
   "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/__/src/Particle.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "output": "tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o"

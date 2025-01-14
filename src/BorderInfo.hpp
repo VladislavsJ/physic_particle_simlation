@@ -44,6 +44,10 @@ public:
     // Display  (debug)
     void display() const;
     //   p.border.check_Borders(p.getPosition, gv.getFieldSizeX(), gv.getFieldSizeY());
+
+    //TOODO3: Should be optimized, I call it every time to check all borders,
+    //but I can call it only when I need it, 
+    //I need to check the efficiency of it.
     void update_border_state(Vector2D pos, int fieldSizeX, int fieldSizeY, int fieldstartX = 0, int fieldstartY = 0);
     
 

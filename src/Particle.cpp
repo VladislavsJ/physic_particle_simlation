@@ -1,5 +1,5 @@
 #include "Particle.hpp"
-Particle::Particle(Vector2D position, Vector2D velocity, int type, float radius, float charge, float density)
+Particle::Particle(Vector2D position, Vector2D velocity, float radius,int type, float charge, float density)
 //TODO3: only denstiry, no mass for now, it is calcualted from density but not the other way around
     : m_position(position),
       m_velocity(velocity),

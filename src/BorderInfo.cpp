@@ -41,6 +41,7 @@ void BorderInfo::setRawData(uint8_t raw) {
     data = raw;
 }
 void BorderInfo::update_border_state(Vector2D pos, int fieldSizeX, int fieldSizeY, int fieldstartX, int fieldstartY) {
+    clearAnyBorderFlag();
     if (pos.x <= fieldstartX) {
         setBorder(BORDER_LEFT);
     } else if (pos.x >= fieldSizeX) {

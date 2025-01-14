@@ -28,9 +28,9 @@ void ParticleSystem::update_border_state() {
             p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
             //TODO2: different border handling
             if (p.border.isBorderSet(BORDER_BOTTOM)) { //touched BORDER_BOTTOM, set velocity backwards,
-
-                p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y*0.5)));
-                int i =5;
+                if (p.getVelocity().y > 0) {
+                    p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y)*0.5));
+                }
             }
         }
 

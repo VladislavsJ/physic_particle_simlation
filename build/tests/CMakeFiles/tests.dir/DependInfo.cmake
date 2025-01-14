@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_Particles.cpp" "tests/CMakeFiles/tests.dir/test_Particles.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_Particles.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp" "tests/CMakeFiles/tests.dir/test_complete_system.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_complete_system.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_main.cpp" "tests/CMakeFiles/tests.dir/test_main.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_main.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp" "tests/CMakeFiles/tests.dir/test_physics.cpp.o" "gcc" "tests/CMakeFiles/tests.dir/test_physics.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

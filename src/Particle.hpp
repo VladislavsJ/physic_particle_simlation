@@ -16,7 +16,7 @@
 //TODO3 (particles can accelerate to each other, "MORE FORMULAS!!"
 class Particle {
 public:
-    Particle(Vector2D position, Vector2D velocity, int type=0, float radius=25.0f, float charge=0, float density = 1.0f);
+    Particle(Vector2D position, Vector2D velocity, float radius=25.0f,int type=0, float charge=0, float density = 1.0f);
 
     // Getters
     Vector2D getPosition() const;

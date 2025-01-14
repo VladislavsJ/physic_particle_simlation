@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/test_complete_system.cpp.o.d"
   "CMakeFiles/tests.dir/test_main.cpp.o"
   "CMakeFiles/tests.dir/test_main.cpp.o.d"
+  "CMakeFiles/tests.dir/test_physics.cpp.o"
+  "CMakeFiles/tests.dir/test_physics.cpp.o.d"
   "tests"
   "tests.pdb"
 )

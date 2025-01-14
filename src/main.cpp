@@ -16,11 +16,11 @@ int main() {
         return 1;
     }
     ParticleSystem particleSystem;// all particles are here
-    particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(0, 0),1, 10));
-    particleSystem.addParticle(Particle(Vector2D(200, 200), Vector2D(0, 0), 1, 10));
-    particleSystem.addParticle(Particle(Vector2D(300, 300), Vector2D(0, 0), 1, 10));
-    particleSystem.addParticle(Particle(Vector2D(400, 400), Vector2D(0, 0), 1, 10));
-    particleSystem.addParticle(Particle(Vector2D(500, 200), Vector2D(0, 0), 1, 15));
+    particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(0, 0),10,1));
+    particleSystem.addParticle(Particle(Vector2D(200, 200), Vector2D(0, 0), 10, 1));
+    particleSystem.addParticle(Particle(Vector2D(300, 300), Vector2D(0, 0), 10, 1));
+    particleSystem.addParticle(Particle(Vector2D(400, 400), Vector2D(0, 0), 10, 1));
+    particleSystem.addParticle(Particle(Vector2D(500, 200), Vector2D(0, 0), 15 ,1));
     
     sf::Clock clock;
     const float FPS = 60.0f; // Constant for 60 frames per second

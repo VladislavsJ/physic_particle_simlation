@@ -83,7 +83,23 @@ namespace Physics {
 
                     float impulseX = impulseScalar * nx;
                     float impulseY = impulseScalar * ny;
+                    //if other particle are on the bottom, then top particle get 80% of impulse and bottom 20%
+                    if (p1.border.isBorderSet(BORDER_BOTTOM)) {
+                        if (pos1.y > pos2.y ) { // p1 is on top
+                        //TODO0: no check for x
 
+                            vel1.x = -(impulseX / m1)*0.2;//just numbers from my head
+                            //TODO1:
+                            vel1.y = -(impulseY / m1) * 0.2;
+                            vel2.x = -(impulseX / m2) * 1.8;
+                            vel2.y = -(impulseY / m2) * 1.8;
+                            p1.setVelocity(vel1);
+                            p2.setVelocity(vel2);
+                            continue;
+                        } else {
+                            
+                        }
+                    }
                     vel1.x += (impulseX / m1);
                     vel1.y += (impulseY / m1);
                     vel2.x -= (impulseX / m2);

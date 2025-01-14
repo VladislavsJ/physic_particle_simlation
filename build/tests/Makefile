@@ -332,6 +332,30 @@ test_main.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_main.cpp.s
 .PHONY : test_main.cpp.s
 
+test_physics.o: test_physics.cpp.o
+.PHONY : test_physics.o
+
+# target to build an object file
+test_physics.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_physics.cpp.o
+.PHONY : test_physics.cpp.o
+
+test_physics.i: test_physics.cpp.i
+.PHONY : test_physics.i
+
+# target to preprocess a source file
+test_physics.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_physics.cpp.i
+.PHONY : test_physics.cpp.i
+
+test_physics.s: test_physics.cpp.s
+.PHONY : test_physics.s
+
+# target to generate assembly for a file
+test_physics.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_physics.cpp.s
+.PHONY : test_physics.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,6 +390,9 @@ help:
 	@echo "... test_main.o"
 	@echo "... test_main.i"
 	@echo "... test_main.s"
+	@echo "... test_physics.o"
+	@echo "... test_physics.i"
+	@echo "... test_physics.s"
 .PHONY : help
 
 
