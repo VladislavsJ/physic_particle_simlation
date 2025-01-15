@@ -272,6 +272,30 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
+src/interact_with_simulation.o: src/interact_with_simulation.cpp.o
+.PHONY : src/interact_with_simulation.o
+
+# target to build an object file
+src/interact_with_simulation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o
+.PHONY : src/interact_with_simulation.cpp.o
+
+src/interact_with_simulation.i: src/interact_with_simulation.cpp.i
+.PHONY : src/interact_with_simulation.i
+
+# target to preprocess a source file
+src/interact_with_simulation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.i
+.PHONY : src/interact_with_simulation.cpp.i
+
+src/interact_with_simulation.s: src/interact_with_simulation.cpp.s
+.PHONY : src/interact_with_simulation.s
+
+# target to generate assembly for a file
+src/interact_with_simulation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.s
+.PHONY : src/interact_with_simulation.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -322,6 +346,9 @@ help:
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
+	@echo "... src/interact_with_simulation.o"
+	@echo "... src/interact_with_simulation.i"
+	@echo "... src/interact_with_simulation.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

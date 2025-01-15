@@ -31,6 +31,12 @@
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp",
+  "output": "CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
   "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/ParticleSimulator.dir/src/main.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp",
   "output": "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o"

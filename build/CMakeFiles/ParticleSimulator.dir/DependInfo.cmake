@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp" "CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp" "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp" "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp" "CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp" "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o.d"
   )
 

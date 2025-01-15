@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o.d"
+  "CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o"
+  "CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o.d"
   "ParticleSimulator"

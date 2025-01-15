@@ -37,7 +37,10 @@ while (renderer.getWindow().isOpen()) {
             renderer.getWindow().close();
         }
     }
-
+    cnt++;
+    if (cnt % 10 == 0) {
+        particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(100, 0), 2, 1));
+    }
     if (frameDuration < FRAME_TIME){
         frameDuration = FRAME_TIME;
     }
