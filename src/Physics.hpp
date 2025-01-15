@@ -18,7 +18,7 @@ namespace Physics {
     void handleCollisions(std::vector<Particle>& particles);
     void check_Borders(Particle p, int fieldSizeX, int fieldSizeY); // check if particle is at the border
     // now it checks which border, left right, top or bottom
-
+    
 }
 
 #endif // PHYSICS_H

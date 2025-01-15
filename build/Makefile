@@ -176,6 +176,30 @@ src/BorderInfo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.s
 .PHONY : src/BorderInfo.cpp.s
 
+src/Graphs_new.o: src/Graphs_new.cpp.o
+.PHONY : src/Graphs_new.o
+
+# target to build an object file
+src/Graphs_new.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o
+.PHONY : src/Graphs_new.cpp.o
+
+src/Graphs_new.i: src/Graphs_new.cpp.i
+.PHONY : src/Graphs_new.i
+
+# target to preprocess a source file
+src/Graphs_new.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.i
+.PHONY : src/Graphs_new.cpp.i
+
+src/Graphs_new.s: src/Graphs_new.cpp.s
+.PHONY : src/Graphs_new.s
+
+# target to generate assembly for a file
+src/Graphs_new.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.s
+.PHONY : src/Graphs_new.cpp.s
+
 src/Particle.o: src/Particle.cpp.o
 .PHONY : src/Particle.o
 
@@ -334,6 +358,9 @@ help:
 	@echo "... src/BorderInfo.o"
 	@echo "... src/BorderInfo.i"
 	@echo "... src/BorderInfo.s"
+	@echo "... src/Graphs_new.o"
+	@echo "... src/Graphs_new.i"
+	@echo "... src/Graphs_new.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"

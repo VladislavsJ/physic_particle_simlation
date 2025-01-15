@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp" "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp" "CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp" "CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp" "CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp" "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o" "gcc" "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o.d"

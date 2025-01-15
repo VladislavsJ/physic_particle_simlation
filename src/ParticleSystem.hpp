@@ -19,7 +19,7 @@ public:
     // Accessors
     std::vector<Particle>& getParticles();
     const std::vector<Particle>& getParticles() const;
-
+    int getParticleCount() const;
 private:
     std::vector<Particle> m_particles;
 };

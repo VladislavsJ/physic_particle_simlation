@@ -3,69 +3,96 @@
 #include <chrono>
 #include "ParticleSystem.hpp"
 #include "Renderer.hpp"
-//TODO LIST
-//TODO0: high risk, should be fixed, checked before use
-// TODO1: Important functionality, but may work without it
-// TODO2, Ideas for optimization, and important stuff, but not necessary
-// TOOD3, just ideas for the future
-
+#include "Graphs_new.hpp" 
+extern GlobalVar &gv;
 int main() {
     Renderer renderer;
     if (!renderer.init()) {
         std::cerr << "Failed to initialize renderer" << std::endl;
         return 1;
     }
-    ParticleSystem particleSystem;// all particles are here
 
+
+    Graph graphFPS;
+    Graph graphParticleCnt;
+    //int inStartX, int inStartY, int inSizeX, int inSizeY, 
+            //  float inValXMin = 0, float inValYMin = 0,
+    if (!graphFPS.init(gv.getFieldSizeX(),50,180,180)){
+        std::cerr << "Failed to initialize graph FPS" << std::endl;
+        return 1;
+    };
+    
+    if (!graphParticleCnt.init(gv.getFieldSizeX(),200,180,180)){
+        std::cerr << "Failed to initialize graph Particle Count" << std::endl;
+        return 1;
+    }
+
+    ParticleSystem particleSystem;
+
+    //  test particles
     particleSystem.addParticle(Particle(Vector2D(300, 400), Vector2D(0, 0), 1, 1));
     particleSystem.addParticle(Particle(Vector2D(300, 499), Vector2D(0, 0), 15, 1));
 
     sf::Clock clock;
-    const float FPS = 60.0f; // Constant for 60 frames per second
-    // if frame time is less than 1/60, sleep for the remaining time
-    // if frame time is more than 1/60, do nothing
+    const float FPS = 60.0f;
     std::chrono::duration<float> FRAME_TIME = std::chrono::duration<double>(1.0 / FPS);
-std::chrono::duration<float> frameDuration;
-int cnt = 0; 
-while (renderer.getWindow().isOpen()) {
-        auto frameStartTime = std::chrono::high_resolution_clock::now();
-    sf::Event event;
+    std::chrono::duration<float> frameDuration;
 
-    while (renderer.getWindow().pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            renderer.getWindow().close();
+    int cnt = 0; 
+    while (renderer.getWindow().isOpen()) {
+        auto frameStartTime = std::chrono::high_resolution_clock::now();
+
+        // Handle events for main window
+        sf::Event event;
+        while (renderer.getWindow().pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                renderer.getWindow().close();
+            }
+        }
+
+        if (cnt % 10 == 0) { // check frame time every 10 frames, to check the performance
+            std::cout << "frame time: " << frameDuration.count() << std::endl;
+            if (frameDuration.count() > 0.016) {
+                std::cout << "frame time is too high, max particle count is" << std::endl;
+                std::cout << particleSystem.getParticleCount() << std::endl;
+            }
+        }
+
+        // to save CPU resources, frame rate is limited to 60 fps
+        if (frameDuration < FRAME_TIME){
+            frameDuration = FRAME_TIME;
+        }
+
+        if (cnt++ % 1 == 0 && cnt < 3000) {
+            particleSystem.addParticle(Particle(Vector2D(300, 400), Vector2D(200, 0), 3, 1));
+            
+        }
+
+        // Update particle system
+        particleSystem.update(frameDuration.count());
+        particleSystem.update_border_state();
+
+        // Render in the main window
+        renderer.render(particleSystem,true);
+        renderer.render_graph(graphFPS, false);
+        renderer.render_graph(graphParticleCnt, false);
+        renderer.display();
+
+        //---
+        //  Update Graphs data and render:
+        //---
+        if (cnt % 10 == 0) {
+            graphFPS.updateData(cnt, frameDuration.count()*100);
+            graphParticleCnt.updateData(cnt,particleSystem.getParticleCount() );
+        }
+
+        auto frameEndTime = std::chrono::high_resolution_clock::now();
+        frameDuration = frameEndTime - frameStartTime;
+        // Sleep if we’re still under the desired frame time
+        if (frameDuration < FRAME_TIME) {
+            sf::sleep(sf::seconds((FRAME_TIME - frameDuration).count()));
         }
     }
-    cnt+=1;
-    if (cnt % 31 == 0) {
 
-        particleSystem.addParticle(Particle(Vector2D(500, 100), Vector2D(300, 0), 4, 1));
-    }
-
-    if (frameDuration < FRAME_TIME){
-        frameDuration = FRAME_TIME;
-    }
-    std::cout << cnt;
-            
-
-    if (cnt++ % 3 == 0 && cnt < 300) {
-        
-        //particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(100, 0), 10, 1));
-    }
-    
-    
-    particleSystem.update(frameDuration.count());// TODO0: check
-    particleSystem.update_border_state();
-    renderer.render(particleSystem);
-
-    renderer.display();
-    auto frameEndTime = std::chrono::high_resolution_clock::now();
-    frameDuration = frameEndTime - frameStartTime;
-    if (frameDuration < FRAME_TIME)
-        sf::sleep(sf::seconds((FRAME_TIME - frameDuration).count()));
-     
-
-}
-
-
+    return 0;
 }

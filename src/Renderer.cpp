@@ -1,6 +1,7 @@
 #include "Renderer.hpp"
 #include <iostream>
 
+extern GlobalVar &gv;
 Renderer::Renderer() {
     // constructor
 }
@@ -11,15 +12,17 @@ Renderer::~Renderer() {
 }
 bool Renderer::init() {
     //  SFML window
-    m_window.create(sf::VideoMode(800, 600), "Particle Simulator");
+    m_window.create(sf::VideoMode(gv.getFieldSizeX()+200, gv.getFieldSizeY()+50), "Particle Simulator"); // +200 for graphs
     if (!m_window.isOpen()) {
         return false;
     }
     return true;
 }
-void Renderer::render(const ParticleSystem& particleSystem) {
+void Renderer::render(const ParticleSystem& particleSystem, bool clear) {
     // render each particle for each frame
-    m_window.clear();
+    if (clear == true) {
+        m_window.clear();
+    }
     for (auto& p : particleSystem.getParticles()) {
         sf::CircleShape circle(p.getRadius());
             circle.setOrigin(circle.getRadius(), circle.getRadius());
@@ -37,7 +40,77 @@ void Renderer::display() {
     // display the frame
     m_window.display();
 }
+
 sf::RenderWindow& Renderer::getWindow() {
     return m_window;
+}
+void Renderer::render_graph(Graph& graph, bool clear) {
+    float valXmin, valXmax, valYmin, valYmax;
+   if (clear == true) {
+        m_window.clear();
+    }
+    if (graph.m_valXmin==graph.m_valXmax) { // if graph size is not assgined
+        // auto scale
+         valXmin = graph.findMinValueX();
+         valXmax = graph.findMaxValueX();
+    }
+    else {
+        valXmin = graph.m_valXmin;
+        valXmax = graph.m_valXmax;
+        
+    }
+    if (graph.m_valYmin==graph.m_valYmax) { //if graph size is not assgined
+        // auto scale
+         valYmin = graph.findMinValueY();
+         valYmax =  graph.findMaxValueY();
+    }
+    else {
+         valYmin = graph.m_valYmin;
+         valYmax = graph.m_valYmax;
+    }
+    drawLineGraph(
+        /* data = */ graph.m_dataY,
+        /* maxValueY = */ valYmax,
+        /* offsetX = */ graph.m_graphDrawStartX,
+        /* offsetY = */ graph.m_graphDrawStartY,
+        /* width   = */ graph.m_graphSizeX,
+        /* height  = */ graph.m_graphSizeY,
+        /* color   = */ sf::Color::Red
+    );
+
+}
+
+
+// Helper that draws data as a line graph
+void Renderer::drawLineGraph(const std::vector<float>& data, float maxValue, 
+                           float offsetX, float offsetY, float width, float height,
+                           sf::Color color, bool isInteger) 
+{
+    if (data.size() < 2) {
+        return; // Not enough points to draw
+    }
+
+    // We’ll create a vertex array for lines
+    sf::VertexArray lines(sf::LineStrip, data.size());
+
+    // The x step between points
+    float step = width / static_cast<float>(data.size() - 1);
+
+    // Map data to [0..height]
+    // For frameTime or count, bigger is higher
+    // We'll draw "up" inside the window, but SFML’s Y grows downward, so we invert
+    for (size_t i = 0; i < data.size(); i++) {
+        float x = offsetX + i * step;
+        float y = offsetY + height - (data[i] / maxValue) * height;
+        lines[i].position = sf::Vector2f(x, y);
+        lines[i].color = color;
+    }
+
+    m_window.draw(lines);
+
+    // Optionally, draw some text (requires loading a font, etc.)
+    // For brevity, this snippet doesn't do font drawing.
+
+    // Could also draw axes if you like, etc.
 }
 

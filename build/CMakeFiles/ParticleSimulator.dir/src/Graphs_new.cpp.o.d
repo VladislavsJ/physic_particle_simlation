@@ -1,11 +1,12 @@
-CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/SFML/Graphics.hpp \
- /usr/include/SFML/Window.hpp /usr/include/SFML/System.hpp \
- /usr/include/SFML/Config.hpp /usr/include/SFML/System/Clock.hpp \
- /usr/include/SFML/System/Export.hpp /usr/include/SFML/System/Time.hpp \
- /usr/include/SFML/System/Err.hpp /usr/include/c++/13/ostream \
- /usr/include/c++/13/bits/requires_hosted.h \
+CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o: \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp \
+ /usr/include/stdc-predef.h \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp \
+ /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
+ /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
+ /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
+ /usr/include/SFML/System/Time.hpp /usr/include/SFML/System/Err.hpp \
+ /usr/include/c++/13/ostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -234,14 +235,13 @@ CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: \
  /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
- /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/c++/13/iostream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
- /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
- /usr/include/c++/13/limits /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/SFML/Graphics/VertexBuffer.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
+ /usr/include/c++/13/cstdint /usr/include/c++/13/iostream \
+ /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -253,7 +253,8 @@ CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
+ /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
  /usr/include/c++/13/tr1/beta_function.tcc \
@@ -265,6 +266,4 @@ CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp

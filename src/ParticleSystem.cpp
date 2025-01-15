@@ -31,6 +31,10 @@ void ParticleSystem::update_border_state() {
             // assuming that groud absorb more energy
                 if (p.getVelocity().y > 0) {
                     p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y)*0.9));
+                
+                if (p.getVelocity().y > -2){ // if y is really small, stop it
+                    p.setVelocity(Vector2D(p.getVelocity().x, 0));// if particle is too slow, stop it
+                }
                 }
             }
             if (p.border.isBorderSet(BORDER_TOP)) { 
@@ -71,7 +75,9 @@ bool ParticleSystem::checkCollision(const Particle& p1, const Particle& p2) cons
     }
     return false;
 }
-
+int ParticleSystem::getParticleCount() const {
+    return m_particles.size();
+}
 std::vector<Particle>& ParticleSystem::getParticles() {
     return m_particles;
 }
