@@ -27,17 +27,34 @@ void ParticleSystem::update_border_state() {
         if (p.border.isAnyBorderSet()) {
             p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
             //TODO2: different border handling
-            if (p.border.isBorderSet(BORDER_BOTTOM)) { //touched BORDER_BOTTOM, set velocity backwards,
+            if (p.border.isBorderSet(BORDER_BOTTOM)) { //touched BORDER_BOTTOM, set velocity backwards *0.5, just because I want it,
+            // assuming that groud absorb more energy
                 if (p.getVelocity().y > 0) {
-                    p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y)*0.5));
+                    p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y)*0.9));
                 }
             }
-        }
+            if (p.border.isBorderSet(BORDER_TOP)) { 
+                if (p.getVelocity().y < 0) {
+                    p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y)*0.9));
+                }
+            }
+            if (p.border.isBorderSet(BORDER_LEFT)) { 
+                if (p.getVelocity().x < 0) {
+                    p.setVelocity(Vector2D((-p.getVelocity().x)*0.9, p.getVelocity().y));
+                }
+            }
+            if (p.border.isBorderSet(BORDER_RIGHT)) {
+                if (p.getVelocity().x > 0) {
+                    p.setVelocity(Vector2D((-p.getVelocity().x)*0.9, p.getVelocity().y));
+                }
+            }
+        
 
 
 
 
     }
+}
 }
 
 bool ParticleSystem::checkCollision(const Particle& p1, const Particle& p2) const {

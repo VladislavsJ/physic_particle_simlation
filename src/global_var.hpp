@@ -14,8 +14,8 @@ public:
     void init() {
         //TODO0: init the non specified variables
         gravity = 9.81;
-        fieldSizeX_Y[0] = 350;
-        fieldSizeX_Y[1] = 350;
+        fieldSizeX_Y[0] = 700;
+        fieldSizeX_Y[1] = 500;
         particleR = 0.1;
 
     }

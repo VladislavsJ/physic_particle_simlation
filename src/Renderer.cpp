@@ -22,8 +22,8 @@ void Renderer::render(const ParticleSystem& particleSystem) {
     m_window.clear();
     for (auto& p : particleSystem.getParticles()) {
         sf::CircleShape circle(p.getRadius());
-        //TOODO1: Set origin maybe be needed
-        circle.setPosition(p.getPosition().x, p.getPosition().y);
+            circle.setOrigin(circle.getRadius(), circle.getRadius());
+        circle.setPosition(p.getPosition().x,p.getPosition().y);
         //TODO3: Set color, for different particles
 
         m_window.draw(circle);

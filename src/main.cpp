@@ -16,18 +16,17 @@ int main() {
         return 1;
     }
     ParticleSystem particleSystem;// all particles are here
-    particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(0, 0),10,1));
-    particleSystem.addParticle(Particle(Vector2D(200, 200), Vector2D(0, 0), 10, 1));
-    particleSystem.addParticle(Particle(Vector2D(300, 300), Vector2D(0, 0), 10, 1));
-    particleSystem.addParticle(Particle(Vector2D(400, 400), Vector2D(0, 0), 10, 1));
-    particleSystem.addParticle(Particle(Vector2D(500, 200), Vector2D(0, 0), 15 ,1));
-    
+
+    particleSystem.addParticle(Particle(Vector2D(300, 400), Vector2D(0, 0), 1, 1));
+    particleSystem.addParticle(Particle(Vector2D(300, 499), Vector2D(0, 0), 15, 1));
+
     sf::Clock clock;
     const float FPS = 60.0f; // Constant for 60 frames per second
     // if frame time is less than 1/60, sleep for the remaining time
     // if frame time is more than 1/60, do nothing
     std::chrono::duration<float> FRAME_TIME = std::chrono::duration<double>(1.0 / FPS);
 std::chrono::duration<float> frameDuration;
+int cnt = 0; 
 while (renderer.getWindow().isOpen()) {
         auto frameStartTime = std::chrono::high_resolution_clock::now();
     sf::Event event;
@@ -44,8 +43,16 @@ while (renderer.getWindow().isOpen()) {
     if (frameDuration < FRAME_TIME){
         frameDuration = FRAME_TIME;
     }
-    particleSystem.update(frameDuration.count());// TODO0: check
+    std::cout << cnt;
+            
+
+    if (cnt++ % 3 == 0 && cnt < 300) {
+        
+        //particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(100, 0), 10, 1));
+    }
+    
     particleSystem.update_border_state();
+    particleSystem.update(frameDuration.count());// TODO0: check
     renderer.render(particleSystem);
 
     renderer.display();

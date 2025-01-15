@@ -27,7 +27,6 @@ namespace Physics {
                 // Compute the vector difference 
                 auto vect_diff = pos1 - pos2;
                 float dist = std::sqrt(vect_diff.x * vect_diff.x + vect_diff.y * vect_diff.y);
-                
 
                 if (dist < (r1 + r2)) {
                     // Collision detected
