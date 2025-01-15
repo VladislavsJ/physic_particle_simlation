@@ -36,10 +36,12 @@ while (renderer.getWindow().isOpen()) {
             renderer.getWindow().close();
         }
     }
-    cnt++;
-    if (cnt % 10 == 0) {
-        particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(100, 0), 2, 1));
+    cnt+=1;
+    if (cnt % 31 == 0) {
+
+        particleSystem.addParticle(Particle(Vector2D(500, 100), Vector2D(300, 0), 4, 1));
     }
+
     if (frameDuration < FRAME_TIME){
         frameDuration = FRAME_TIME;
     }
@@ -51,8 +53,9 @@ while (renderer.getWindow().isOpen()) {
         //particleSystem.addParticle(Particle(Vector2D(100, 100), Vector2D(100, 0), 10, 1));
     }
     
-    particleSystem.update_border_state();
+    
     particleSystem.update(frameDuration.count());// TODO0: check
+    particleSystem.update_border_state();
     renderer.render(particleSystem);
 
     renderer.display();

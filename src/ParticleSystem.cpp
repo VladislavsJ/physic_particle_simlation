@@ -40,12 +40,13 @@ void ParticleSystem::update_border_state() {
             }
             if (p.border.isBorderSet(BORDER_LEFT)) { 
                 if (p.getVelocity().x < 0) {
-                    p.setVelocity(Vector2D((-p.getVelocity().x)*0.9, p.getVelocity().y));
+                    p.setVelocity(Vector2D((-1*p.getVelocity().x)*0.9, p.getVelocity().y));
+                    p.border.update_border_state(p.getPosition(), gv.getFieldSizeX(), gv.getFieldSizeY());
                 }
             }
-            if (p.border.isBorderSet(BORDER_RIGHT)) {
+            else if (p.border.isBorderSet(BORDER_RIGHT)) {
                 if (p.getVelocity().x > 0) {
-                    p.setVelocity(Vector2D((-p.getVelocity().x)*0.9, p.getVelocity().y));
+                    p.setVelocity(Vector2D((-1*p.getVelocity().x)*0.9, p.getVelocity().y));
                 }
             }
         
