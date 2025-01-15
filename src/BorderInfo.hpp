@@ -20,7 +20,7 @@ class BorderInfo {
 private:
     uint8_t data; // 1-byte storage for borders
     void setAnyBorderFlag();
-    void clearAnyBorderFlag();
+    void clearALL();
 
 public:
 

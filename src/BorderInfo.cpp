@@ -6,8 +6,8 @@ void BorderInfo::setAnyBorderFlag() {
     data |= ANY_BORDER_MASK;
 }
 
-void BorderInfo::clearAnyBorderFlag() {
-    data &= ~ANY_BORDER_MASK;
+void BorderInfo::clearALL() {
+    data = 0;
 }
 
 void BorderInfo::setBorder(Border border) {
@@ -20,7 +20,7 @@ void BorderInfo::clearBorder(Border border) {
     data &= ~border;       // Clear the specified border bit
     // If no borders are touched, clear the 'any border' flag
     if ((data & 0x0F) == 0) {
-        clearAnyBorderFlag();
+        clearALL();
     }
 }
 
@@ -41,7 +41,7 @@ void BorderInfo::setRawData(uint8_t raw) {
     data = raw;
 }
 void BorderInfo::update_border_state(Vector2D pos, int fieldSizeX, int fieldSizeY, int fieldstartX, int fieldstartY) {
-    clearAnyBorderFlag();
+    clearALL();
     if (pos.x <= fieldstartX) {
         setBorder(BORDER_LEFT);
     } else if (pos.x >= fieldSizeX) {
