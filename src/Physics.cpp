@@ -16,9 +16,10 @@ void applyGravity(Particle &p, float deltaTime) {
 void handleCollisions(std::vector<Particle> &particles) {
   // Iterate through all unique pairs of particles
   for (size_t i = 0; i < particles.size(); ++i) {
+    Particle &p1 = particles[i];
     for (size_t j = i + 1; j < particles.size(); ++j) {
-      auto &p1 = particles[i];
-      auto &p2 = particles[j];
+
+      Particle &p2 = particles[j];
       float r1 = p1.getRadius();
       float r2 = p2.getRadius();
       auto pos1 = p1.getPosition();
@@ -33,7 +34,9 @@ void handleCollisions(std::vector<Particle> &particles) {
         // Collision detected
         // Avoid  zero
         if (dist == 0.0f) {
-          //  direction to separate the particles, just 1.0f in x direction
+
+          //  direction to separate the particles, just 1.0 in x direction
+
           vect_diff = {1.0f, 0.0f};
           dist = 1.0f;
         }
@@ -50,9 +53,7 @@ void handleCollisions(std::vector<Particle> &particles) {
         float ratio1 = m2 / totalMass;
         float ratio2 = m1 / totalMass;
 
-        // Update positions to resolve the collision
-        // it mostly needed if particles are assigned to the same position
-        // otherways direction will be changed thanks to the velocity change.
+        // Update positions
         pos1.x += nx * overlap * ratio1;
         pos1.y += ny * overlap * ratio1;
         pos2.x -= nx * overlap * ratio2;
@@ -61,7 +62,7 @@ void handleCollisions(std::vector<Particle> &particles) {
         p1.setPosition(pos1);
         p2.setPosition(pos2);
 
-        // --- Collision Response: Adjust Velocities ---
+        // Collision Response, Adjust Velocities
 
         auto vel1 = p1.getVelocity();
         auto vel2 = p2.getVelocity();
@@ -90,15 +91,17 @@ void handleCollisions(std::vector<Particle> &particles) {
           if (pos1.y > pos2.y) { // p1 is on top
                                  // TODO0: no check for x
 
-            vel1.x = -(impulseX / m1) * 0.2; // just numbers from my head
-            // TODO1:
+            vel1.x = -(impulseX / m1); // just numbers from my head
+            // idea is that top particle should bounce from the particle partile
+            // below if it is touching the ground, annd particle on the bottom
+            // should bounce a little
+            //  TODO1:
             vel1.y = -(impulseY / m1) * 0.2;
-            vel2.x = -(impulseX / m2) * 1.8;
-            vel2.y = -(impulseY / m2) * 1.8;
+            vel2.x = -(impulseX / m2);
+            vel2.y = -(impulseY / m2) * 0.8;
             p1.setVelocity(vel1);
             p2.setVelocity(vel2);
             continue;
-          } else {
           }
         }
         vel1.x += (impulseX / m1);
@@ -115,4 +118,43 @@ void handleCollisions(std::vector<Particle> &particles) {
   // TODO: Handle collisions with walls or other boundaries if applicable
 }
 
+void update_border_speed(Particle &p) {
+  p.border.update_border_state(p.getPosition(), p.getRadius(),
+                               gv.getFieldSizeX(), gv.getFieldSizeY());
+  if (p.border.isAnyBorderSet()) {
+    p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
+    // TODO2: different border handling
+    if (p.border.isBorderSet(
+            BORDER_BOTTOM)) { // touched BORDER_BOTTOM, set velocity backwards
+                              // *0.5, just because I want it,
+      // assuming that groud absorb more energy
+      if (p.getVelocity().y > 0) {
+        p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y) * 0.9));
+
+        if (p.getVelocity().y > -2) { // if y is really small, stop it
+          p.setVelocity(Vector2D(p.getVelocity().x,
+                                 0)); // if particle is too slow, stop it
+        }
+      }
+    }
+    if (p.border.isBorderSet(BORDER_TOP)) {
+      if (p.getVelocity().y < 0) {
+        p.setVelocity(Vector2D(p.getVelocity().x, (-p.getVelocity().y) * 0.9));
+      }
+    }
+    if (p.border.isBorderSet(BORDER_LEFT)) {
+      if (p.getVelocity().x < 0) {
+        p.setVelocity(
+            Vector2D((-1 * p.getVelocity().x) * 0.9, p.getVelocity().y));
+      }
+    } else if (p.border.isBorderSet(BORDER_RIGHT)) {
+      if (p.getVelocity().x > 0) {
+        p.setVelocity(
+            Vector2D((-1 * p.getVelocity().x) * 0.9, p.getVelocity().y));
+      }
+    }
+  }
+}
 } // namespace Physics
+
+// namespace Physics

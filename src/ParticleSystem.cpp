@@ -11,58 +11,17 @@ void ParticleSystem::update(float deltaTime) {
   // 1. Apply gravity to each particle
   for (auto &p : m_particles) {
     Physics::applyGravity(p, deltaTime);
-  }
 
-  // 3. Update positions
-  for (auto &p : m_particles) {
+    // 3. Update positions
+
     p.update(deltaTime);
-  }
 
+    // Handle border collisions
+
+    Physics::update_border_speed(p);
+  }
   // 4. Handle collisions
   Physics::handleCollisions(m_particles);
-}
-void ParticleSystem::update_border_state() {
-  for (auto &p : m_particles) {
-    p.border.update_border_state(p.getPosition(), gv.getFieldSizeX(),
-                                 gv.getFieldSizeY());
-    if (p.border.isAnyBorderSet()) {
-      p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
-      // TODO2: different border handling
-      if (p.border.isBorderSet(
-              BORDER_BOTTOM)) { // touched BORDER_BOTTOM, set velocity backwards
-                                // *0.5, just because I want it,
-        // assuming that groud absorb more energy
-        if (p.getVelocity().y > 0) {
-          p.setVelocity(
-              Vector2D(p.getVelocity().x, (-p.getVelocity().y) * 0.9));
-
-          if (p.getVelocity().y > -2) { // if y is really small, stop it
-            p.setVelocity(Vector2D(p.getVelocity().x,
-                                   0)); // if particle is too slow, stop it
-          }
-        }
-      }
-      if (p.border.isBorderSet(BORDER_TOP)) {
-        if (p.getVelocity().y < 0) {
-          p.setVelocity(
-              Vector2D(p.getVelocity().x, (-p.getVelocity().y) * 0.9));
-        }
-      }
-      if (p.border.isBorderSet(BORDER_LEFT)) {
-        if (p.getVelocity().x < 0) {
-          p.setVelocity(
-              Vector2D((-1 * p.getVelocity().x) * 0.9, p.getVelocity().y));
-          p.border.update_border_state(p.getPosition(), gv.getFieldSizeX(),
-                                       gv.getFieldSizeY());
-        }
-      } else if (p.border.isBorderSet(BORDER_RIGHT)) {
-        if (p.getVelocity().x > 0) {
-          p.setVelocity(
-              Vector2D((-1 * p.getVelocity().x) * 0.9, p.getVelocity().y));
-        }
-      }
-    }
-  }
 }
 
 bool ParticleSystem::checkCollision(const Particle &p1,

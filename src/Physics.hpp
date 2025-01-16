@@ -19,6 +19,9 @@ void check_Borders(Particle p, int fieldSizeX,
                    int fieldSizeY); // check if particle is at the border
 // now it checks which border, left right, top or bottom
 
+void update_border_speed(Particle &p); // change the border if detectet that
+// particle is near the border
+
 } // namespace Physics
 
 #endif // PHYSICS_H

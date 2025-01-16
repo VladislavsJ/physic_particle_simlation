@@ -30,9 +30,9 @@ int main() {
 
   //  test particles
   particleSystem.addParticle(
-      Particle(Vector2D(300, 400), Vector2D(0, 0), 1, 1));
+      Particle(Vector2D(300, 400), Vector2D(0, 0), 25, 1));
   particleSystem.addParticle(
-      Particle(Vector2D(300, 499), Vector2D(0, 0), 15, 1));
+      Particle(Vector2D(300, 450), Vector2D(0, 0), 30, 1));
 
   sf::Clock clock;
   const float FPS = 60.0f;
@@ -68,15 +68,13 @@ int main() {
       frameDuration = FRAME_TIME;
     }
 
-    if (cnt++ % 1 == 0 && cnt < 30000 && cnt % 200 < 100) {
+    if (cnt++ % 1 == 0 && cnt < 1000 && cnt % 200 < 100) {
       particleSystem.addParticle(
-          Particle(Vector2D(300, 400), Vector2D(200, 0), 3, 1));
+          Particle(Vector2D(300, 200), Vector2D(400, 0), 3, 1));
     }
 
     // Update particle system
     particleSystem.update(frameDuration.count());
-    particleSystem.update_border_state();
-
     // Render in the main window
     renderer.render(particleSystem, true);
     renderer.render_graph(graphFPS, false);

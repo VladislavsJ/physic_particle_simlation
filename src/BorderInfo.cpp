@@ -31,18 +31,18 @@ bool BorderInfo::isAnyBorderSet() const {
 uint8_t BorderInfo::getRawData() const { return data; }
 
 void BorderInfo::setRawData(uint8_t raw) { data = raw; }
-void BorderInfo::update_border_state(Vector2D pos, int fieldSizeX,
+void BorderInfo::update_border_state(Vector2D pos, float radius, int fieldSizeX,
                                      int fieldSizeY, int fieldstartX,
                                      int fieldstartY) {
   clearALL();
-  if (pos.x <= fieldstartX) {
+  if (pos.x - radius <= fieldstartX) {
     setBorder(BORDER_LEFT);
-  } else if (pos.x >= fieldSizeX) {
+  } else if (pos.x + radius >= fieldSizeX) {
     setBorder(BORDER_RIGHT);
   }
   if (pos.y <= fieldstartY) {
     setBorder(BORDER_TOP);
-  } else if (pos.y >= fieldSizeY) {
+  } else if (pos.y + radius >= fieldSizeY) {
     setBorder(BORDER_BOTTOM);
   }
 }
