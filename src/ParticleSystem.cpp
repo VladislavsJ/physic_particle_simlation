@@ -6,7 +6,9 @@ extern GlobalVar &gv;
 void ParticleSystem::addParticle(const Particle &particle) {
   m_particles.push_back(particle);
 }
-
+void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
+  m_particles.insert(m_particles.end(), particles.begin(), particles.end());
+}
 void ParticleSystem::update(float deltaTime) {
   // 1. Apply gravity to each particle
   for (auto &p : m_particles) {

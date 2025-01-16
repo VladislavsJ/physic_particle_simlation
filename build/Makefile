@@ -296,29 +296,29 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
-src/interact_with_simulation.o: src/interact_with_simulation.cpp.o
-.PHONY : src/interact_with_simulation.o
+src/graphical_items.o: src/graphical_items.cpp.o
+.PHONY : src/graphical_items.o
 
 # target to build an object file
-src/interact_with_simulation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o
-.PHONY : src/interact_with_simulation.cpp.o
+src/graphical_items.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o
+.PHONY : src/graphical_items.cpp.o
 
-src/interact_with_simulation.i: src/interact_with_simulation.cpp.i
-.PHONY : src/interact_with_simulation.i
+src/graphical_items.i: src/graphical_items.cpp.i
+.PHONY : src/graphical_items.i
 
 # target to preprocess a source file
-src/interact_with_simulation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.i
-.PHONY : src/interact_with_simulation.cpp.i
+src/graphical_items.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.i
+.PHONY : src/graphical_items.cpp.i
 
-src/interact_with_simulation.s: src/interact_with_simulation.cpp.s
-.PHONY : src/interact_with_simulation.s
+src/graphical_items.s: src/graphical_items.cpp.s
+.PHONY : src/graphical_items.s
 
 # target to generate assembly for a file
-src/interact_with_simulation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.s
-.PHONY : src/interact_with_simulation.cpp.s
+src/graphical_items.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.s
+.PHONY : src/graphical_items.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -343,6 +343,54 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/user_interactions.o: src/user_interactions.cpp.o
+.PHONY : src/user_interactions.o
+
+# target to build an object file
+src/user_interactions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o
+.PHONY : src/user_interactions.cpp.o
+
+src/user_interactions.i: src/user_interactions.cpp.i
+.PHONY : src/user_interactions.i
+
+# target to preprocess a source file
+src/user_interactions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.i
+.PHONY : src/user_interactions.cpp.i
+
+src/user_interactions.s: src/user_interactions.cpp.s
+.PHONY : src/user_interactions.s
+
+# target to generate assembly for a file
+src/user_interactions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.s
+.PHONY : src/user_interactions.cpp.s
+
+src/user_interactions_new.o: src/user_interactions_new.cpp.o
+.PHONY : src/user_interactions_new.o
+
+# target to build an object file
+src/user_interactions_new.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o
+.PHONY : src/user_interactions_new.cpp.o
+
+src/user_interactions_new.i: src/user_interactions_new.cpp.i
+.PHONY : src/user_interactions_new.i
+
+# target to preprocess a source file
+src/user_interactions_new.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.i
+.PHONY : src/user_interactions_new.cpp.i
+
+src/user_interactions_new.s: src/user_interactions_new.cpp.s
+.PHONY : src/user_interactions_new.s
+
+# target to generate assembly for a file
+src/user_interactions_new.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.s
+.PHONY : src/user_interactions_new.cpp.s
 
 # Help Target
 help:
@@ -373,12 +421,18 @@ help:
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
-	@echo "... src/interact_with_simulation.o"
-	@echo "... src/interact_with_simulation.i"
-	@echo "... src/interact_with_simulation.s"
+	@echo "... src/graphical_items.o"
+	@echo "... src/graphical_items.i"
+	@echo "... src/graphical_items.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/user_interactions.o"
+	@echo "... src/user_interactions.i"
+	@echo "... src/user_interactions.s"
+	@echo "... src/user_interactions_new.o"
+	@echo "... src/user_interactions_new.i"
+	@echo "... src/user_interactions_new.s"
 .PHONY : help
 
 

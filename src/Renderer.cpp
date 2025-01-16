@@ -107,3 +107,49 @@ void Renderer::drawLineGraph(const std::vector<float> &data, float maxValue,
 
   // Could also draw axes if you like, etc.
 }
+void Renderer::renderUI(const UserInteractions &ui) {
+  int drawing_Y_pos = 400; // 2 graphs before. 400 is the starting point
+
+  // 1) Draw an icon for AddParticles (yellow rectangle)
+  // positon on writing time is 520,420
+  sf::RectangleShape addParticlesIcon(sf::Vector2f(32.f, 32.f));
+  addParticlesIcon.setFillColor(sf::Color::Yellow);
+  addParticlesIcon.setPosition(gv.getFieldSizeX() + 20.f,
+                               drawing_Y_pos += 20.f);
+  m_window.draw(addParticlesIcon);
+
+  // Size slider background
+  // (420,440)
+  sf::RectangleShape sizeSliderBG(sf::Vector2f(180.f, 20.0f));
+  sizeSliderBG.setFillColor(sf::Color(100, 100, 100));
+  sizeSliderBG.setPosition(gv.getFieldSizeX() + 20.f, drawing_Y_pos += 20);
+  m_window.draw(sizeSliderBG);
+
+  // Size slider “knob”
+
+  float sizeT =
+      (ui.getParticleSize() - 1.f) / (50.f - 1.f); // map 1..50 -> 0..1
+  float sizeKnobX =
+      gv.getFieldSizeX() + 10.f +
+      sizeT * 180.f; // variable position, depending on the previous size
+  sf::CircleShape sizeKnob(8.f);
+  sizeKnob.setFillColor(sf::Color::Red);
+  sizeKnob.setOrigin(8.f, 8.f); // so the circle center is the hot-spot
+  sizeKnob.setPosition(sizeKnobX, drawing_Y_pos + 10);
+  m_window.draw(sizeKnob);
+
+  // Speed slider background
+  sf::RectangleShape speedSliderBG(sf::Vector2f(180.f, 20.f));
+  speedSliderBG.setFillColor(sf::Color(100, 100, 100));
+  speedSliderBG.setPosition(gv.getFieldSizeX() + 10.f, 150.f);
+  m_window.draw(speedSliderBG);
+
+  // Speed slider “knob”
+  float speedT = ui.getParticleSpeed() / 500.f; // map 0..500 -> 0..1
+  float speedKnobX = gv.getFieldSizeX() + 10.f + speedT * 180.f;
+  sf::CircleShape speedKnob(8.f);
+  speedKnob.setFillColor(sf::Color::Cyan);
+  speedKnob.setOrigin(8.f, 8.f);
+  speedKnob.setPosition(speedKnobX, 160.f);
+  m_window.draw(speedKnob);
+}

@@ -10,7 +10,7 @@ extern GlobalVar &gv;
 class ParticleSystem {
 public:
   void addParticle(const Particle &particle);
-
+  void addParticles(const std::vector<Particle> &particles);
   // update the particle system for each frame
   void update(float deltaTime); // all physics calculations are done here
 
@@ -23,5 +23,6 @@ public:
 private:
   std::vector<Particle> m_particles;
 };
+void addParticles(const std::vector<Particle> &particles);
 
 #endif // PARTICLESYSTEM_H

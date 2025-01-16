@@ -153,19 +153,19 @@ CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp -o CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.s
 
-CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o: CMakeFiles/ParticleSimulator.dir/flags.make
-CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp
-CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o: CMakeFiles/ParticleSimulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o -MF CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o.d -o CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp
+CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o: CMakeFiles/ParticleSimulator.dir/flags.make
+CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.cpp
+CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o: CMakeFiles/ParticleSimulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o -MF CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o.d -o CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.cpp
 
-CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp > CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.i
+CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.cpp > CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.i
 
-CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/interact_with_simulation.cpp -o CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.s
+CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.cpp -o CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.s
 
 CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: CMakeFiles/ParticleSimulator.dir/flags.make
 CMakeFiles/ParticleSimulator.dir/src/main.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp
@@ -181,6 +181,34 @@ CMakeFiles/ParticleSimulator.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/main.cpp -o CMakeFiles/ParticleSimulator.dir/src/main.cpp.s
 
+CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o: CMakeFiles/ParticleSimulator.dir/flags.make
+CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions.cpp
+CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o: CMakeFiles/ParticleSimulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o -MF CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o.d -o CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions.cpp
+
+CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions.cpp > CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.i
+
+CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions.cpp -o CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.s
+
+CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o: CMakeFiles/ParticleSimulator.dir/flags.make
+CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.cpp
+CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o: CMakeFiles/ParticleSimulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o -MF CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o.d -o CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.cpp
+
+CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.cpp > CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.i
+
+CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.cpp -o CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.s
+
 # Object files for target ParticleSimulator
 ParticleSimulator_OBJECTS = \
 "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o" \
@@ -189,8 +217,10 @@ ParticleSimulator_OBJECTS = \
 "CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o" \
 "CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o" \
 "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o" \
-"CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o" \
-"CMakeFiles/ParticleSimulator.dir/src/main.cpp.o"
+"CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o" \
+"CMakeFiles/ParticleSimulator.dir/src/main.cpp.o" \
+"CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o" \
+"CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o"
 
 # External object files for target ParticleSimulator
 ParticleSimulator_EXTERNAL_OBJECTS =
@@ -201,14 +231,16 @@ ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o
-ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/interact_with_simulation.cpp.o
+ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/main.cpp.o
+ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o
+ParticleSimulator: CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/build.make
 ParticleSimulator: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 ParticleSimulator: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 ParticleSimulator: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 ParticleSimulator: CMakeFiles/ParticleSimulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ParticleSimulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ParticleSimulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ParticleSimulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

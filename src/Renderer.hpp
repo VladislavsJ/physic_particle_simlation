@@ -4,6 +4,7 @@
 #include "Graphs_new.hpp"
 #include "ParticleSystem.hpp"
 #include "global_var.hpp"
+#include "user_interactions.hpp"
 #include <SFML/Graphics.hpp>
 class Graph;
 class Renderer {
@@ -27,7 +28,7 @@ public:
                      float maxValue, //// Helper that draws data as a line graph
                      float offsetX, float offsetY, float width, float height,
                      sf::Color color, bool isInteger = false);
-
+  void renderUI(const UserInteractions &ui);
   sf::RenderWindow &getWindow();
 
 private:
