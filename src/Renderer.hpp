@@ -4,7 +4,8 @@
 #include "Graphs_new.hpp"
 #include "ParticleSystem.hpp"
 #include "global_var.hpp"
-#include "user_interactions.hpp"
+#include "graphical_items.hpp"
+#include "user_interactions_new.hpp"
 #include <SFML/Graphics.hpp>
 class Graph;
 class Renderer {

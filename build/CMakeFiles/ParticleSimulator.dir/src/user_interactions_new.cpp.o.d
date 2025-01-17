@@ -187,9 +187,6 @@ CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o: \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions.hpp \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \

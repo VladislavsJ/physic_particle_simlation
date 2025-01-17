@@ -31,10 +31,6 @@ int main() {
 
   // 1) Instantiate UserInteractions
   UserInteractions ui;
-
-  // 2) NEW: Initialize Sliders/Buttons in the UI
-  ui.initUI(); // <---- ADDED
-
   // Create ParticleSystem
   ParticleSystem particleSystem;
   // Test particles
@@ -90,6 +86,7 @@ int main() {
     particleSystem.update(frameDuration.count());
 
     // Render everything
+    renderer.clear();
     renderer.render(particleSystem, true);
     renderer.render_graph(graphFPS, false);
     renderer.render_graph(graphParticleCnt, false);
