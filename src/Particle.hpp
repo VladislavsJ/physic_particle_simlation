@@ -1,19 +1,23 @@
 #ifndef PARTICLE_H
 #define PARTICLE_H
+
 #include "BorderInfo.hpp"
 #include "Vector2D.hpp"
 #include <cmath>
-// TODO LIST
-// TODO0: high risk, should be fixed, checked before use
-//  TODO1: Important functionality, but may work without it
-//  TODO2, Ideas for optimization, and important stuff, but not necessary
-//  TOOD3, just ideas for the future
 
-// Each particle has its values,
-// now it is
-// 2 vectors, Velocity, Position
-//  radius and charge
-// TODO3 (particles can accelerate to each other, "MORE FORMULAS!!"
+// TODO LIST
+// TODO0: High risk, must be fixed and thoroughly checked before use.
+// TODO1: Important functionality, but the system may operate without it.
+// TODO2: Ideas for optimization and enhancements; important but not critical.
+// TODO3: Future considerations and potential improvements.
+
+// Each particle represents a physical entity with specific attributes.
+// Currently includes:
+// - Two vectors: Position and Velocity
+// - Radius, Charge, Mass, and Density
+// TODO3: Implement functionality for particles to exert forces on each other
+//(e.g., electrostatic). "MORE FORMULAS!!"
+
 class Particle {
 public:
   Particle(Vector2D position, Vector2D velocity, float radius = 25.0f,
@@ -36,12 +40,12 @@ public:
   void setDensity(float d);
   void setType(int t);
   void setMass(float m);
-  void limit_coordinates(int fieldSizeX, int fieldSizeY, int fieldstartX = 0,
-                         int fieldstartY = 0);
+  void limitCoordinates(int fieldSizeX, int fieldSizeY, int fieldStartX = 0,
+                        int fieldStartY = 0);
   void setElasticity(float e);
-  // More like bug hider, if particle is out of the field, it will be set to the
-  // border
-  // TODO3: limit_coordinates should not be needed at all
+  // More like a bug hider: if a particle is out of the field, it will be set to
+  // the border
+  // TODO3: limitCoordinates should not be needed at all
 
   // Update method
   void update(float deltaTime);
@@ -54,10 +58,10 @@ private:
   Vector2D m_velocity;
   float m_radius;
   float m_charge;
-  float mass;
-  float density;
-  float elasticity; // how much energy is lost in the collision
-  int type;         // TODO3: for different particles types
+  float m_mass;
+  float m_density;
+  float m_elasticity; // How much energy is lost in the collision
+  int m_type;         // TODO3: For different particle types
 };
 
 #endif // PARTICLE_H

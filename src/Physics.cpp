@@ -4,17 +4,18 @@ GlobalVar &gv = GlobalVar::getInstance();
 namespace Physics {
 
 float GRAVITY = gv.getGravity();
-// float CONTRACTION_FORCE // TODO2: Implement this
+// float CONTRACTION_FORCE // TODO3: Implement this
 // particles should contract to each other if they have different charge
 void applyGravity(Particle &p, float deltaTime) {
-  // If there's no charge or if we decide charge doesn't negate gravity,
-  // we just add downward acceleration (gravity).
+  // add downward acceleration (gravity). TOOD3: make gravity direction
+  // changeable
   auto vel = p.getVelocity();
   vel.y += GRAVITY * deltaTime;
   p.setVelocity(vel);
 }
 void handleCollisions(std::vector<Particle> &particles) {
   // Iterate through all unique pairs of particles
+
   for (size_t i = 0; i < particles.size(); ++i) {
     Particle &p1 = particles[i];
     for (size_t j = i + 1; j < particles.size(); ++j) {
@@ -27,16 +28,15 @@ void handleCollisions(std::vector<Particle> &particles) {
 
       // Compute the vector difference
       auto vect_diff = pos1 - pos2;
-      float dist =
-          std::sqrt(vect_diff.x * vect_diff.x + vect_diff.y * vect_diff.y);
+      float dist = vect_diff.x * vect_diff.x + vect_diff.y * vect_diff.y;
 
-      if (dist < (r1 + r2)) {
+      if (dist < (r1 + r2) * (r1 + r2)) {
         // Collision detected
         // Avoid  zero
+        dist = std::sqrt(dist);
         if (dist == 0.0f) {
 
           //  direction to separate the particles, just 1.0 in x direction
-
           vect_diff = {1.0f, 0.0f};
           dist = 1.0f;
         }
@@ -86,16 +86,15 @@ void handleCollisions(std::vector<Particle> &particles) {
         float impulseX = impulseScalar * nx;
         float impulseY = impulseScalar * ny;
         // if other particle are on the bottom, then top particle get 80% of
-        // impulse and bottom 20%
+        // impulse and bottom 20%, why? just because I want it
         if (p1.border.isBorderSet(BORDER_BOTTOM)) {
           if (pos1.y > pos2.y) { // p1 is on top
-                                 // TODO0: no check for x
+            // TODO1: for loop is cutting half of pairs, where p1 is on top
 
             vel1.x = -(impulseX / m1); // just numbers from my head
             // idea is that top particle should bounce from the particle partile
             // below if it is touching the ground, annd particle on the bottom
             // should bounce a little
-            //  TODO1:
             vel1.y = -(impulseY / m1) * 0.2;
             vel2.x = -(impulseX / m2);
             vel2.y = -(impulseY / m2) * 0.8;
@@ -114,15 +113,13 @@ void handleCollisions(std::vector<Particle> &particles) {
       }
     }
   }
-
-  // TODO: Handle collisions with walls or other boundaries if applicable
 }
 
 void update_border_speed(Particle &p) {
   p.border.update_border_state(p.getPosition(), p.getRadius(),
                                gv.getFieldSizeX(), gv.getFieldSizeY());
   if (p.border.isAnyBorderSet()) {
-    p.limit_coordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
+    p.limitCoordinates(gv.getFieldSizeX(), gv.getFieldSizeY());
     // TODO2: different border handling
     if (p.border.isBorderSet(
             BORDER_BOTTOM)) { // touched BORDER_BOTTOM, set velocity backwards
@@ -156,5 +153,3 @@ void update_border_speed(Particle &p) {
   }
 }
 } // namespace Physics
-
-// namespace Physics

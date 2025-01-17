@@ -34,14 +34,8 @@ void Renderer::render(const ParticleSystem &particleSystem, bool clear) {
     m_window.draw(circle);
   }
 }
-void Renderer::clear() {
-  // black screen
-  m_window.clear();
-}
-void Renderer::display() {
-  // display the frame
-  m_window.display();
-}
+void Renderer::clear() { m_window.clear(); }
+void Renderer::display() { m_window.display(); }
 
 sf::RenderWindow &Renderer::getWindow() { return m_window; }
 void Renderer::render_graph(Graph &graph, bool clear) {
@@ -74,7 +68,11 @@ void Renderer::render_graph(Graph &graph, bool clear) {
       /* height  = */ graph.m_graphSizeY,
       /* color   = */ sf::Color::Red);
 }
-
+void Renderer::render_graphs(std::vector<Graph> &graphs, bool clear) {
+  for (Graph &graph : graphs) {
+    render_graph(graph, clear);
+  }
+}
 // Helper that draws data as a line graph
 void Renderer::drawLineGraph(const std::vector<float> &data, float maxValue,
                              float offsetX, float offsetY, float width,
@@ -91,7 +89,7 @@ void Renderer::drawLineGraph(const std::vector<float> &data, float maxValue,
 
   // Map data to [0..height]
   // For frameTime or count, bigger is higher
-  // We'll draw "up" inside the window, but SFML’s Y grows downward, so we
+  // draw "up" inside the window, but SFML’s Y grows downward, so we
   // invert
   for (size_t i = 0; i < data.size(); i++) {
     float x = offsetX + i * step;
@@ -108,7 +106,6 @@ void Renderer::renderUI(const UserInteractions &ui) {
     slider.renderSlidebar(m_window);
   }
   for (auto &btnPair : ui.getButtons()) {
-    // btnPair.first is a switch_button class, .second is an InteractionType
     btnPair.first.renderButton(m_window);
   }
 }

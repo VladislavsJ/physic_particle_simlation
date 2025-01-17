@@ -5,10 +5,12 @@
 #include <cstdint>
 #include <iostream>
 // Enum to define the borders with bit positions
-// WHY uint8? and not 4 bools? its efficient and something unusual
+// WHY uint8? and not 5 bools? Then why I studied it?
 enum Border : uint8_t {
-  BORDER_NONE = 0x00,   // No border
-  BORDER_TOP = 0x08,    // Top border (bit 3)
+  // if particle touch the bourder then change the bit state
+  BORDER_NONE = 0x00, // No border touched (all bits 0), just to make check more
+                      // understandable
+  BORDER_TOP = 0x08,  // Top border (bit 3)
   BORDER_BOTTOM = 0x04, // Bottom border (bit 2)
   BORDER_LEFT = 0x02,   // Left border (bit 1)
   BORDER_RIGHT = 0x01   // Right border (bit 0)

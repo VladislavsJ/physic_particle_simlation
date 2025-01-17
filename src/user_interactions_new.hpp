@@ -24,12 +24,13 @@ public:
   void handleEvent(const sf::Event &event, sf::RenderWindow &window,
                    ParticleSystem &particleSystem);
 
-  // Example getter
   InteractionType getCurrentInteractionType() const;
 
-  // Provide access if you want your Renderer to draw them
   const std::vector<Slidebar> &getSliders() const { return m_sliders; }
+
   const std::vector<std::pair<switch_button, InteractionType>> &
+  // each button has its own interaction type, so we can know what to do
+
   getButtons() const {
     return m_buttons;
   }

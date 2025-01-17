@@ -6,6 +6,11 @@
 #include <chrono>
 #include <iostream>
 
+// TODO LIST , to comment the ideas/thoughts
+// TODO0: High risk, must be fixed and thoroughly checked before use.
+// TODO1: Important functionality, but the system may operate without it.
+// TODO2: Ideas for optimization and enhancements; important but not critical.
+// TODO3: Future considerations and potential improvements.
 extern GlobalVar &gv;
 
 int main() {
@@ -14,20 +19,24 @@ int main() {
     std::cerr << "Failed to initialize renderer" << std::endl;
     return 1;
   }
-
+  // std::vector<Graph> &graphs(2); // can't visualize the graphs, in the while
+  // loop below, should be fixed
+  //  now vector is not used.
   Graph graphFPS;
   Graph graphParticleCnt;
-  // int inStartX, int inStartY, int inSizeX, int inSizeY,
-  // float inValXMin = 0, float inValYMin = 0,
-  if (!graphFPS.init(gv.getFieldSizeX(), 50, 180, 180)) {
+
+  // two graphs to show FPS and particle count
+  if (!graphFPS.init(gv.getFieldSizeX() /*inStartX*/, 50 /*inStartY*/,
+                     180 /*inSizeX*/, 180 /*inSizeY*/)) {
     std::cerr << "Failed to initialize graph FPS" << std::endl;
     return 1;
   }
-
+  // graphs.push_back(graphFPS);
   if (!graphParticleCnt.init(gv.getFieldSizeX(), 200, 180, 180)) {
     std::cerr << "Failed to initialize graph Particle Count" << std::endl;
     return 1;
   }
+  // graphs.push_back(graphParticleCnt);
 
   // 1) Instantiate UserInteractions
   UserInteractions ui;
@@ -39,7 +48,9 @@ int main() {
   particleSystem.addParticle(
       Particle(Vector2D(300, 450), Vector2D(0, 0), 30, 1));
 
-  // Setup timing / FPS
+  // Setup timing, idea is to hold constant frame rate, while possible and CPU
+  // are abble to do so
+
   sf::Clock clock;
   const float FPS = 60.0f;
   std::chrono::duration<float> FRAME_TIME =
@@ -63,7 +74,7 @@ int main() {
     // Periodic logging for frame duration
     if (cnt % 10 == 0) {
       std::cout << "frame time: " << frameDuration.count() << std::endl;
-      if (frameDuration.count() > 0.016f) {
+      if (frameDuration.count() > 0.016f) { // totals FPS < 60FPS
         std::cout << "frame time is too high, max particle count is"
                   << std::endl;
         std::cout << particleSystem.getParticleCount() << std::endl;
@@ -75,25 +86,33 @@ int main() {
       frameDuration = FRAME_TIME;
     }
 
-    // Example: inject new particles up to 1000 frames, every 200 frames for 100
-    // ticks
-    if (cnt++ % 1 == 0 && cnt < 1000 && (cnt % 200) < 100) {
+    // test: inject new particles, to see how the system behaves
+    if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170) {
       particleSystem.addParticle(
-          Particle(Vector2D(300, 200), Vector2D(400, 0), 3, 1));
+          Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
+      if (cnt % 250 == 1) {
+        particleSystem.addParticle(
+            Particle(Vector2D(40, 80), Vector2D(545, 138), 25, 1));
+      }
     }
 
-    // Update particle system
-    particleSystem.update(frameDuration.count());
+    particleSystem.update(
+        frameDuration.count()); // update particle system, frame duration is
+                                // passed to update the system
+    // to calculate the new position of the particles
 
     // Render everything
     renderer.clear();
-    renderer.render(particleSystem, true);
+    renderer.render(
+        particleSystem,
+        false); // false means not to clear the screen before rendering
+
     renderer.render_graph(graphFPS, false);
     renderer.render_graph(graphParticleCnt, false);
     renderer.renderUI(ui);
     renderer.display();
 
-    // Update graphs every 10 frames
+    // Update graphs every 10 frames,
     if (cnt % 10 == 0) {
       graphFPS.updateData(
           cnt, std::chrono::duration_cast<std::chrono::duration<float>>(
@@ -106,7 +125,7 @@ int main() {
     frameEndTime = std::chrono::high_resolution_clock::now();
     frameDuration = frameEndTime - frameStartTime;
 
-    // Sleep if still under desired frame time
+    // Sleep if frame rendered faster than 60 fps
     if (frameDuration < FRAME_TIME) {
       sf::sleep(sf::seconds((FRAME_TIME - frameDuration).count()));
     }

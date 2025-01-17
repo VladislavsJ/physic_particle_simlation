@@ -1,5 +1,5 @@
 #include "Graphs_new.hpp"
-#include <algorithm> // for std::max_element, std::min_element
+#include <algorithm>
 #include <string>
 
 void Graph::updateData(float dataX, float dataY) {
@@ -8,20 +8,23 @@ void Graph::updateData(float dataX, float dataY) {
   trimDataBuffers();
 }
 
-void Graph::trimDataBuffers() { // if data is too big, remove the oldest data
-  if (m_dataX.size() > MAX_POINTS) {
-    m_dataX.erase(m_dataX.begin(), m_dataX.end() - MAX_POINTS);
-  }
-  if (m_dataY.size() > MAX_POINTS) {
-    m_dataY.erase(m_dataY.begin(), m_dataY.end() - MAX_POINTS);
+void Graph::trimDataBuffers() { // if data amount is too long, remove the oldest
+                                // data
+  const size_t currentSize = m_dataX.size();
+  if (currentSize > MAX_POINTS) {
+    const size_t removeCount = currentSize - MAX_POINTS;
+    m_dataX.erase(m_dataX.begin(), m_dataX.begin() + removeCount);
+    m_dataY.erase(m_dataY.begin(), m_dataY.begin() + removeCount);
   }
 }
+
 float Graph::findMaxValue(const std::vector<float> &data) {
   if (data.empty()) {
     return 0.0f;
   }
   return *std::max_element(data.begin(), data.end());
 }
+
 float Graph::findMinValue(const std::vector<float> &data) {
   if (data.empty()) {
     return 0.0f;

@@ -15,7 +15,7 @@ public:
   void update(float deltaTime); // all physics calculations are done here
 
   bool checkCollision(const Particle &p1, const Particle &p2) const;
-  // Accessors
+  // Getters
   std::vector<Particle> &getParticles();
   const std::vector<Particle> &getParticles() const;
   int getParticleCount() const;
@@ -25,4 +25,4 @@ private:
 };
 void addParticles(const std::vector<Particle> &particles);
 
-#endif // PARTICLESYSTEM_H
+#endif

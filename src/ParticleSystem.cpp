@@ -15,14 +15,12 @@ void ParticleSystem::update(float deltaTime) {
     Physics::applyGravity(p, deltaTime);
 
     // 3. Update positions
-
     p.update(deltaTime);
 
     // Handle border collisions
-
     Physics::update_border_speed(p);
   }
-  // 4. Handle collisions
+
   Physics::handleCollisions(m_particles);
 }
 
