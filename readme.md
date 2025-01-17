@@ -1,4 +1,6 @@
 ![Screencast from 2025-01-17 17-47-33 (1)](https://github.com/user-attachments/assets/deaedaec-b53d-48e8-94af-223425de4f78)
+
+
 Particle Simulator
 A prototype particle simulation system inspired by Sandbox games, designed to test multi-core/CUDA performance on real-world tasks (coming soon).
 Features
