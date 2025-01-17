@@ -18,7 +18,7 @@ void UserInteractions::initUI() {
   create_new_Slider(Slidebar(180, 20, gv.getFieldSizeX() + 10, 400,
                              /*max*/ 10, /*min*/ 0));
 
-  //  button that toggles White_Ball
+  //  button that toggles White_Ball InteractionType, just create the particles.
   create_new_Button(switch_button(20, 20,
                                   Vector2D(gv.getFieldSizeX() + 10, 430),
                                   sf::Color::Green, sf::Color::Red),
@@ -56,7 +56,8 @@ void UserInteractions::handleEvent(const sf::Event &event,
 
 void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
                                    ParticleSystem &particleSystem) {
-  // 1) Check sliders
+  // Check where click happened
+  //  1) Check sliders
   for (auto &slider : m_sliders) {
     if (slider.PointOnTheSlider(mousePos)) {
       slider.updateSlider(mousePos);
@@ -75,6 +76,7 @@ void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
   }
 
   if (mousePos.x <= gv.getFieldSizeX() && mousePos.y <= gv.getFieldSizeY()) {
+    // if the user clicked inside the field(simulation area)
     if (m_rightClickStart) {
       if (m_currentInteractionType == InteractionType::White_Ball) {
         // The user pressed left after a right-click start => create a Particle

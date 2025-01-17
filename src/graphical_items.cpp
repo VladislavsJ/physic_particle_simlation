@@ -1,3 +1,4 @@
+// graphical_items.cpp
 #include "graphical_items.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -20,8 +21,10 @@ void Slidebar::renderSlidebar(sf::RenderWindow &window) const {
   // Draw the pin
   float ratio = (currentValue - minValue) / (maxValue - minValue);
   float pinX = slidebarX + ratio * slidebarLength;
-  sf::CircleShape pin((slidebarWidth * 0.5f) *
-                      1.2f); // 1.2f is the scale for the circle(pin)
+
+  // 1.2f is the scale for the circle(pin)
+  const float pinScale = 1.2f;
+  sf::CircleShape pin((slidebarWidth * 0.5f) * pinScale);
   pin.setPosition(pinX, slidebarY);
   pin.setFillColor(pinColor);
   window.draw(pin);
@@ -29,14 +32,9 @@ void Slidebar::renderSlidebar(sf::RenderWindow &window) const {
 
 void Slidebar::updateSlider(sf::Vector2f mousePos) {
   // limit pin X position
-  float pinX = mousePos.x;
-  if (pinX < slidebarX) {
-    pinX = slidebarX;
-  }
-  if (pinX > slidebarX + slidebarLength) {
-    pinX = slidebarX + slidebarLength;
-  }
-  // Update the currentValue based on pinX.
+  float pinX = std::clamp(mousePos.x, slidebarX, slidebarX + slidebarLength);
+
+  // Update the currentValue based on pinX
   currentValue =
       minValue + (maxValue - minValue) * (pinX - slidebarX) / slidebarLength;
 }
@@ -45,10 +43,8 @@ float Slidebar::getCurrentValue() const { return currentValue; }
 
 bool Slidebar::PointOnTheSlider(sf::Vector2f mousePos) {
   // check if the mouse is on the slider
-  if (mousePos.x >= slidebarX && mousePos.x <= slidebarX + slidebarLength &&
-      mousePos.y >= slidebarY && mousePos.y <= slidebarY + slidebarWidth)
-    return true;
-  return false;
+  return mousePos.x >= slidebarX && mousePos.x <= slidebarX + slidebarLength &&
+         mousePos.y >= slidebarY && mousePos.y <= slidebarY + slidebarWidth;
 }
 
 switch_button::switch_button(float iconSizeX, float iconSizeY,
@@ -61,25 +57,20 @@ switch_button::switch_button(float iconSizeX, float iconSizeY,
 void switch_button::renderButton(sf::RenderWindow &window) const {
   sf::RectangleShape body(sf::Vector2f(iconSizeX, iconSizeY));
   body.setPosition(start_point.x, start_point.y);
-
-  if (pressed) {
-    body.setFillColor(iconColor_ON);
-
-  } else {
-    body.setFillColor(iconColor_OFF);
-  }
+  body.setFillColor(pressed ? iconColor_ON : iconColor_OFF);
   window.draw(body);
 }
 
 bool switch_button::PointOnTheSlider(sf::Vector2f mousePos) {
   // check if the mouse is on the slider
-  if (mousePos.x >= start_point.x && mousePos.x <= start_point.x + iconSizeX &&
-      mousePos.y >= start_point.y && mousePos.y <= start_point.y + iconSizeY)
-    return true;
-  return false;
+  return mousePos.x >= start_point.x &&
+         mousePos.x <= start_point.x + iconSizeX &&
+         mousePos.y >= start_point.y && mousePos.y <= start_point.y + iconSizeY;
 }
+
 void switch_button::updateButton(sf::Vector2f mousePos) {
   // Update the value of the button
-  if (PointOnTheSlider(mousePos))
+  if (PointOnTheSlider(mousePos)) {
     pressed = !pressed;
+  }
 }
