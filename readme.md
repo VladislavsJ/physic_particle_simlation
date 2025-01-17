@@ -2,7 +2,7 @@
 
 
 Particle Simulator
-A prototype particle simulation system inspired by Sandbox games, designed to test multi-core/CUDA performance on real-world tasks (coming soon).
+A prototype particle simulation system inspired by "Sandbox" game, designed to test multi-core/CUDA performance on real-world tasks (coming soon).
 Features
 
 Interactive particle generation system
