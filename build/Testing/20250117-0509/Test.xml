@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250117-0509-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.28.3"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="vlad-IdeaPad-5-Pro-16ACH6"
+	OSRelease="6.8.0-51-generic"
+	OSVersion="#52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="25"
+	ModelID="80"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="4095"
+	TotalPhysicalMemory="13823"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3992.47"
+	>
+	<Testing>
+		<StartDateTime>Jan 17 13:56 EET</StartDateTime>
+		<StartTestTime>1737114966</StartTestTime>
+		<TestList>
+			<Test>./tests/tests</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>tests</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/tests</FullName>
+			<FullCommandLine>/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00313757</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJydVd9vmzAQfvdfcY+rtkKytS+R9pCpSRUtSqMm/SFFEXLgGNaMzWyTNP3rZyBlIaFA5wfA5++7O3932Kvv5VjDfSoEE7+g3weD2mgIlYzhKp+ATpl9O2R1WY413HK5obwAoNgyJUWMwoLRXKbJCfjq2GvBfKRqaW1kBfcPM8jHurrk3Cq6ZWZ/gBXj7mcTDD71INYXTU7HDHmwYK/Y5rYC7OB4TpVhPscuvk+xHdyXs4nQhgofGyU5BZcBulWlgIORhvILUmVdH7PKjey1wfi8oOfrzjAI3qzVLTRjayWqobyZ9NDcsDBEZZtyKn1qmBS6NWAju2sKS5n6kf2bSmetYc8YXUPdbVFxmiQfilZH+g95f0gVoNLkaTKdQkgZh1QY+9zkdvAj9H8D08DihGN2NmDwEf0P7ms7t6UHm9q3OOAK5oJmqZ137T+7M3rJv4kbY8Cou+U0cBcRVRh4O2/qzpazB1fgzvOfn71Qcpuxm0R7zXzP/k1ce489N081f3oxZcLxk2RwPYCxVSxVSEYvCfpWG8A/KeX2IAMZgolQI2wpT1EPCNisP0OfZNk9RcyPrKwD+Grn30gm6Xg4mY5u6jOv1a9ehK6yzfMN6oyiTxrmaMUZJgnfHw7nk8K/B2tN9pjZlO57t5NBqi4DuRNkdXz9NVx7oKhwqqHsXubDxaJQvN8rqE61EIXDL8CZzmq7QS53g7ZaEWJ5B8BytFiSvw57b4w=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jan 17 13:56 EET</EndDateTime>
+		<EndTestTime>1737114966</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

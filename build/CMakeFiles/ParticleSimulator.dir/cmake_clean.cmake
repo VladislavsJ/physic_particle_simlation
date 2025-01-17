@@ -15,8 +15,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ParticleSimulator.dir/src/graphical_items.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/main.cpp.o.d"
-  "CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o"
-  "CMakeFiles/ParticleSimulator.dir/src/user_interactions.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.o.d"
   "ParticleSimulator"
