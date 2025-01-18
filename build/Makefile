@@ -344,6 +344,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/simulation_examples.o: src/simulation_examples.cpp.o
+.PHONY : src/simulation_examples.o
+
+# target to build an object file
+src/simulation_examples.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/simulation_examples.cpp.o
+.PHONY : src/simulation_examples.cpp.o
+
+src/simulation_examples.i: src/simulation_examples.cpp.i
+.PHONY : src/simulation_examples.i
+
+# target to preprocess a source file
+src/simulation_examples.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/simulation_examples.cpp.i
+.PHONY : src/simulation_examples.cpp.i
+
+src/simulation_examples.s: src/simulation_examples.cpp.s
+.PHONY : src/simulation_examples.s
+
+# target to generate assembly for a file
+src/simulation_examples.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/simulation_examples.cpp.s
+.PHONY : src/simulation_examples.cpp.s
+
 src/user_interactions_new.o: src/user_interactions_new.cpp.o
 .PHONY : src/user_interactions_new.o
 
@@ -403,6 +427,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/simulation_examples.o"
+	@echo "... src/simulation_examples.i"
+	@echo "... src/simulation_examples.s"
 	@echo "... src/user_interactions_new.o"
 	@echo "... src/user_interactions_new.i"
 	@echo "... src/user_interactions_new.s"

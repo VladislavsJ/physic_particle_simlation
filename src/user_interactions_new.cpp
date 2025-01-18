@@ -23,6 +23,11 @@ void UserInteractions::initUI() {
                                   Vector2D(gv.getFieldSizeX() + 10, 430),
                                   sf::Color::Green, sf::Color::Red),
                     InteractionType::White_Ball);
+  // Stop button, to stop the simulation
+  create_new_Button(switch_button(20, 20,
+                                  Vector2D(gv.getFieldSizeX() + 10, 460),
+                                  sf::Color(135, 238, 21), sf::Color::Red),
+                    InteractionType::Stop);
 }
 
 void UserInteractions::create_new_Slider(const Slidebar &slidebar) {
@@ -70,8 +75,13 @@ void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
     if (btn.PointOnTheSlider(mousePos)) {
       btn.updateButton(mousePos);
       // If button toggles an interaction, store that
+      if (m_currentInteractionType == pairBtn.second) {
+        m_currentInteractionType = InteractionType::None;
+      } else {
+        m_currentInteractionType = pairBtn.second;
+      }
+    } else {
       m_currentInteractionType = pairBtn.second;
-      return;
     }
   }
 
@@ -94,6 +104,10 @@ void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
         std::vector<Particle> newParticles{p};
         particleSystem.addParticles(newParticles);
         m_rightClickStart = false;
+      }
+      if (m_currentInteractionType == InteractionType::Stop) {
+        // wait, stop the simulation(in main), until the user clicks on the
+        // field again
       }
     }
   }
@@ -118,4 +132,7 @@ void UserInteractions::MouseMoved(const sf::Vector2f &mousePos) {
       slider.updateSlider(mousePos);
     }
   }
+}
+InteractionType UserInteractions::getCurrentInteractionType() const {
+  return m_currentInteractionType;
 }

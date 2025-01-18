@@ -10,7 +10,8 @@ enum class InteractionType { // interaction types, for each button
   None,
   AddParticles,
   White_Ball,
-  Red_Ball
+  Red_Ball,
+  Stop,
 };
 
 class UserInteractions {

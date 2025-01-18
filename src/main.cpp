@@ -1,18 +1,18 @@
 #include "Graphs_new.hpp"
 #include "ParticleSystem.hpp"
 #include "Renderer.hpp"
+#include "simulation_examples.hpp"
 #include "user_interactions_new.hpp" // (Optional) Ensure this reflects your actual header name for UserInteractions
 #include <SFML/Graphics.hpp>
 #include <chrono>
 #include <iostream>
-
 // TODO LIST , to comment the ideas/thoughts
 // TODO0: High risk, must be fixed and thoroughly checked before use.
 // TODO1: Important functionality, but the system may operate without it.
 // TODO2: Ideas for optimization and enhancements; important but not critical.
 // TODO3: Future considerations and potential improvements.
 extern GlobalVar &gv;
-
+enum class InteractionType;
 int main() {
   Renderer renderer;
   if (!renderer.init()) {
@@ -47,7 +47,7 @@ int main() {
       Particle(Vector2D(300, 400), Vector2D(0, 0), 25, 1));
   particleSystem.addParticle(
       Particle(Vector2D(300, 450), Vector2D(0, 0), 30, 1));
-
+  make_test1(particleSystem);
   // Setup timing, idea is to hold constant frame rate, while possible and CPU
   // are abble to do so
 
@@ -59,8 +59,8 @@ int main() {
   auto frameEndTime = std::chrono::high_resolution_clock::now();
 
   int cnt = 0;
+  auto frameStartTime = std::chrono::high_resolution_clock::now();
   while (renderer.getWindow().isOpen()) {
-    auto frameStartTime = std::chrono::high_resolution_clock::now();
 
     // Handle window events
     sf::Event event;
@@ -70,37 +70,44 @@ int main() {
       }
       ui.handleEvent(event, renderer.getWindow(), particleSystem);
     }
+    if (ui.getCurrentInteractionType() !=
+        InteractionType::Stop) { // if user wants to stop the
+                                 // simulation
+      // to add new particles, or just wait for a while, do not compute the
+      // physics, just render the particles
+      // TODO0: chnge the frameduration to 0, so the speed is not like 10
+      // seconds and particles will go crazy because speed = g*t
 
-    // Periodic logging for frame duration
-    if (cnt % 10 == 0) {
-      std::cout << "frame time: " << frameDuration.count() << std::endl;
-      if (frameDuration.count() > 0.016f) { // totals FPS < 60FPS
-        std::cout << "frame time is too high, max particle count is"
-                  << std::endl;
-        std::cout << particleSystem.getParticleCount() << std::endl;
+      // Periodic logging for frame duration
+      if (cnt % 10 == 0) {
+        std::cout << "frame time: " << frameDuration.count() << std::endl;
+        if (frameDuration.count() > 0.016f) { // totals FPS < 60FPS
+          std::cout << "frame time is too high, max particle count is"
+                    << std::endl;
+          std::cout << particleSystem.getParticleCount() << std::endl;
+        }
       }
-    }
 
-    // Limit frame rate to 60 fps
-    if (frameDuration < FRAME_TIME) {
-      frameDuration = FRAME_TIME;
-    }
+      // Limit frame rate to 60 fps
+      if (frameDuration < FRAME_TIME) {
+        frameDuration = FRAME_TIME;
+      }
 
-    // test: inject new particles, to see how the system behaves
-    if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170) {
-      particleSystem.addParticle(
-          Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
-      if (cnt % 250 == 1) {
+      // test: inject new particles, to see how the system behaves
+      if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170) {
         particleSystem.addParticle(
-            Particle(Vector2D(40, 80), Vector2D(545, 138), 25, 1));
+            Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
+        if (cnt % 250 == 1) {
+          particleSystem.addParticle(
+              Particle(Vector2D(40, 80), Vector2D(545, 138), 25, 1));
+        }
       }
+
+      particleSystem.update(
+          frameDuration.count()); // update particle system, frame duration is
+                                  // passed to update the system
+      // to calculate the new position of the particles
     }
-
-    particleSystem.update(
-        frameDuration.count()); // update particle system, frame duration is
-                                // passed to update the system
-    // to calculate the new position of the particles
-
     // Render everything
     renderer.clear();
     renderer.render(
