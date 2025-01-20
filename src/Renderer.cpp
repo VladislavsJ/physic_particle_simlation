@@ -105,7 +105,7 @@ void Renderer::renderUI(const UserInteractions &ui) {
   for (auto &slider : ui.getSliders()) {
     slider.renderSlidebar(m_window);
   }
-  for (auto &btnPair : ui.getButtons()) {
+  for (auto &btnPair : ui.getButtons_Interact()) {
     btnPair.first.renderButton(m_window);
   }
 }

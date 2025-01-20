@@ -2,8 +2,10 @@
 #include "Particle.hpp" // For creating new Particles
 #include "Vector2D.hpp"
 #include "global_var.hpp" // Assuming you need gv.getFieldSizeX(), etc.
+#include "user_interface.hpp"
 #include <iostream>
 extern GlobalVar &gv;
+enum class InteractionType;
 UserInteractions::UserInteractions()
     : m_currentInteractionType(InteractionType::None),
       m_rightClickStart(false) {
@@ -12,31 +14,21 @@ UserInteractions::UserInteractions()
 
 void UserInteractions::initUI() {
   // Hard-coded creation of UI controls
-  create_new_Slider(Slidebar(180, 20, gv.getFieldSizeX() + 10, 350,
-                             /*max*/ 50, /*min*/ 1));
+  m_userInterface.addSlider(Slidebar(180, 20, gv.getFieldSizeX() + 10, 350,
+                                     /*max*/ 50, /*min*/ 1));
 
-  create_new_Slider(Slidebar(180, 20, gv.getFieldSizeX() + 10, 400,
-                             /*max*/ 10, /*min*/ 0));
-
+  m_userInterface.addSlider(Slidebar(180, 20, gv.getFieldSizeX() + 10, 400,
+                                     /*max*/ 10, /*min*/ 0));
   //  button that toggles White_Ball InteractionType, just create the particles.
-  create_new_Button(switch_button(20, 20,
-                                  Vector2D(gv.getFieldSizeX() + 10, 430),
-                                  sf::Color::Green, sf::Color::Red),
-                    InteractionType::White_Ball);
+  m_userInterface.addButton(
+      switch_button(20, 20, Vector2D(gv.getFieldSizeX() + 10, 430),
+                    sf::Color::White, sf::Color::Red),
+      InteractionType::White_Ball);
   // Stop button, to stop the simulation
-  create_new_Button(switch_button(20, 20,
-                                  Vector2D(gv.getFieldSizeX() + 10, 460),
-                                  sf::Color(135, 238, 21), sf::Color::Red),
-                    InteractionType::Stop);
-}
-
-void UserInteractions::create_new_Slider(const Slidebar &slidebar) {
-  m_sliders.push_back(slidebar);
-}
-void UserInteractions::create_new_Button(const switch_button &button,
-                                         InteractionType type) {
-  // Store the button with its associated action
-  m_buttons.emplace_back(button, type);
+  m_userInterface.addButton(
+      switch_button(20, 20, Vector2D(gv.getFieldSizeX() + 10, 460),
+                    sf::Color::Red, sf::Color::Green),
+      InteractionType::Stop);
 }
 
 void UserInteractions::handleEvent(const sf::Event &event,
@@ -47,7 +39,9 @@ void UserInteractions::handleEvent(const sf::Event &event,
       window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
   if (event.type == sf::Event::MouseButtonPressed) {
+
     if (event.mouseButton.button == sf::Mouse::Left) {
+
       onLeftClick(mousePos, particleSystem);
     } else if (event.mouseButton.button == sf::Mouse::Right) {
       onRightClick(mousePos);
@@ -63,35 +57,23 @@ void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
                                    ParticleSystem &particleSystem) {
   // Check where click happened
   //  1) Check sliders
-  for (auto &slider : m_sliders) {
-    if (slider.PointOnTheSlider(mousePos)) {
-      slider.updateSlider(mousePos);
-      return; // or break if you only allow 1 click at a time
-    }
+  // if (m_userInterface.update_all_items(mousePos))
+  ; // if any item exists at mouse position,
+  // return true, this one item will be turned on, and others will be turned off
+  InteractionType TempType =
+      m_userInterface.update_all_items(mousePos); // if any item exists at mouse
+                                                  // position, return
+                                                  // interaction type
+  if (TempType != InteractionType::None) {
+    m_currentInteractionType = TempType;
   }
-  // 2) Check buttons
-  for (auto &pairBtn : m_buttons) {
-    auto &btn = pairBtn.first;
-    if (btn.PointOnTheSlider(mousePos)) {
-      btn.updateButton(mousePos);
-      // If button toggles an interaction, store that
-      if (m_currentInteractionType == pairBtn.second) {
-        m_currentInteractionType = InteractionType::None;
-      } else {
-        m_currentInteractionType = pairBtn.second;
-      }
-    } else {
-      m_currentInteractionType = pairBtn.second;
-    }
-  }
-
   if (mousePos.x <= gv.getFieldSizeX() && mousePos.y <= gv.getFieldSizeY()) {
     // if the user clicked inside the field(simulation area)
     if (m_rightClickStart) {
       if (m_currentInteractionType == InteractionType::White_Ball) {
         // The user pressed left after a right-click start => create a Particle
         sf::Vector2f speed = mousePos - m_rightClickPosition;
-
+        std::vector<Slidebar> m_sliders = m_userInterface.getSliders();
         float speedScale = m_sliders[1].getCurrentValue(); // second slider
         float radius = m_sliders[0].getCurrentValue();     // first slider
         speed.x *= speedScale;
@@ -127,6 +109,7 @@ void UserInteractions::onRightClick(const sf::Vector2f &mousePos) {
 
 void UserInteractions::MouseMoved(const sf::Vector2f &mousePos) {
   // If the user drags on a slider, update the slider's value
+  std::vector<Slidebar> m_sliders = m_userInterface.getSliders();
   for (auto &slider : m_sliders) {
     if (slider.PointOnTheSlider(mousePos)) {
       slider.updateSlider(mousePos);
@@ -135,4 +118,12 @@ void UserInteractions::MouseMoved(const sf::Vector2f &mousePos) {
 }
 InteractionType UserInteractions::getCurrentInteractionType() const {
   return m_currentInteractionType;
+}
+
+std::vector<Slidebar> UserInteractions::getSliders() const {
+  return m_userInterface.getSliders();
+}
+std::vector<std::pair<switch_button, InteractionType>>
+UserInteractions::getButtons_Interact() const {
+  return m_userInterface.getButtons_interaction();
 }

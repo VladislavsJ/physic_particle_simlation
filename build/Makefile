@@ -392,6 +392,30 @@ src/user_interactions_new.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interactions_new.cpp.s
 .PHONY : src/user_interactions_new.cpp.s
 
+src/user_interface.o: src/user_interface.cpp.o
+.PHONY : src/user_interface.o
+
+# target to build an object file
+src/user_interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o
+.PHONY : src/user_interface.cpp.o
+
+src/user_interface.i: src/user_interface.cpp.i
+.PHONY : src/user_interface.i
+
+# target to preprocess a source file
+src/user_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.i
+.PHONY : src/user_interface.cpp.i
+
+src/user_interface.s: src/user_interface.cpp.s
+.PHONY : src/user_interface.s
+
+# target to generate assembly for a file
+src/user_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.s
+.PHONY : src/user_interface.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -433,6 +457,9 @@ help:
 	@echo "... src/user_interactions_new.o"
 	@echo "... src/user_interactions_new.i"
 	@echo "... src/user_interactions_new.s"
+	@echo "... src/user_interface.o"
+	@echo "... src/user_interface.i"
+	@echo "... src/user_interface.s"
 .PHONY : help
 
 

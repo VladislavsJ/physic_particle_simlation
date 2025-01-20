@@ -46,4 +46,11 @@ private:
   double particleR;    // Default particle radius.
 };
 
+enum class InteractionType { // interaction types, for each button
+  None,
+  AddParticles,
+  White_Ball,
+  Stop,
+  Slider,
+};
 #endif // SETTINGS_HPP

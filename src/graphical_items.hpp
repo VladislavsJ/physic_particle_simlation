@@ -11,9 +11,11 @@ public:
            float slidebarY, float maxValue, float minValue,
            sf::Color bodyColor = sf::Color(100, 100, 100),
            sf::Color pinColor = sf::Color(240, 80, 80));
-
+  // F_update_value is designed to change the value of a global variable, for
+  // example, gravity in global.cpp
+  //  not mandatory, if not provided, it will do nothing
   void updateSlider(sf::Vector2f mousePos);
-  bool PointOnTheSlider(sf::Vector2f mousePos);
+  bool PointOnTheSlider(sf::Vector2f mousePos) const;
   void renderSlidebar(sf::RenderWindow &window) const;
 
   float getCurrentValue() const;
@@ -47,9 +49,10 @@ public:
                 sf::Color iconColor_OFF = sf::Color::Red);
 
   void renderButton(sf::RenderWindow &window) const;
-  bool PointOnTheSlider(sf::Vector2f mousePos);
+  bool PointOnTheButton(sf::Vector2f mousePos) const;
   void updateButton(sf::Vector2f mousePos);
-
+  void change_state(bool state);
+  void updateSliderPosVal(sf::Vector2f mousePos);
   float iconSizeX;
   float iconSizeY;
   Vector2D start_point;

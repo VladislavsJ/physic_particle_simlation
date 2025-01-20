@@ -41,7 +41,7 @@ void Slidebar::updateSlider(sf::Vector2f mousePos) {
 
 float Slidebar::getCurrentValue() const { return currentValue; }
 
-bool Slidebar::PointOnTheSlider(sf::Vector2f mousePos) {
+bool Slidebar::PointOnTheSlider(sf::Vector2f mousePos) const {
   // check if the mouse is on the slider
   return mousePos.x >= slidebarX && mousePos.x <= slidebarX + slidebarLength &&
          mousePos.y >= slidebarY && mousePos.y <= slidebarY + slidebarWidth;
@@ -61,7 +61,7 @@ void switch_button::renderButton(sf::RenderWindow &window) const {
   window.draw(body);
 }
 
-bool switch_button::PointOnTheSlider(sf::Vector2f mousePos) {
+bool switch_button::PointOnTheButton(sf::Vector2f mousePos) const {
   // check if the mouse is on the slider
   return mousePos.x >= start_point.x &&
          mousePos.x <= start_point.x + iconSizeX &&
@@ -70,7 +70,8 @@ bool switch_button::PointOnTheSlider(sf::Vector2f mousePos) {
 
 void switch_button::updateButton(sf::Vector2f mousePos) {
   // Update the value of the button
-  if (PointOnTheSlider(mousePos)) {
+  if (PointOnTheButton(mousePos)) {
     pressed = !pressed;
   }
 }
+void switch_button::change_state(bool state) { pressed = state; }
