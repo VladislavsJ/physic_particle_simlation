@@ -59,9 +59,9 @@ int main() {
   auto frameEndTime = std::chrono::high_resolution_clock::now();
 
   int cnt = 0;
-  auto frameStartTime = std::chrono::high_resolution_clock::now();
-  while (renderer.getWindow().isOpen()) {
 
+  while (renderer.getWindow().isOpen()) {
+    auto frameStartTime = std::chrono::high_resolution_clock::now();
     // Handle window events
     sf::Event event;
     while (renderer.getWindow().pollEvent(event)) {
@@ -87,9 +87,8 @@ int main() {
           std::cout << particleSystem.getParticleCount() << std::endl;
         }
       }
-
-      // Limit frame rate to 60 fps
-      if (frameDuration < FRAME_TIME) {
+      if (frameDuration.count() < 0.016f) {
+        // Limit frame rate to 60 fps
         frameDuration = FRAME_TIME;
       }
 

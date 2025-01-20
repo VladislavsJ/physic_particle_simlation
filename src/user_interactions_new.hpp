@@ -3,17 +3,10 @@
 
 #include "ParticleSystem.hpp"
 #include "graphical_items.hpp"
+#include "user_interface.hpp"
 #include <SFML/Graphics.hpp>
 #include <vector>
-
-enum class InteractionType { // interaction types, for each button
-  None,
-  AddParticles,
-  White_Ball,
-  Red_Ball,
-  Stop,
-};
-
+enum class InteractionType;
 class UserInteractions {
 public:
   UserInteractions();
@@ -26,15 +19,9 @@ public:
                    ParticleSystem &particleSystem);
 
   InteractionType getCurrentInteractionType() const;
-
-  const std::vector<Slidebar> &getSliders() const { return m_sliders; }
-
-  const std::vector<std::pair<switch_button, InteractionType>> &
-  // each button has its own interaction type, so we can know what to do
-
-  getButtons() const {
-    return m_buttons;
-  }
+  std::vector<Slidebar> getSliders() const;
+  std::vector<std::pair<switch_button, InteractionType>>
+  getButtons_Interact() const;
 
 private:
   // Helpers
@@ -43,17 +30,11 @@ private:
   void onRightClick(const sf::Vector2f &mousePos);
   void MouseMoved(const sf::Vector2f &mousePos);
 
-  // For building up the UI
-  void create_new_Slider(const Slidebar &slidebar);
-  void create_new_Button(const switch_button &button, InteractionType type);
-
 private:
   // Keep track of user’s chosen action
   InteractionType m_currentInteractionType;
-
+  UserInterface m_userInterface = UserInterface();
   // Sliders & Buttons
-  std::vector<Slidebar> m_sliders;
-  std::vector<std::pair<switch_button, InteractionType>> m_buttons;
 
   bool m_rightClickStart;
   sf::Vector2f m_rightClickPosition;
