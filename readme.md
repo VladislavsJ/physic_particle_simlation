@@ -1,4 +1,5 @@
-![Screencast from 2025-01-17 17-47-33 (1)](https://github.com/user-attachments/assets/deaedaec-b53d-48e8-94af-223425de4f78)
+
+https://github.com/user-attachments/assets/779e4425-0d78-4d7e-817f-8b187da04a22
 
 
 # Particle Simulator
