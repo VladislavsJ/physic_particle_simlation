@@ -131,7 +131,7 @@ int main() {
       sf::sleep(sf::seconds((FRAME_TIME - frameDuration).count()));
     }
     // make a start delay
-    if (cnt == 1) {
+    if (cnt == 5) {
       sf::sleep(sf::seconds(1));
     }
   }

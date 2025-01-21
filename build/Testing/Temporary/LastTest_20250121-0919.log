@@ -1,10 +1,10 @@
-Start testing: Jan 21 14:48 EET
+Start testing: Jan 21 16:14 EET
 ----------------------------------------------------------
 1/1 Testing: tests
 1/1 Test: tests
 Command: "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests"
 Directory: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests
-"tests" start time: Jan 21 14:48 EET
+"tests" start time: Jan 21 16:14 EET
 Output:
 ----------------------------------------------------------
 [==========] Running 14 tests from 5 test suites.
@@ -31,8 +31,8 @@ Output:
 [       OK ] ParticleSystemTest.OverlappingParticles (0 ms)
 [ RUN      ] ParticleSystemTest.ParticlesAtBorders
 WILL fail until border check is implemented
-[       OK ] ParticleSystemTest.ParticlesAtBorders (15 ms)
-[----------] 5 tests from ParticleSystemTest (15 ms total)
+[       OK ] ParticleSystemTest.ParticlesAtBorders (14 ms)
+[----------] 5 tests from ParticleSystemTest (14 ms total)
 
 [----------] 1 test from SampleTest
 [ RUN      ] SampleTest.Example
@@ -59,50 +59,27 @@ Velocity.y should match gravity * deltaTime (9.81 for deltaTime=1)
 
 [----------] 3 tests from UserInteractionsTest
 [ RUN      ] UserInteractionsTest.ButtonTogglesOnOff
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp:90: Failure
-Value of: buttonsPair[0].first.pressed
-  Actual: false
-Expected: true
-Button should be pressed after first click.
-
-[  FAILED  ] UserInteractionsTest.ButtonTogglesOnOff (96 ms)
+[       OK ] UserInteractionsTest.ButtonTogglesOnOff (103 ms)
 [ RUN      ] UserInteractionsTest.SlidebarChangesInteraction
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp:132: Failure
-Expected equality of these values:
-  userInteractions.getCurrentInteractionType()
-    Which is: 4-byte object <00-00 00-00>
-  InteractionType::Slider
-    Which is: 4-byte object <04-00 00-00>
-Current interaction type should be SlideBar after moving the slider.
-
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp:139: Failure
-The difference between sliderVal and 50.0f is 49, which exceeds 1e-1, where
-sliderVal evaluates to 1,
-50.0f evaluates to 50, and
-1e-1 evaluates to 0.10000000000000001.
-Slider value is expected to be near midpoint after moving mouse to center.
-
-[  FAILED  ] UserInteractionsTest.SlidebarChangesInteraction (26 ms)
+[       OK ] UserInteractionsTest.SlidebarChangesInteraction (30 ms)
 [ RUN      ] UserInteractionsTest.RightClickBehavior
-[       OK ] UserInteractionsTest.RightClickBehavior (53 ms)
-[----------] 3 tests from UserInteractionsTest (177 ms total)
+[       OK ] UserInteractionsTest.RightClickBehavior (25 ms)
+[----------] 3 tests from UserInteractionsTest (159 ms total)
 
 [----------] Global test environment tear-down
-[==========] 14 tests from 5 test suites ran. (192 ms total)
-[  PASSED  ] 10 tests.
-[  FAILED  ] 4 tests, listed below:
+[==========] 14 tests from 5 test suites ran. (173 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 2 tests, listed below:
 [  FAILED  ] SampleTest.Example
 [  FAILED  ] PhysicsTests.ApplyGravity
-[  FAILED  ] UserInteractionsTest.ButtonTogglesOnOff
-[  FAILED  ] UserInteractionsTest.SlidebarChangesInteraction
 
- 4 FAILED TESTS
+ 2 FAILED TESTS
 <end of output>
-Test time =   0.21 sec
+Test time =   0.19 sec
 ----------------------------------------------------------
 Test Failed.
-"tests" end time: Jan 21 14:48 EET
+"tests" end time: Jan 21 16:14 EET
 "tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 21 14:48 EET
+End testing: Jan 21 16:14 EET

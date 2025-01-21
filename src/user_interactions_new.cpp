@@ -4,6 +4,7 @@
 #include "global_var.hpp" // Assuming you need gv.getFieldSizeX(), etc.
 #include "user_interface.hpp"
 #include <iostream>
+#include <stdexcept>
 extern GlobalVar &gv;
 enum class InteractionType;
 UserInteractions::UserInteractions()
@@ -35,9 +36,28 @@ void UserInteractions::handleEvent(const sf::Event &event,
                                    sf::RenderWindow &window,
                                    ParticleSystem &particleSystem) {
   // Convert the SFML mouse position to world coords
-  sf::Vector2f mousePos =
-      window.mapPixelToCoords(sf::Mouse::getPosition(window));
+  // Get position from the event instead of real mouse,
+  // otherways, in the dubg mode or tests, the mouse position will be out of
+  // bounds
+  sf::Vector2i pixelPos;
 
+  switch (event.type) {
+  case sf::Event::MouseButtonPressed:
+    pixelPos = sf::Vector2i(event.mouseButton.x, event.mouseButton.y);
+    break;
+  case sf::Event::MouseMoved:
+    pixelPos = sf::Vector2i(event.mouseMove.x, event.mouseMove.y);
+    break;
+    // ... other cases
+  }
+  // Now map the event coordinates
+  sf::Vector2f mousePos = window.mapPixelToCoords(pixelPos);
+
+  if (mousePos.x < 0 || mousePos.y < 0) { // should not be needed at all
+    throw std::out_of_range(
+        "Mouse position is out of bounds: negative coordinates detected");
+    return;
+  }
   if (event.type == sf::Event::MouseButtonPressed) {
 
     if (event.mouseButton.button == sf::Mouse::Left) {

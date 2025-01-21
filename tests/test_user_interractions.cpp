@@ -29,7 +29,7 @@ protected:
     window.create(sf::VideoMode(800, 600), "Test Window", sf::Style::Default);
 
     // Initialize UI (sliders, buttons, etc.)
-    userInteractions.initUI();
+    // userInteractions.initUI();
   }
 
   virtual void TearDown() override { window.close(); }
@@ -76,13 +76,15 @@ TEST_F(UserInteractionsTest, ButtonTogglesOnOff) {
   auto &firstButton = firstButtonPair.first;
 
   // Coordinates roughly at the button’s position
-  int clickX =
-      static_cast<int>(firstButton.start_point.x + firstButton.iconSizeX / 2);
-  int clickY =
-      static_cast<int>(firstButton.start_point.y + firstButton.iconSizeY / 2);
+  float clickX = (firstButton.start_point.x + firstButton.iconSizeX / 2);
+  float clickY = (firstButton.start_point.y + firstButton.iconSizeY / 2);
+  // Create the simulated mouse position
+  sf::Vector2i pixelPos(clickX, clickY);
 
-  // 1) Simulate a left mouse press on the button
-  sf::Event clickEvent = createMousePressEvent(sf::Mouse::Left, clickX, clickY);
+  // sf::Vector2f mousePos(clickX, clickY);
+  //  1) Simulate a left mouse press on the button
+  sf::Event clickEvent =
+      createMousePressEvent(sf::Mouse::Left, pixelPos.x, pixelPos.y);
   userInteractions.handleEvent(clickEvent, window, particleSystem);
 
   // Now the button should be "pressed == true"
@@ -118,15 +120,18 @@ TEST_F(UserInteractionsTest, SlidebarChangesInteraction) {
       static_cast<int>(slider.getSlidebarX() + slider.getSlidebarLength() / 2);
   int sliderCenterY =
       static_cast<int>(slider.getSlidebarY() + slider.getSlidebarWidth() / 2);
+  sf::Vector2i pixelPos(sliderCenterX, sliderCenterY);
 
+  sf::Event moveEvent = createMouseMoveEvent(pixelPos.x, pixelPos.y);
   // Move event: position the mouse in the slider region
-  sf::Event moveEvent = createMouseMoveEvent(sliderCenterX, sliderCenterY);
   userInteractions.handleEvent(moveEvent, window, particleSystem);
 
   // Click event: press the mouse
   sf::Event clickEvent =
       createMousePressEvent(sf::Mouse::Left, sliderCenterX, sliderCenterY);
   userInteractions.handleEvent(clickEvent, window, particleSystem);
+  sliders = userInteractions.getSliders();
+  slider = sliders[0];
 
   // Check if current interaction is recognized as SlideBar
   EXPECT_EQ(userInteractions.getCurrentInteractionType(),
@@ -135,8 +140,9 @@ TEST_F(UserInteractionsTest, SlidebarChangesInteraction) {
 
   // Optionally, you can check if the slider's internal value changed.
   float sliderVal = slider.getCurrentValue();
-  // If minValue=0, maxValue=100, the middle is ~50.
-  EXPECT_NEAR(sliderVal, 50.0f, 1e-1)
+  // If minValue=1, maxValue=50, the middle is ~25.5.
+  // values are assigned in the initUI() function
+  EXPECT_NEAR(sliderVal, 25.5f, 1e-1)
       << "Slider value is expected to be near midpoint after moving mouse to "
          "center.";
 }
