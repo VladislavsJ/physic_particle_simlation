@@ -2,6 +2,7 @@
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles/test.dir
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles/edit_cache.dir
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles/rebuild_cache.dir
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/CMakeFiles/physics_lib.dir
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/CMakeFiles/tests.dir
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/CMakeFiles/test.dir
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/CMakeFiles/edit_cache.dir

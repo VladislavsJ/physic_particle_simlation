@@ -10,7 +10,7 @@ find_package(OpenMP REQUIRED)         # Finds the OpenMP package
 # Source files
 file(GLOB PARTICLE_SIM_SRC
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
-    "${PROJECT_SOURCE_DIR}/src/*.h"
+    "${PROJECT_SOURCE_DIR}/src/*.hpp"
 )
 
 # Main application

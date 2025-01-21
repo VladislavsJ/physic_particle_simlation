@@ -259,6 +259,9 @@ PhysicsBalls_SOURCE_DIR:STATIC=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic
 //The directory containing a CMake configuration file for SFML.
 SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
 
+//Dependencies for the target
+physics_lib_LIB_DEPENDS:STATIC=general;sfml-graphics;general;sfml-window;general;sfml-system;
+
 
 ########################
 # INTERNAL cache entries
@@ -414,9 +417,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/GTe
 //Details about finding OpenMP
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v4.5()]
 //Details about finding OpenMP_C
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
 //Details about finding OpenMP_CXX
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
 //Result of TRY_COMPILE
 OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
 //Result of TRY_COMPILE

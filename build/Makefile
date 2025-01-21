@@ -140,6 +140,19 @@ ParticleSimulator/fast:
 .PHONY : ParticleSimulator/fast
 
 #=============================================================================
+# Target rules for targets named physics_lib
+
+# Build rule for target.
+physics_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 physics_lib
+.PHONY : physics_lib
+
+# fast build rule for target.
+physics_lib/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/build
+.PHONY : physics_lib/fast
+
+#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -426,6 +439,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ParticleSimulator"
+	@echo "... physics_lib"
 	@echo "... tests"
 	@echo "... src/BorderInfo.o"
 	@echo "... src/BorderInfo.i"

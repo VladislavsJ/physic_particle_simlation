@@ -139,61 +139,19 @@ tests/CMakeFiles/tests.dir/test_physics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test_physics.cpp.s"
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp -o CMakeFiles/tests.dir/test_physics.cpp.s
 
-tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp
-tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o: tests/CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o -MF CMakeFiles/tests.dir/__/src/Particle.cpp.o.d -o CMakeFiles/tests.dir/__/src/Particle.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp
+tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: tests/CMakeFiles/tests.dir/flags.make
+tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp
+tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: tests/CMakeFiles/tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o"
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o -MF CMakeFiles/tests.dir/test_user_interractions.cpp.o.d -o CMakeFiles/tests.dir/test_user_interractions.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp
 
-tests/CMakeFiles/tests.dir/__/src/Particle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/__/src/Particle.cpp.i"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp > CMakeFiles/tests.dir/__/src/Particle.cpp.i
+tests/CMakeFiles/tests.dir/test_user_interractions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/test_user_interractions.cpp.i"
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp > CMakeFiles/tests.dir/test_user_interractions.cpp.i
 
-tests/CMakeFiles/tests.dir/__/src/Particle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/__/src/Particle.cpp.s"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp -o CMakeFiles/tests.dir/__/src/Particle.cpp.s
-
-tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp
-tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o: tests/CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o -MF CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o.d -o CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp
-
-tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.i"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp > CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.i
-
-tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.s"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp -o CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.s
-
-tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp
-tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o: tests/CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o -MF CMakeFiles/tests.dir/__/src/Physics.cpp.o.d -o CMakeFiles/tests.dir/__/src/Physics.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp
-
-tests/CMakeFiles/tests.dir/__/src/Physics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/__/src/Physics.cpp.i"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp > CMakeFiles/tests.dir/__/src/Physics.cpp.i
-
-tests/CMakeFiles/tests.dir/__/src/Physics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/__/src/Physics.cpp.s"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp -o CMakeFiles/tests.dir/__/src/Physics.cpp.s
-
-tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp
-tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o: tests/CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o -MF CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o.d -o CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp
-
-tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/__/src/BorderInfo.cpp.i"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp > CMakeFiles/tests.dir/__/src/BorderInfo.cpp.i
-
-tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/__/src/BorderInfo.cpp.s"
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp -o CMakeFiles/tests.dir/__/src/BorderInfo.cpp.s
+tests/CMakeFiles/tests.dir/test_user_interractions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test_user_interractions.cpp.s"
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp -o CMakeFiles/tests.dir/test_user_interractions.cpp.s
 
 # Object files for target tests
 tests_OBJECTS = \
@@ -202,10 +160,7 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/test_complete_system.cpp.o" \
 "CMakeFiles/tests.dir/test_main.cpp.o" \
 "CMakeFiles/tests.dir/test_physics.cpp.o" \
-"CMakeFiles/tests.dir/__/src/Particle.cpp.o" \
-"CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o" \
-"CMakeFiles/tests.dir/__/src/Physics.cpp.o" \
-"CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o"
+"CMakeFiles/tests.dir/test_user_interractions.cpp.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
@@ -215,20 +170,18 @@ tests/tests: tests/CMakeFiles/tests.dir/test_Particles.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/test_complete_system.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/test_main.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/test_physics.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o
+tests/tests: tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/build.make
+tests/tests: tests/libphysics_lib.a
 tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
-tests/tests: /usr/lib/x86_64-linux-gnu/libgtest_main.a
-tests/tests: /usr/lib/x86_64-linux-gnu/libgtest.a
 tests/tests: /usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so
 tests/tests: /usr/lib/x86_64-linux-gnu/libpthread.a
+tests/tests: /usr/lib/x86_64-linux-gnu/libgtest_main.a
+tests/tests: /usr/lib/x86_64-linux-gnu/libgtest.a
 tests/tests: tests/CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable tests"
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

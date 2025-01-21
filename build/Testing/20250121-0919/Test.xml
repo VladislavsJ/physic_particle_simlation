@@ -21,11 +21,11 @@
 	TotalVirtualMemory="4095"
 	TotalPhysicalMemory="13823"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="4017.08"
+	ProcessorClockFrequency="3992.59"
 	>
 	<Testing>
-		<StartDateTime>Jan 21 11:53 EET</StartDateTime>
-		<StartTestTime>1737453224</StartTestTime>
+		<StartDateTime>Jan 21 14:48 EET</StartDateTime>
+		<StartTestTime>1737463694</StartTestTime>
 		<TestList>
 			<Test>./tests/tests</Test>
 		</TestList>
@@ -42,7 +42,7 @@
 					<Value>1</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0159296</Value>
+					<Value>0.209409</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -57,12 +57,12 @@
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value encoding="base64" compression="gzip">eJytVttu4jAQffdXzGO7WwKhkBCkPrAqrdAiihp6kVCFTDJprHWcbOxA2a9fJ6GUW4Gu1g+BjM+ZGR/POB5frcYL3GdCMPEKpgkKpZIQpHEEjeIFZMb0r0HGldV4gVseTykvAShmLI1FhEKDUVWyZAvcWPdaMh9pOtI2Mob7hwEU42VzyrhN6YypxRJWjrufh2BwVoNInh9yesOQ+y77g8fcbgBPcDykqWIex1N8b2NPcL966wmpqPDwoCTb4FWA03alhIOKFeXnZJPVXGetFrKQCqPdDd2dNzq+/27dXMJh7F6J9lDeTbKjrlkQYKqLsh97VLFYyKMBD7JPTWEUZ16ou2nl7GjYHcapoe5mmHKaJF+Kto/0D/L+iFMfU0meev0+BJRxyITSz2lhBy9E7xcwCSxKOOZnA/pf0X/pHs6c3co9UoMlZ3/5lgdcyXRpntpu1X7Yje5b8Z9UI/QZrc449atuSFP0J/NJvzoYDR6qAucT7/l5EsRcZ1xNwoVk3kR3E5eTx1q1SLV4TiLKhOElSbvZhhutWJYi6b4l6GltAH9nlOuDDOIAVIgSYUZ5hrJNQGf9HUySZ/cUMi/Usrahrt8vSS7pTafX717vz3xv5+8X4VDXrzOGxQJlTpFbBbM2Y3SShC+Wh/N/0q+ckoWEdedDw1GI4C/7VR92U1RzRAEBE/pIQ24sgAofHKNlBnlFmoZj1Wu1Wqthtay67VxewLyQFd88RF9Cd+j2+neD3KxdkjU/mO8J1clomfTX0rBt7cisW1bDdhpO/YKUQTZguUlHqzVMxzIty9GwPB+yjLINdophN+xLu2U3TQsrtaZBdPjY00rqHGQYZ9yHiCqd8mspMHwDH7miIxbpLc8jQhCnH7Yr83yrVD7dq6MVs848VDOfXREU0rTix3NBxut3kAN3D0ipMDa7Wq9l2HHdci1OyTQ2V1gvrRfAmcwbbKolnLePNcyJKhGi/S9xo647cslf6n34/g==</Value>
+					<Value encoding="base64" compression="gzip">eJy1V9tu4kgQffdX1GOyG4zNNUY7K5FMMooWhSiQzEhRhBq7jHvHt+1uQ9iv3/IFsIEAmZ3pB4Or69anqo7tl0/r9QqPSRjycAZmCxRKJcEVUQDt7AZkwulX115q6/UKX/xoyvxcAcM5F1EYYEjKqGpJvKVc8ZpbPjMxJpn2Ao9P95Ct1+qW/kWwOVfLQi1fw78OqcGZAYE8P+T0lqPvjPi/eMxtRfEExw9MKG77eIrvbd0T3K/v7kKpWGjjQUi2ldcBTqtKrg4qUsw/16pW7bLV+iBLqTDYLejuvt53nJW0eoTDunsh2mOyEsm++sxdFwU15SCymeJRKI8GPGh9agrjKLE9mqa1s6NhdyxODTWco/BZHH8o2j6jH4D3KhIOCql9vRsMwGXchyRUdJ1mcrA9tL8Dl8CD2MeUG9D5CP6Fezgz27ute6QJC6P9DWzmpJWZjlia3G7fbuT6zVv2X6sH6HBWn/vMqY88JtCZLCaD+v34/qke4mJif/s2cSOfcq7H3lJye0Lz5MvJs1HPcs2uk4DxULfjuNfuwS1hlgjUbt5itAkdwH8S5hOVQeSC8lAizJmfoOxpQFn/DqaWZvfV47ZHwPagQfdNLQX1tn83uPm8P/O9s78fhENzX7Z4yA4oUxO51TKlHb0fx/6yoOefhF++JTMIG9YGw7GH4BQTS3Q3RbVADMHlIZEa+voSWOiApV+abtqTpm51GoZhXLY6l51G12pewCKDFd9sREfCzcPobjC8T8XkUiv5wbQmjJIhmMA09W6XHJmNTqfVtVpW40LLg1TUUhFFM1qm1TE7HYvU0ny0Isq2spWtbqvb7F5222YHa0Zb1yh8ZBOSlIP0osR3IGCKUp7lAMNv4KCv2JgHVPI0IriR2Mg+medbrfJurY52TNnyUM80y2P6JJGeRwoFszM63Z26fRr6VaJUFI6j2YxoYRgOXfcntVJC0SY8DbeKl3WVZWy66jkdP5rGHkyzLOQD4+LFeNVdLii1WKCUxGoAfVvR6PaIBn25GegeKJGglp9gVbQpQmEHzKXgkPkC2+f2d32rQicCQuXu7LL3XuORzx2cMnHtsXCGsrT/a1E1m40PEl6ylb4+Q3WdiPSJXBKPlzGenW/xYqs2XSqq2/RvCgN/GEbNMCC7/kmaW9a9XoaJOOKjVfJRpAF84wkUuSqVOPN5xURR4yCap6/XdEaQWTSq9C/G+zg55plQj2fc2DZ0I+PGlrVNhibWzBUTboyqRHih5Q4q0raR81zqoLpj6Bkhlpapa3kh8h5IM8FVn5ABYRoi4RlwJ47ovFVgg4hwSNXs9D1DnDRH748CnDVOnadHPvPUdTq7V+gReUai+o5zohGctZu7lHuUPuk9p9t9l33f+0RThGPNiRah9lL+Bjzw7QeChToFsxqlYHTOh/5olCNsGrmxXgW+cHkBPpdpIaf0DFv0jr2xnPiY+iGu/F+NoWl0osJ6fDMaj7T/ADI5A/w=</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Jan 21 11:53 EET</EndDateTime>
-		<EndTestTime>1737453224</EndTestTime>
+		<EndDateTime>Jan 21 14:48 EET</EndDateTime>
+		<EndTestTime>1737463694</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

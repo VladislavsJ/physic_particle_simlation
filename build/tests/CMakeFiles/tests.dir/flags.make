@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src
 
-CXX_FLAGS = -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -fopenmp
+CXX_FLAGS = -g -std=c++17 -fopenmp -DGTEST_HAS_PTHREAD=1
 

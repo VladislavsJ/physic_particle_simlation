@@ -127,6 +127,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+tests/CMakeFiles/physics_lib.dir/rule:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/physics_lib.dir/rule
+.PHONY : tests/CMakeFiles/physics_lib.dir/rule
+
+# Convenience name for target.
+physics_lib: tests/CMakeFiles/physics_lib.dir/rule
+.PHONY : physics_lib
+
+# fast build rule for target.
+physics_lib/fast:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/build
+.PHONY : physics_lib/fast
+
+# Convenience name for target.
 tests/CMakeFiles/tests.dir/rule:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/tests.dir/rule
 .PHONY : tests/CMakeFiles/tests.dir/rule
@@ -145,7 +159,7 @@ __/src/BorderInfo.o: __/src/BorderInfo.cpp.o
 
 # target to build an object file
 __/src/BorderInfo.cpp.o:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.o
 .PHONY : __/src/BorderInfo.cpp.o
 
 __/src/BorderInfo.i: __/src/BorderInfo.cpp.i
@@ -153,7 +167,7 @@ __/src/BorderInfo.i: __/src/BorderInfo.cpp.i
 
 # target to preprocess a source file
 __/src/BorderInfo.cpp.i:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.i
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.i
 .PHONY : __/src/BorderInfo.cpp.i
 
 __/src/BorderInfo.s: __/src/BorderInfo.cpp.s
@@ -161,15 +175,39 @@ __/src/BorderInfo.s: __/src/BorderInfo.cpp.s
 
 # target to generate assembly for a file
 __/src/BorderInfo.cpp.s:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.s
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.s
 .PHONY : __/src/BorderInfo.cpp.s
+
+__/src/Graphs_new.o: __/src/Graphs_new.cpp.o
+.PHONY : __/src/Graphs_new.o
+
+# target to build an object file
+__/src/Graphs_new.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.o
+.PHONY : __/src/Graphs_new.cpp.o
+
+__/src/Graphs_new.i: __/src/Graphs_new.cpp.i
+.PHONY : __/src/Graphs_new.i
+
+# target to preprocess a source file
+__/src/Graphs_new.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.i
+.PHONY : __/src/Graphs_new.cpp.i
+
+__/src/Graphs_new.s: __/src/Graphs_new.cpp.s
+.PHONY : __/src/Graphs_new.s
+
+# target to generate assembly for a file
+__/src/Graphs_new.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.s
+.PHONY : __/src/Graphs_new.cpp.s
 
 __/src/Particle.o: __/src/Particle.cpp.o
 .PHONY : __/src/Particle.o
 
 # target to build an object file
 __/src/Particle.cpp.o:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.o
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Particle.cpp.o
 .PHONY : __/src/Particle.cpp.o
 
 __/src/Particle.i: __/src/Particle.cpp.i
@@ -177,7 +215,7 @@ __/src/Particle.i: __/src/Particle.cpp.i
 
 # target to preprocess a source file
 __/src/Particle.cpp.i:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.i
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Particle.cpp.i
 .PHONY : __/src/Particle.cpp.i
 
 __/src/Particle.s: __/src/Particle.cpp.s
@@ -185,7 +223,7 @@ __/src/Particle.s: __/src/Particle.cpp.s
 
 # target to generate assembly for a file
 __/src/Particle.cpp.s:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Particle.cpp.s
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Particle.cpp.s
 .PHONY : __/src/Particle.cpp.s
 
 __/src/ParticleSystem.o: __/src/ParticleSystem.cpp.o
@@ -193,7 +231,7 @@ __/src/ParticleSystem.o: __/src/ParticleSystem.cpp.o
 
 # target to build an object file
 __/src/ParticleSystem.cpp.o:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/ParticleSystem.cpp.o
 .PHONY : __/src/ParticleSystem.cpp.o
 
 __/src/ParticleSystem.i: __/src/ParticleSystem.cpp.i
@@ -201,7 +239,7 @@ __/src/ParticleSystem.i: __/src/ParticleSystem.cpp.i
 
 # target to preprocess a source file
 __/src/ParticleSystem.cpp.i:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.i
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/ParticleSystem.cpp.i
 .PHONY : __/src/ParticleSystem.cpp.i
 
 __/src/ParticleSystem.s: __/src/ParticleSystem.cpp.s
@@ -209,7 +247,7 @@ __/src/ParticleSystem.s: __/src/ParticleSystem.cpp.s
 
 # target to generate assembly for a file
 __/src/ParticleSystem.cpp.s:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.s
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/ParticleSystem.cpp.s
 .PHONY : __/src/ParticleSystem.cpp.s
 
 __/src/Physics.o: __/src/Physics.cpp.o
@@ -217,7 +255,7 @@ __/src/Physics.o: __/src/Physics.cpp.o
 
 # target to build an object file
 __/src/Physics.cpp.o:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Physics.cpp.o
 .PHONY : __/src/Physics.cpp.o
 
 __/src/Physics.i: __/src/Physics.cpp.i
@@ -225,7 +263,7 @@ __/src/Physics.i: __/src/Physics.cpp.i
 
 # target to preprocess a source file
 __/src/Physics.cpp.i:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.i
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Physics.cpp.i
 .PHONY : __/src/Physics.cpp.i
 
 __/src/Physics.s: __/src/Physics.cpp.s
@@ -233,8 +271,152 @@ __/src/Physics.s: __/src/Physics.cpp.s
 
 # target to generate assembly for a file
 __/src/Physics.cpp.s:
-	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/__/src/Physics.cpp.s
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Physics.cpp.s
 .PHONY : __/src/Physics.cpp.s
+
+__/src/Renderer.o: __/src/Renderer.cpp.o
+.PHONY : __/src/Renderer.o
+
+# target to build an object file
+__/src/Renderer.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.o
+.PHONY : __/src/Renderer.cpp.o
+
+__/src/Renderer.i: __/src/Renderer.cpp.i
+.PHONY : __/src/Renderer.i
+
+# target to preprocess a source file
+__/src/Renderer.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.i
+.PHONY : __/src/Renderer.cpp.i
+
+__/src/Renderer.s: __/src/Renderer.cpp.s
+.PHONY : __/src/Renderer.s
+
+# target to generate assembly for a file
+__/src/Renderer.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.s
+.PHONY : __/src/Renderer.cpp.s
+
+__/src/graphical_items.o: __/src/graphical_items.cpp.o
+.PHONY : __/src/graphical_items.o
+
+# target to build an object file
+__/src/graphical_items.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/graphical_items.cpp.o
+.PHONY : __/src/graphical_items.cpp.o
+
+__/src/graphical_items.i: __/src/graphical_items.cpp.i
+.PHONY : __/src/graphical_items.i
+
+# target to preprocess a source file
+__/src/graphical_items.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/graphical_items.cpp.i
+.PHONY : __/src/graphical_items.cpp.i
+
+__/src/graphical_items.s: __/src/graphical_items.cpp.s
+.PHONY : __/src/graphical_items.s
+
+# target to generate assembly for a file
+__/src/graphical_items.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/graphical_items.cpp.s
+.PHONY : __/src/graphical_items.cpp.s
+
+__/src/main.o: __/src/main.cpp.o
+.PHONY : __/src/main.o
+
+# target to build an object file
+__/src/main.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/main.cpp.o
+.PHONY : __/src/main.cpp.o
+
+__/src/main.i: __/src/main.cpp.i
+.PHONY : __/src/main.i
+
+# target to preprocess a source file
+__/src/main.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/main.cpp.i
+.PHONY : __/src/main.cpp.i
+
+__/src/main.s: __/src/main.cpp.s
+.PHONY : __/src/main.s
+
+# target to generate assembly for a file
+__/src/main.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/main.cpp.s
+.PHONY : __/src/main.cpp.s
+
+__/src/simulation_examples.o: __/src/simulation_examples.cpp.o
+.PHONY : __/src/simulation_examples.o
+
+# target to build an object file
+__/src/simulation_examples.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/simulation_examples.cpp.o
+.PHONY : __/src/simulation_examples.cpp.o
+
+__/src/simulation_examples.i: __/src/simulation_examples.cpp.i
+.PHONY : __/src/simulation_examples.i
+
+# target to preprocess a source file
+__/src/simulation_examples.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/simulation_examples.cpp.i
+.PHONY : __/src/simulation_examples.cpp.i
+
+__/src/simulation_examples.s: __/src/simulation_examples.cpp.s
+.PHONY : __/src/simulation_examples.s
+
+# target to generate assembly for a file
+__/src/simulation_examples.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/simulation_examples.cpp.s
+.PHONY : __/src/simulation_examples.cpp.s
+
+__/src/user_interactions_new.o: __/src/user_interactions_new.cpp.o
+.PHONY : __/src/user_interactions_new.o
+
+# target to build an object file
+__/src/user_interactions_new.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interactions_new.cpp.o
+.PHONY : __/src/user_interactions_new.cpp.o
+
+__/src/user_interactions_new.i: __/src/user_interactions_new.cpp.i
+.PHONY : __/src/user_interactions_new.i
+
+# target to preprocess a source file
+__/src/user_interactions_new.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interactions_new.cpp.i
+.PHONY : __/src/user_interactions_new.cpp.i
+
+__/src/user_interactions_new.s: __/src/user_interactions_new.cpp.s
+.PHONY : __/src/user_interactions_new.s
+
+# target to generate assembly for a file
+__/src/user_interactions_new.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interactions_new.cpp.s
+.PHONY : __/src/user_interactions_new.cpp.s
+
+__/src/user_interface.o: __/src/user_interface.cpp.o
+.PHONY : __/src/user_interface.o
+
+# target to build an object file
+__/src/user_interface.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interface.cpp.o
+.PHONY : __/src/user_interface.cpp.o
+
+__/src/user_interface.i: __/src/user_interface.cpp.i
+.PHONY : __/src/user_interface.i
+
+# target to preprocess a source file
+__/src/user_interface.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interface.cpp.i
+.PHONY : __/src/user_interface.cpp.i
+
+__/src/user_interface.s: __/src/user_interface.cpp.s
+.PHONY : __/src/user_interface.s
+
+# target to generate assembly for a file
+__/src/user_interface.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/user_interface.cpp.s
+.PHONY : __/src/user_interface.cpp.s
 
 testGlobalVar.o: testGlobalVar.cpp.o
 .PHONY : testGlobalVar.o
@@ -356,6 +538,30 @@ test_physics.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_physics.cpp.s
 .PHONY : test_physics.cpp.s
 
+test_user_interractions.o: test_user_interractions.cpp.o
+.PHONY : test_user_interractions.o
+
+# target to build an object file
+test_user_interractions.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o
+.PHONY : test_user_interractions.cpp.o
+
+test_user_interractions.i: test_user_interractions.cpp.i
+.PHONY : test_user_interractions.i
+
+# target to preprocess a source file
+test_user_interractions.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_user_interractions.cpp.i
+.PHONY : test_user_interractions.cpp.i
+
+test_user_interractions.s: test_user_interractions.cpp.s
+.PHONY : test_user_interractions.s
+
+# target to generate assembly for a file
+test_user_interractions.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_user_interractions.cpp.s
+.PHONY : test_user_interractions.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -365,10 +571,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... physics_lib"
 	@echo "... tests"
 	@echo "... __/src/BorderInfo.o"
 	@echo "... __/src/BorderInfo.i"
 	@echo "... __/src/BorderInfo.s"
+	@echo "... __/src/Graphs_new.o"
+	@echo "... __/src/Graphs_new.i"
+	@echo "... __/src/Graphs_new.s"
 	@echo "... __/src/Particle.o"
 	@echo "... __/src/Particle.i"
 	@echo "... __/src/Particle.s"
@@ -378,6 +588,24 @@ help:
 	@echo "... __/src/Physics.o"
 	@echo "... __/src/Physics.i"
 	@echo "... __/src/Physics.s"
+	@echo "... __/src/Renderer.o"
+	@echo "... __/src/Renderer.i"
+	@echo "... __/src/Renderer.s"
+	@echo "... __/src/graphical_items.o"
+	@echo "... __/src/graphical_items.i"
+	@echo "... __/src/graphical_items.s"
+	@echo "... __/src/main.o"
+	@echo "... __/src/main.i"
+	@echo "... __/src/main.s"
+	@echo "... __/src/simulation_examples.o"
+	@echo "... __/src/simulation_examples.i"
+	@echo "... __/src/simulation_examples.s"
+	@echo "... __/src/user_interactions_new.o"
+	@echo "... __/src/user_interactions_new.i"
+	@echo "... __/src/user_interactions_new.s"
+	@echo "... __/src/user_interface.o"
+	@echo "... __/src/user_interface.i"
+	@echo "... __/src/user_interface.s"
 	@echo "... testGlobalVar.o"
 	@echo "... testGlobalVar.i"
 	@echo "... testGlobalVar.s"
@@ -393,6 +621,9 @@ help:
 	@echo "... test_physics.o"
 	@echo "... test_physics.i"
 	@echo "... test_physics.s"
+	@echo "... test_user_interractions.o"
+	@echo "... test_user_interractions.i"
+	@echo "... test_user_interractions.s"
 .PHONY : help
 
 

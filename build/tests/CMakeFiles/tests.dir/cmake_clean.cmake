@@ -1,12 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o"
-  "CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o.d"
-  "CMakeFiles/tests.dir/__/src/Particle.cpp.o"
-  "CMakeFiles/tests.dir/__/src/Particle.cpp.o.d"
-  "CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o"
-  "CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o.d"
-  "CMakeFiles/tests.dir/__/src/Physics.cpp.o"
-  "CMakeFiles/tests.dir/__/src/Physics.cpp.o.d"
   "CMakeFiles/tests.dir/testGlobalVar.cpp.o"
   "CMakeFiles/tests.dir/testGlobalVar.cpp.o.d"
   "CMakeFiles/tests.dir/test_Particles.cpp.o"
@@ -17,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/test_main.cpp.o.d"
   "CMakeFiles/tests.dir/test_physics.cpp.o"
   "CMakeFiles/tests.dir/test_physics.cpp.o.d"
+  "CMakeFiles/tests.dir/test_user_interractions.cpp.o"
+  "CMakeFiles/tests.dir/test_user_interractions.cpp.o.d"
   "tests"
   "tests.pdb"
 )
