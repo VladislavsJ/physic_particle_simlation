@@ -11,6 +11,7 @@ void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
 }
 void ParticleSystem::update(float deltaTime) {
   // 1. Apply gravity to each particle
+
   for (auto &p : m_particles) {
     Physics::applyGravity(p, deltaTime);
 
@@ -20,7 +21,6 @@ void ParticleSystem::update(float deltaTime) {
     // Handle border collisions
     Physics::update_border_speed(p);
   }
-
   Physics::handleCollisions(m_particles);
 }
 

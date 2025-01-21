@@ -15,9 +15,11 @@ void applyGravity(Particle &p, float deltaTime) {
 }
 void handleCollisions(std::vector<Particle> &particles) {
   // Iterate through all unique pairs of particles
-
+#pragma omp parallel for num_threads(                                          \
+        4) // 1 thread 1100particles, 4 threads 1700,
   for (size_t i = 0; i < particles.size(); ++i) {
     Particle &p1 = particles[i];
+
     for (size_t j = i + 1; j < particles.size(); ++j) {
 
       Particle &p2 = particles[j];

@@ -3,8 +3,8 @@
 
 #include "BorderInfo.hpp"
 #include "Vector2D.hpp"
+#include <SFML/Graphics.hpp>
 #include <cmath>
-
 // TODO LIST
 // TODO0: High risk, must be fixed and thoroughly checked before use.
 // TODO1: Important functionality, but the system may operate without it.
@@ -21,7 +21,8 @@
 class Particle {
 public:
   Particle(Vector2D position, Vector2D velocity, float radius = 25.0f,
-           int type = 0, float charge = 0, float density = 1.0f);
+           int type = 0, float charge = 0, float density = 1.0f,
+           sf::Color color = sf::Color::White);
 
   // Getters
   Vector2D getPosition() const;
@@ -32,7 +33,7 @@ public:
   float getDensity() const;
   int getType() const;
   int getElasticity() const;
-
+  sf::Color getColor() const;
   // Setters
   void setPosition(const Vector2D &pos);
   void setVelocity(const Vector2D &vel);
@@ -43,6 +44,8 @@ public:
   void limitCoordinates(int fieldSizeX, int fieldSizeY, int fieldStartX = 0,
                         int fieldStartY = 0);
   void setElasticity(float e);
+  sf::Color changeColor_Fspeed() const;
+  void setColor(sf::Color color);
   // More like a bug hider: if a particle is out of the field, it will be set to
   // the border
   // TODO3: limitCoordinates should not be needed at all
@@ -62,6 +65,7 @@ private:
   float m_density;
   float m_elasticity; // How much energy is lost in the collision
   int m_type;         // TODO3: For different particle types
+  sf::Color m_color;  // TODO3:
 };
 
 #endif // PARTICLE_H

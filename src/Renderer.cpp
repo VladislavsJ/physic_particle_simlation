@@ -30,7 +30,8 @@ void Renderer::render(const ParticleSystem &particleSystem, bool clear) {
     circle.setOrigin(circle.getRadius(), circle.getRadius());
     circle.setPosition(p.getPosition().x, p.getPosition().y);
     // TODO3: Set color, for different particles
-
+    sf::Color pColor = p.changeColor_Fspeed();
+    circle.setFillColor(pColor);
     m_window.draw(circle);
   }
 }
