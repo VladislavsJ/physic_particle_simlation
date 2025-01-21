@@ -21,14 +21,48 @@
 	TotalVirtualMemory="4095"
 	TotalPhysicalMemory="13823"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="4019.39"
+	ProcessorClockFrequency="4017.08"
 	>
 	<Testing>
-		<StartDateTime>Jan 21 11:38 EET</StartDateTime>
-		<StartTestTime>1737452307</StartTestTime>
-		<TestList/>
-		<EndDateTime>Jan 21 11:38 EET</EndDateTime>
-		<EndTestTime>1737452307</EndTestTime>
+		<StartDateTime>Jan 21 11:53 EET</StartDateTime>
+		<StartTestTime>1737453224</StartTestTime>
+		<TestList>
+			<Test>./tests/tests</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>tests</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/tests</FullName>
+			<FullCommandLine>/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0159296</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJytVttu4jAQffdXzGO7WwKhkBCkPrAqrdAiihp6kVCFTDJprHWcbOxA2a9fJ6GUW4Gu1g+BjM+ZGR/POB5frcYL3GdCMPEKpgkKpZIQpHEEjeIFZMb0r0HGldV4gVseTykvAShmLI1FhEKDUVWyZAvcWPdaMh9pOtI2Mob7hwEU42VzyrhN6YypxRJWjrufh2BwVoNInh9yesOQ+y77g8fcbgBPcDykqWIex1N8b2NPcL966wmpqPDwoCTb4FWA03alhIOKFeXnZJPVXGetFrKQCqPdDd2dNzq+/27dXMJh7F6J9lDeTbKjrlkQYKqLsh97VLFYyKMBD7JPTWEUZ16ou2nl7GjYHcapoe5mmHKaJF+Kto/0D/L+iFMfU0meev0+BJRxyITSz2lhBy9E7xcwCSxKOOZnA/pf0X/pHs6c3co9UoMlZ3/5lgdcyXRpntpu1X7Yje5b8Z9UI/QZrc449atuSFP0J/NJvzoYDR6qAucT7/l5EsRcZ1xNwoVk3kR3E5eTx1q1SLV4TiLKhOElSbvZhhutWJYi6b4l6GltAH9nlOuDDOIAVIgSYUZ5hrJNQGf9HUySZ/cUMi/Usrahrt8vSS7pTafX717vz3xv5+8X4VDXrzOGxQJlTpFbBbM2Y3SShC+Wh/N/0q+ckoWEdedDw1GI4C/7VR92U1RzRAEBE/pIQ24sgAofHKNlBnlFmoZj1Wu1Wqthtay67VxewLyQFd88RF9Cd+j2+neD3KxdkjU/mO8J1clomfTX0rBt7cisW1bDdhpO/YKUQTZguUlHqzVMxzIty9GwPB+yjLINdophN+xLu2U3TQsrtaZBdPjY00rqHGQYZ9yHiCqd8mspMHwDH7miIxbpLc8jQhCnH7Yr83yrVD7dq6MVs848VDOfXREU0rTix3NBxut3kAN3D0ipMDa7Wq9l2HHdci1OyTQ2V1gvrRfAmcwbbKolnLePNcyJKhGi/S9xo647cslf6n34/g==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jan 21 11:53 EET</EndDateTime>
+		<EndTestTime>1737453224</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

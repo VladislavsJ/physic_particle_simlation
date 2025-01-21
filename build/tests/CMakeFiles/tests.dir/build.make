@@ -220,8 +220,13 @@ tests/tests: tests/CMakeFiles/tests.dir/__/src/ParticleSystem.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/__/src/Physics.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/__/src/BorderInfo.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/build.make
+tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
+tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
+tests/tests: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 tests/tests: /usr/lib/x86_64-linux-gnu/libgtest_main.a
 tests/tests: /usr/lib/x86_64-linux-gnu/libgtest.a
+tests/tests: /usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so
+tests/tests: /usr/lib/x86_64-linux-gnu/libpthread.a
 tests/tests: tests/CMakeFiles/tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable tests"
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)

@@ -22,9 +22,11 @@ int main() {
   // std::vector<Graph> &graphs(2); // can't visualize the graphs, in the while
   // loop below, should be fixed
   //  now vector is not used.
+
+  // TODO3: should be another class
   Graph graphFPS;
   Graph graphParticleCnt;
-
+  std::vector<Graph> graphs;
   // two graphs to show FPS and particle count
   if (!graphFPS.init(gv.getFieldSizeX() /*inStartX*/, 50 /*inStartY*/,
                      180 /*inSizeX*/, 180 /*inSizeY*/)) {
@@ -36,6 +38,10 @@ int main() {
     std::cerr << "Failed to initialize graph Particle Count" << std::endl;
     return 1;
   }
+  //
+
+  graphs.push_back(graphFPS);
+  graphs.push_back(graphParticleCnt);
   // graphs.push_back(graphParticleCnt);
 
   // 1) Instantiate UserInteractions
@@ -43,10 +49,6 @@ int main() {
   // Create ParticleSystem
   ParticleSystem particleSystem;
   // Test particles
-  particleSystem.addParticle(
-      Particle(Vector2D(300, 400), Vector2D(0, 0), 25, 1));
-  particleSystem.addParticle(
-      Particle(Vector2D(300, 450), Vector2D(0, 0), 30, 1));
   make_test1(particleSystem);
   // Setup timing, idea is to hold constant frame rate, while possible and CPU
   // are abble to do so
@@ -107,18 +109,11 @@ int main() {
                                   // passed to update the system
       // to calculate the new position of the particles
     }
-    // Render everything
-    renderer.clear();
-    renderer.render(
-        particleSystem,
-        false); // false means not to clear the screen before rendering
-
-    renderer.render_graph(graphFPS, false);
-    renderer.render_graph(graphParticleCnt, false);
-    renderer.renderUI(ui);
+    renderer.RenderAll(particleSystem, ui, graphs);
     renderer.display();
 
-    // Update graphs every 10 frames,
+    // TODO3: Should be another class
+    //  Update graphs every 10 frames,
     if (cnt % 10 == 0) {
       graphFPS.updateData(
           cnt, std::chrono::duration_cast<std::chrono::duration<float>>(
@@ -135,7 +130,11 @@ int main() {
     if (frameDuration < FRAME_TIME) {
       sf::sleep(sf::seconds((FRAME_TIME - frameDuration).count()));
     }
+    // make a start delay
+    if (cnt == 1) {
+      sf::sleep(sf::seconds(1));
+    }
   }
-
+  //
   return 0;
 }

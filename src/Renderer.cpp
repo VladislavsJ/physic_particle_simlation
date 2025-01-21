@@ -110,3 +110,13 @@ void Renderer::renderUI(const UserInteractions &ui) {
     btnPair.first.renderButton(m_window);
   }
 }
+void Renderer::RenderAll(const ParticleSystem &particleSystem,
+                         const UserInteractions &ui,
+                         const std::vector<Graph> &graphs) {
+
+  frameCNT++;
+  clear();
+  render(particleSystem, false);
+  render_graphs(const_cast<std::vector<Graph> &>(graphs), false);
+  renderUI(ui);
+}

@@ -85,7 +85,7 @@ void UserInteractions::onLeftClick(const sf::Vector2f &mousePos,
 
         std::vector<Particle> newParticles{p};
         particleSystem.addParticles(newParticles);
-        m_rightClickStart = false;
+        // m_rightClickStart = false;
       }
       if (m_currentInteractionType == InteractionType::Stop) {
         // wait, stop the simulation(in main), until the user clicks on the

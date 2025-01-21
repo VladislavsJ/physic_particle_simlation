@@ -1,3 +1,76 @@
-Start testing: Jan 21 11:38 EET
+Start testing: Jan 21 11:53 EET
 ----------------------------------------------------------
-End testing: Jan 21 11:38 EET
+1/1 Testing: tests
+1/1 Test: tests
+Command: "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests/tests"
+Directory: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests
+"tests" start time: Jan 21 11:53 EET
+Output:
+----------------------------------------------------------
+[==========] Running 11 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from GlobalVarTest
+[ RUN      ] GlobalVarTest.GravityTest
+[       OK ] GlobalVarTest.GravityTest (0 ms)
+[ RUN      ] GlobalVarTest.FieldSizeTest
+[       OK ] GlobalVarTest.FieldSizeTest (0 ms)
+[ RUN      ] GlobalVarTest.ParticleSizeTest
+[       OK ] GlobalVarTest.ParticleSizeTest (0 ms)
+[ RUN      ] GlobalVarTest.GlobalVarInstance
+[       OK ] GlobalVarTest.GlobalVarInstance (0 ms)
+[----------] 4 tests from GlobalVarTest (0 ms total)
+
+[----------] 5 tests from ParticleSystemTest
+[ RUN      ] ParticleSystemTest.AddParticle
+[       OK ] ParticleSystemTest.AddParticle (0 ms)
+[ RUN      ] ParticleSystemTest.ParticlesAtDifferentLocations
+[       OK ] ParticleSystemTest.ParticlesAtDifferentLocations (0 ms)
+[ RUN      ] ParticleSystemTest.TouchingParticles
+[       OK ] ParticleSystemTest.TouchingParticles (0 ms)
+[ RUN      ] ParticleSystemTest.OverlappingParticles
+[       OK ] ParticleSystemTest.OverlappingParticles (0 ms)
+[ RUN      ] ParticleSystemTest.ParticlesAtBorders
+WILL fail until border check is implemented
+[       OK ] ParticleSystemTest.ParticlesAtBorders (9 ms)
+[----------] 5 tests from ParticleSystemTest (9 ms total)
+
+[----------] 1 test from SampleTest
+[ RUN      ] SampleTest.Example
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_main.cpp:5: Failure
+Expected equality of these values:
+  1 + 1
+    Which is: 2
+  3
+
+[  FAILED  ] SampleTest.Example (0 ms)
+[----------] 1 test from SampleTest (0 ms total)
+
+[----------] 1 test from PhysicsTests
+[ RUN      ] PhysicsTests.ApplyGravity
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp:29: Failure
+The difference between finalVel.y and 9.81f is 1.962000846862793, which exceeds EPSILON, where
+finalVel.y evaluates to 11.772001266479492,
+9.81f evaluates to 9.8100004196166992, and
+EPSILON evaluates to 9.9999997473787516e-05.
+Velocity.y should match gravity * deltaTime (9.81 for deltaTime=1)
+
+[  FAILED  ] PhysicsTests.ApplyGravity (0 ms)
+[----------] 1 test from PhysicsTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 4 test suites ran. (9 ms total)
+[  PASSED  ] 9 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] SampleTest.Example
+[  FAILED  ] PhysicsTests.ApplyGravity
+
+ 2 FAILED TESTS
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"tests" end time: Jan 21 11:53 EET
+"tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 21 11:53 EET

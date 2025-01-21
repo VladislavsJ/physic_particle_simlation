@@ -11,7 +11,7 @@ void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
 }
 void ParticleSystem::update(float deltaTime) {
   // 1. Apply gravity to each particle
-
+#pragma omp parallel for num_threads(11)
   for (auto &p : m_particles) {
     Physics::applyGravity(p, deltaTime);
 

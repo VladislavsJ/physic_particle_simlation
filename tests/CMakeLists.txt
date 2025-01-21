@@ -33,6 +33,7 @@ target_link_libraries(tests
         GTest::GTest
         GTest::Main
         pthread
+        sfml-graphics sfml-window sfml-system OpenMP::OpenMP_CXX
 )
 
 # Register the tests

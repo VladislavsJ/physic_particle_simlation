@@ -33,9 +33,12 @@ public:
   void renderUI(const UserInteractions &
                     ui); // render user interaction interface, buttons, sliders.
   sf::RenderWindow &getWindow();
+  void RenderAll(const ParticleSystem &particleSystem,
+                 const UserInteractions &ui, const std::vector<Graph> &graphs);
 
 private:
   sf::RenderWindow m_window;
+  int frameCNT = 0;
 };
 
 #endif // RENDERER_H
