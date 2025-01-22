@@ -1,0 +1,41 @@
+[33m2aadf06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m MAJOR
+[33meb91e9c[m Major:
+[33m14e4921[m debug_continues
+[33m27518d9[m mess, part of the change.  should not be pushed
+[33m505ca8f[m Update readme.md
+[33m96c0c7d[m Merge branch 'main' of https://github.com/VladislavsJ/physic_particle_simlation
+[33mcd7c264[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m user interraction tests are added, some bugs are fixed.
+[33m786bfb1[m tests compilations are fixed, cmake file doesn't have all /src files to run. New test for user interractions added
+[33m2105754[m small main changes, RenderAll is added is Graphic.cpp to clean main a bit
+[33m893ee03[m Lazy multithread is added (just handleColissions loop) 2x particle amount before FPS limit  and color change added depending on the particle speed(for debug porpuses)
+[33m39ae0df[m Feature beta done, simulation can be stopped pressing on the button. I I started refactoring, I split user_intercations As it will grow, significantly with each new button all logic which interface part (buttons, sliders) is active (not yet) in the user_interface
+[33mf1724df[m IN progress:Implement a stop functionality my idea is to make a priority for each activity type as there is many buttons, but onyl one ui.getCurrentInteractionType() or make stop/start highest priority or make different lists or untoggle al buttons if other button is pressed
+[33m0db4de8[m Update readme.md
+[33m7d8033c[m Update readme.md
+[33m9ec9721[m Update readme.md
+[33mf2ea305[m Update readme.md
+[33m7e21ad6[m Create readme.md
+[33m77209f8[m Comments added, little handleCollisions in Physic.cpp optimization,
+[33m72718a6[m Merge branch 'dev' of https://github.com/VladislavsJ/physic_particle_simlation into dev
+[33mab36a3a[m Major: User interractions are added toggle_bars and buttons are created, new files, user_interactions_new and graphical_items now user can choose interaction type (now just white_balls creation) with right click choose start coordinate, with left click set particle velocity vector toggle buttons allow to change size and velocity multiplicator depending on the distance between y and x velocity increases  or decreases
+[33md7c59d6[m[33m ([m[1;32mmess[m[33m)[m toggle_bars and buttons are created, new files, user_interactions_new and graphical_items
+[33mf2b5c92[m Feature that is being worked on: User interface for the particle simulator doesn't really work as expected spagetti code, needs to be refactored
+[33m0e13ad3[m Issue #9 fixed. Fix the graphic, big particles go under the borders #9. Update_border_state modev to physics class and renamed
+[33m05d227c[m Merge branch 'dev' of https://github.com/VladislavsJ/physic_particle_simlation into dev
+[33me371138[m FPS graph fix, code has been finaly formated.
+[33m55db666[m FPS graph fix,
+[33ma8a91e9[m Major:Graphs classes are added and some code fixes Graphs classes should be upgraded, as now they are not so informative
+[33m0bcbba0[m bug with update_border_state is fixed, now particles can change border state
+[33m5721305[m balls now bouncing from all borders,
+[33mb25578c[m Merge branch 'main'render fix, setOrigin is added, logical and graphical location was not the same before
+[33mc538353[m minor changes
+[33m7f3aec5[m render fix, setOrigin is added, logical and graphical location was not the same before
+[33m8bb252f[m speed reverse is added, if second particle is on the groud now if there is a particle on the ground and other particle hits it, then they go up together, with different energy levels, it allows Particles to influence each other.Physics.cpp is updated
+[33mb6b6bdc[m now 60HZ refresh rate is a constant number (unti CPU is powerful enough) now program are not running on all CPU power Physics colissions should be checked, as they are not working properly Particle clas should divided into two classes, as there just too much material variables, and it is hard to manage them colissions with the border doesn't work at all
+[33m0461fa6[m border fuinctionality added, not fully teted yet, TODO0: particle radius change doesn't work, particles can overlap,
+[33m991ac71[m Not functionally complete, border class is done but not used yet, borders doesn't exist
+[33m98bfc54[m test for full system is added there is no borders yet, test fails basic functionality is implemented and tested
+[33m1962ece[m Google test init, add test executable.
+[33mdecea52[m Just basic prototype, values for balls are pre-assigned, tests't havent been done yet, I didn't check the colision, borders doesnt exist and balls can be assigned and go over the window. just a basic prototype to be sure that all dependencies works
+[33m31a55cc[m Add initial implementation of Particle Simulator with CMake configuration and basic physics handling
+[33m65316a4[m Predicted file structure, no code

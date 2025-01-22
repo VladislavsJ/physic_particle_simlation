@@ -1,0 +1,274 @@
+[33mcommit 505ca8f40b49d2d2c91794b48915a8398527a765[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Tue Jan 21 16:20:08 2025 +0200
+
+    Update readme.md
+
+[33mcommit 96c0c7db14edb7da259e15e16a687455708b79e5[m
+Merge: cd7c264 0db4de8
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 21 16:18:42 2025 +0200
+
+    Merge branch 'main' of https://github.com/VladislavsJ/physic_particle_simlation
+
+[33mcommit cd7c264c199e03559bfce413269aa1fad0ae9088[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 21 16:15:23 2025 +0200
+
+    user interraction tests are added,
+    some bugs are fixed.
+
+[33mcommit 786bfb13fe2b27be973ac014e1c7d7325b67b561[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 21 14:49:28 2025 +0200
+
+    tests compilations are fixed, cmake file doesn't have
+    all /src files to run.
+    New test for user interractions added
+
+[33mcommit 2105754944693c80430fbf7b0e5969ee85e3dec5[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 21 12:24:52 2025 +0200
+
+    small main changes, RenderAll is added is Graphic.cpp
+    to clean main a bit
+
+[33mcommit 893ee03bb3912af871d8b743e8161035003e6fa8[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 21 11:44:46 2025 +0200
+
+    Lazy multithread is added (just handleColissions loop)
+    2x particle amount before FPS limit
+     and color change added
+    depending on the particle speed(for debug porpuses)
+
+[33mcommit 39ae0df102337eedfb45c7f8cc38e2eba09a7fa5[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Mon Jan 20 19:51:09 2025 +0200
+
+    Feature beta done, simulation can be stopped
+    pressing on the button.
+    I I started refactoring, I split user_intercations
+    As it will grow, significantly with each new button
+    all logic which interface part (buttons, sliders) is active (not yet) in the user_interface
+
+[33mcommit f1724dfdc985cbe1b8c36a215db5ee74b70e67b7[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Sat Jan 18 21:16:53 2025 +0200
+
+    IN progress:Implement a stop functionality
+    my idea is to make a priority for each activity type
+    as there is many buttons, but onyl one ui.getCurrentInteractionType()
+    or make stop/start highest priority
+    or make different lists or untoggle al buttons
+    if other button is pressed
+
+[33mcommit 0db4de8dbe9898c4b7aced674d5b7eb60ed663b6[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Fri Jan 17 18:26:43 2025 +0200
+
+    Update readme.md
+
+[33mcommit 7d8033c12195a12a0935feff2cbabc41eeee47e8[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Fri Jan 17 18:14:15 2025 +0200
+
+    Update readme.md
+
+[33mcommit 9ec9721ad10e307dfc4b76966468ba797ed405cf[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Fri Jan 17 18:10:52 2025 +0200
+
+    Update readme.md
+
+[33mcommit f2ea3051efad7c07cf25bf02fffd33b1f27d07f4[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Fri Jan 17 18:10:34 2025 +0200
+
+    Update readme.md
+
+[33mcommit 7e21ad6f73fa185373ee9ff7791bcc28d21ccbaf[m
+Author: VladislavsJacina <118118069+VladislavsJ@users.noreply.github.com>
+Date:   Fri Jan 17 18:10:20 2025 +0200
+
+    Create readme.md
+
+[33mcommit 77209f865ba8660e49e8ac0aaee1c2ae031503cb[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Fri Jan 17 17:41:08 2025 +0200
+
+    Comments added,
+    little handleCollisions in Physic.cpp optimization,
+
+[33mcommit 72718a64e0a22457c6bc2aea21ea33e4faee0ecf[m
+Merge: ab36a3a d7c59d6
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Fri Jan 17 14:24:58 2025 +0200
+
+    Merge branch 'dev' of https://github.com/VladislavsJ/physic_particle_simlation into dev
+
+[33mcommit ab36a3abacd9c41936a380d1f8805b2bae5e8f69[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Fri Jan 17 14:16:02 2025 +0200
+
+    Major: User interractions are added
+    toggle_bars and buttons are created,
+    new files, user_interactions_new and graphical_items
+    now user can choose interaction type
+    (now just white_balls creation)
+    with right click choose start coordinate,
+    with left click set particle velocity vector
+    toggle buttons allow to change size and velocity multiplicator
+    depending on the distance between y and x velocity increases
+     or decreases
+
+[33mcommit d7c59d6c4c147df0c5654c66ff6d873c13fefb6d[m[33m ([m[1;32mmess[m[33m)[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Fri Jan 17 14:16:02 2025 +0200
+
+    toggle_bars and buttons are created,
+    new files, user_interactions_new and graphical_items
+
+[33mcommit f2b5c92d17fd63a4a22a64e7957caf9048a12d9d[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Thu Jan 16 21:38:53 2025 +0200
+
+    Feature that is being worked on:
+    User interface for the particle simulator
+    doesn't really work as expected
+    spagetti code, needs to be refactored
+
+[33mcommit 0e13ad3e00738478b0c0b83ebacecf7e19a6bd00[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Thu Jan 16 08:45:26 2025 +0200
+
+    Issue #9 fixed.
+    Fix the graphic, big particles go under the borders #9.
+    Update_border_state modev to physics class and renamed
+
+[33mcommit 05d227c3483e70869cbfa5a95929b2e97c970aa3[m
+Merge: e371138 55db666
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 19:58:07 2025 +0200
+
+    Merge branch 'dev' of https://github.com/VladislavsJ/physic_particle_simlation into dev
+
+[33mcommit e3711380153c4880b6846a65ee3bc567cc7fb51c[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 19:53:04 2025 +0200
+
+    FPS graph fix, code has been finaly formated.
+
+[33mcommit 55db666a4b3d1e0aa901f0646bf8a4aed33755d3[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 19:53:04 2025 +0200
+
+    FPS graph fix,
+
+[33mcommit a8a91e93948b813a9c0abe88d6571dec3f1a3eb8[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 19:16:43 2025 +0200
+
+    Major:Graphs classes are added and some code fixes
+    Graphs classes should be upgraded, as now
+    they are not so informative
+
+[33mcommit 0bcbba097a75d2806c031e6d07e40ff8898f03df[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 14:14:59 2025 +0200
+
+    bug with update_border_state is fixed, now particles can change border state
+
+[33mcommit 57213056cb68a6d6081827a439f0fc412a270fb1[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 13:47:42 2025 +0200
+
+    balls now bouncing from all borders,
+
+[33mcommit b25578c834514a120b38d3264f6b25df2c1a19a3[m
+Merge: c538353 7f3aec5
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 13:15:13 2025 +0200
+
+    Merge branch 'main'render fix, setOrigin is added, logical and graphical location was not the same before
+
+[33mcommit c5383530a7642ecea6f62af3bf9d173c4a55e947[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 13:08:31 2025 +0200
+
+    minor changes
+
+[33mcommit 7f3aec5d446fd8439b3b27355a2224c544236de0[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Wed Jan 15 12:58:13 2025 +0200
+
+    render fix, setOrigin is added, logical and graphical location was not the same before
+
+[33mcommit 8bb252f0f6c16f8c8a09a1b629c2bcd9c5a492a7[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 14 17:45:29 2025 +0200
+
+    speed reverse is added, if second particle is on the groud
+    now if there is a particle on the ground
+    and other particle hits it, then they go up together,
+    with different energy levels, it allows Particles
+    to influence each other.Physics.cpp is updated
+
+[33mcommit b6b6bdc42794028b15a88478e7156878c8bd719c[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 14 15:42:57 2025 +0200
+
+    now 60HZ refresh rate is a constant number (unti CPU is powerful enough)
+    now program are not running on all CPU power
+    Physics colissions should be checked, as they are not working properly
+    Particle clas should divided into two classes, as
+    there just too much material variables, and it is hard to manage them
+    colissions with the border doesn't work at all
+
+[33mcommit 0461fa617094847807da4e62f877c76adceb2a73[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Tue Jan 14 12:59:57 2025 +0200
+
+    border fuinctionality added, not fully teted yet,
+    TODO0:
+    particle radius change doesn't work,
+    particles can overlap,
+
+[33mcommit 991ac717f139ea9d6204730fe5fa71340cee8b23[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Mon Jan 13 19:36:57 2025 +0200
+
+    Not functionally complete, border class is done
+    but not used yet, borders doesn't exist
+
+[33mcommit 98bfc545c7024919be6fbf571c846647c38b94da[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Mon Jan 13 13:12:38 2025 +0200
+
+    test for full system is added
+    there is no borders yet, test fails
+    basic functionality is implemented and tested
+
+[33mcommit 1962ece78371e6ca68750a0cf0254c79efb2bc34[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Mon Jan 13 12:47:55 2025 +0200
+
+    Google test init, add test executable.
+
+[33mcommit decea5202ce2f3c355fea09b343f74354fc6ca9d[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Sun Jan 12 21:23:32 2025 +0200
+
+    Just basic prototype, values for balls are pre-assigned, tests't havent been done yet, I didn't check the colision, borders doesnt exist and balls can be assigned and go over the window. just a basic prototype to be sure that all dependencies works
+
+[33mcommit 31a55cc71546e64e5fe28eb1af5e5c988b00ac58[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Sun Jan 12 21:21:04 2025 +0200
+
+    Add initial implementation of Particle Simulator with CMake configuration and basic physics handling
+
+[33mcommit 65316a483aa314ab36004fdaffa96f026cd971a4[m
+Author: VladislavsJ <jacina.vlad@gmail.com>
+Date:   Sat Jan 11 17:39:09 2025 +0200
+
+    Predicted file structure, no code

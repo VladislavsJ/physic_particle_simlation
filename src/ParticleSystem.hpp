@@ -1,10 +1,10 @@
 #ifndef PARTICLESYSTEM_H
 #define PARTICLESYSTEM_H
 
+#include "Grid.hpp"
 #include "Particle.hpp"
 #include "global_var.hpp"
 #include <vector>
-
 extern GlobalVar &gv;
 
 class ParticleSystem {
@@ -21,6 +21,7 @@ public:
   int getParticleCount() const;
 
 private:
+  Grid m_grid &;
   std::vector<Particle> m_particles;
 };
 void addParticles(const std::vector<Particle> &particles);
