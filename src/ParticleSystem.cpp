@@ -41,19 +41,14 @@ void ParticleSystem::update(float deltaTime) {
   CalcWindow calcWindow(m_grid); // for now one thread, one CalcWindow
   calcWindow.InitWindow(1, 1);
   // start from the top left corner, there is empty cells
-  // around the "rear" borders
-  // calcWindow now has 9 cells, 3x3, with the center in the top left corner
+  // 1:1 because 0:0 is "dummy" grid, to calculate borders particles
   int cnt = 0;
   int partcnt = 0;
 
   do {
-    // std::cout << "cnt: " << cnt++ << std::endl;
-
     for (Particle *i : *(calcWindow.getCell(CalcWindowIndex::CENTER))) {
       // 1) Update position/velocity
-      if (i == nullptr) {
-        continue;
-      }
+
       /* simulation is not the same if this is inside or outside the loop
             Physics::applyGravity(*i, deltaTime);
             i->update(deltaTime);
@@ -62,9 +57,6 @@ void ParticleSystem::update(float deltaTime) {
       // 2) Collisions
       for (auto &vecPtr : calcWindow.getCalcWindow()) {
         for (Particle *j : *vecPtr) {
-          if (j == nullptr || i == nullptr) {
-            continue;
-          }
           if (i != j) {
             Physics::applyCollisionforP1(*i, *j);
           }
@@ -77,6 +69,8 @@ void ParticleSystem::update(float deltaTime) {
   } while (calcWindow.Shift());
   // std::cout << "partcnt: " << partcnt << std::endl;
 }
+
+// may be used in tests
 bool ParticleSystem::checkCollision(const Particle &p1,
                                     const Particle &p2) const {
   float r1 = p1.getRadius();

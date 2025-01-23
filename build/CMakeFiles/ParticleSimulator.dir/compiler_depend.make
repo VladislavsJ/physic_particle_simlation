@@ -1699,6 +1699,7 @@ CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o: /media/vlad/Shared_w_L/NTNU/
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cstring \
   /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
@@ -1761,6 +1762,8 @@ CMakeFiles/ParticleSimulator.dir/src/Physics.cpp.o: /media/vlad/Shared_w_L/NTNU/
   /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
@@ -3820,6 +3823,10 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/simulation_examples.hpp:
 
+/usr/include/string.h:
+
+/usr/include/c++/13/cstring:
+
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h:
@@ -4487,6 +4494,8 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/SFML/Graphics/Transform.hpp:
+
+/usr/include/strings.h:
 
 /usr/include/SFML/Graphics/View.hpp:
 

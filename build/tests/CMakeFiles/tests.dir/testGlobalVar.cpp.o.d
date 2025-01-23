@@ -1,7 +1,8 @@
 tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o: \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/testGlobalVar.cpp \
- /usr/include/stdc-predef.h /usr/include/gtest/gtest.h \
- /usr/include/c++/13/cstddef \
+ /usr/include/stdc-predef.h \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/global_var.hpp \
+ /usr/include/gtest/gtest.h /usr/include/c++/13/cstddef \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -273,5 +274,4 @@ tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o: \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /usr/include/gtest/gtest-test-part.h \
  /usr/include/gtest/gtest-typed-test.h \
- /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/global_var.hpp
+ /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h
