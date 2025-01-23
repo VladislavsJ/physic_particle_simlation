@@ -88,10 +88,8 @@ int main() {
           std::cout << particleSystem.getParticleCount() << std::endl;
         }
       }
-      if (frameDuration.count() < 0.016f) {
-        // Limit frame rate to 60 fps
-        frameDuration = FRAME_TIME;
-      }
+
+      frameDuration = FRAME_TIME;
 
       // test: inject new particles, to see how the system behaves, and it works
       // like a benchmark
