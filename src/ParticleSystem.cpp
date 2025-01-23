@@ -2,6 +2,8 @@
 #include "Physics.hpp"
 #include "global_var.hpp"
 #include <cmath>
+#include <omp.h>
+
 extern GlobalVar &gv;
 enum CalcWindowIndex;
 ParticleSystem::ParticleSystem(int dispWidth, int dispHeight,
@@ -21,7 +23,7 @@ void ParticleSystem::addParticle(const Particle &particle) {
   // ofc in next frame, the grid will be updated
 }
 void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
-  for (const auto &p : particles) {
+  for (const auto p : particles) {
     m_particles.push_back(p);
     Particle *pPtr = &m_particles.back();
     m_grid.addParticle(pPtr);
@@ -29,6 +31,12 @@ void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
 }
 
 void ParticleSystem::update(float deltaTime) {
+  for (Particle &p :
+       m_particles) { // WHY AUTO is less efficient??? 1700 particles vs 2100
+    Physics::applyGravity(p, deltaTime);
+    p.update(deltaTime);
+    Physics::update_border_speed(p);
+  }
   m_grid.updateGrid();
   CalcWindow calcWindow(m_grid); // for now one thread, one CalcWindow
   calcWindow.InitWindow(1, 1);
@@ -37,6 +45,7 @@ void ParticleSystem::update(float deltaTime) {
   // calcWindow now has 9 cells, 3x3, with the center in the top left corner
   int cnt = 0;
   int partcnt = 0;
+
   do {
     // std::cout << "cnt: " << cnt++ << std::endl;
 
@@ -45,14 +54,11 @@ void ParticleSystem::update(float deltaTime) {
       if (i == nullptr) {
         continue;
       }
-      if (partcnt == 16) {
-        // std::cout << "debug 5" << std::endl;
-      }
-
-      Physics::applyGravity(*i, deltaTime);
-      i->update(deltaTime);
-      Physics::update_border_speed(*i);
-
+      /* simulation is not the same if this is inside or outside the loop
+            Physics::applyGravity(*i, deltaTime);
+            i->update(deltaTime);
+            Physics::update_border_speed(*i);
+        */
       // 2) Collisions
       for (auto &vecPtr : calcWindow.getCalcWindow()) {
         for (Particle *j : *vecPtr) {

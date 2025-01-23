@@ -1,20 +1,14 @@
 #include "Grid.hpp"
+
 enum CalcWindowIndex;
 Grid::Grid(int DispWidth, int DispHeight, int maxParticleSize)
     : m_width(DispWidth), m_height(DispHeight),
       m_cellSize(maxParticleSize * 2) {
 
-  m_rows = ((m_width + (m_cellSize / 2)) / m_cellSize) +
-           2; // round up, as the grid should be bigger than the display
-  // to avoid the case when the edges of the particles are not in the grid
+  m_rows = ((m_width + (m_cellSize / 2)) / m_cellSize) + 2;
   //+2 for the case, then edge cell checks the particles in the next cell
   m_cols = ((m_height + (m_cellSize / 2)) / m_cellSize) + 2;
   //+2 for the case, then edge cell checks the particles in the next cell
-
-  // Resize the 3D vector, and clean data
-  int innerSize = maxParticleSize / 10; // just start size for each cell
-  // TODO3: Resize efficiency is not checked, as mentioned that resize
-  //  is waste of time, as a compiler "knows better"
 
   // Resize both grids
   m_grid.resize(m_rows);
@@ -174,31 +168,6 @@ void CalcWindow::InitWindow(int row, int col) {
   }
 }
 
-/*
-Other method, same result
-void m_calcWindow::InitWindow(int gridNumberXY[2]) {
-  m_gridNumberXY[0] = gridNumberXY[0];
-  m_gridNumberXY[1] = gridNumberXY[1];
-
-  m_calcWindow[TOP_LEFT] =
-      &m_grid.getCell(m_gridNumberXY[0] - 1, m_gridNumberXY[1] - 1);
-  m_calcWindow[TOP_CENTER] =
-      &m_grid.getCell(m_gridNumberXY[0] - 1, m_gridNumberXY[1]);
-  m_calcWindow[TOP_RIGHT] =
-      &m_grid.getCell(m_gridNumberXY[0] - 1, m_gridNumberXY[1] + 1);
-  m_calcWindow[CENTER_LEFT] =
-      &m_grid.getCell(m_gridNumberXY[0], m_gridNumberXY[1] - 1);
-  m_calcWindow[CENTER] = &m_grid.getCell(m_gridNumberXY[0], m_gridNumberXY[1]);
-  m_calcWindow[CENTER_RIGHT] =
-      &m_grid.getCell(m_gridNumberXY[0], m_gridNumberXY[1] + 1);
-  m_calcWindow[BOTTOM_LEFT] =
-      &m_grid.getCell(m_gridNumberXY[0] + 1, m_gridNumberXY[1] - 1);
-  m_calcWindow[BOTTOM_CENTER] =
-      &m_grid.getCell(m_gridNumberXY[0] + 1, m_gridNumberXY[1]);
-  m_calcWindow[BOTTOM_RIGHT] =
-      &m_grid.getCell(m_gridNumberXY[0] + 1, m_gridNumberXY[1] + 1);
-}*/
-
 void CalcWindow::setCellNumber(int gridNumberXY[2]) {
   m_gridNumberXY[0] = gridNumberXY[0];
   m_gridNumberXY[1] = gridNumberXY[1];
@@ -207,15 +176,7 @@ void CalcWindow::setCellNumber(int gridNumberXY[2]) {
 std::vector<Particle *> *CalcWindow::getCell(CalcWindowIndex index) {
   return m_calcWindow[index];
 }
-// TODO3: check if Shift logic if more efficient than naive approach
-/*
-void m_calcWindow::shiftLeft()
-{
-    // Example naive approach: just re-init at col - 1
-    m_gridNumberXY[1] -= 1;
-    InitWindow(m_gridNumberXY[0], m_gridNumberXY[1]);
-}
-*/
+
 // ALL this shif logic is needed to avoid memory allocation each time,
 //  I can use 6 from 9 cells again.
 //  InitWindow method (below in this file)
@@ -223,77 +184,77 @@ void m_calcWindow::shiftLeft()
 //  but now my grid method is not really optimized
 
 void CalcWindow::shiftLeft() {
-
-  // Shift entire 9-cell window left
-  m_calcWindow[TOP_RIGHT] = m_calcWindow[TOP_CENTER];
-  m_calcWindow[TOP_CENTER] = m_calcWindow[TOP_LEFT];
+  // Shift entire 9-cell window left using move()
+  m_calcWindow[TOP_RIGHT] = std::move(m_calcWindow[TOP_CENTER]);
+  m_calcWindow[TOP_CENTER] = std::move(m_calcWindow[TOP_LEFT]);
   m_calcWindow[TOP_LEFT] =
       &m_grid.getCell(m_gridNumberXY[0] - 1, m_gridNumberXY[1] - 2);
 
-  m_calcWindow[CENTER_RIGHT] = m_calcWindow[CENTER];
-  m_calcWindow[CENTER] = m_calcWindow[CENTER_LEFT];
+  m_calcWindow[CENTER_RIGHT] = std::move(m_calcWindow[CENTER]);
+  m_calcWindow[CENTER] = std::move(m_calcWindow[CENTER_LEFT]);
   m_calcWindow[CENTER_LEFT] =
       &m_grid.getCell(m_gridNumberXY[0], m_gridNumberXY[1] - 2);
 
-  m_calcWindow[BOTTOM_RIGHT] = m_calcWindow[BOTTOM_CENTER];
-  m_calcWindow[BOTTOM_CENTER] = m_calcWindow[BOTTOM_LEFT];
+  m_calcWindow[BOTTOM_RIGHT] = std::move(m_calcWindow[BOTTOM_CENTER]);
+  m_calcWindow[BOTTOM_CENTER] = std::move(m_calcWindow[BOTTOM_LEFT]);
   m_calcWindow[BOTTOM_LEFT] =
       &m_grid.getCell(m_gridNumberXY[0] + 1, m_gridNumberXY[1] - 2);
 }
 
 void CalcWindow::shiftRight() {
-  // Shift entire 9-cell window right
-  m_calcWindow[TOP_LEFT] = m_calcWindow[TOP_CENTER];
-  m_calcWindow[TOP_CENTER] = m_calcWindow[TOP_RIGHT];
+  // Shift entire 9-cell window right using move()
+  m_calcWindow[TOP_LEFT] = std::move(m_calcWindow[TOP_CENTER]);
+  m_calcWindow[TOP_CENTER] = std::move(m_calcWindow[TOP_RIGHT]);
   m_calcWindow[TOP_RIGHT] =
       &m_grid.getCell(m_gridNumberXY[0] - 1, m_gridNumberXY[1] + 2);
 
-  m_calcWindow[CENTER_LEFT] = m_calcWindow[CENTER];
-  m_calcWindow[CENTER] = m_calcWindow[CENTER_RIGHT];
+  m_calcWindow[CENTER_LEFT] = std::move(m_calcWindow[CENTER]);
+  m_calcWindow[CENTER] = std::move(m_calcWindow[CENTER_RIGHT]);
   m_calcWindow[CENTER_RIGHT] =
       &m_grid.getCell(m_gridNumberXY[0], m_gridNumberXY[1] + 2);
 
-  m_calcWindow[BOTTOM_LEFT] = m_calcWindow[BOTTOM_CENTER];
-  m_calcWindow[BOTTOM_CENTER] = m_calcWindow[BOTTOM_RIGHT];
+  m_calcWindow[BOTTOM_LEFT] = std::move(m_calcWindow[BOTTOM_CENTER]);
+  m_calcWindow[BOTTOM_CENTER] = std::move(m_calcWindow[BOTTOM_RIGHT]);
   m_calcWindow[BOTTOM_RIGHT] =
       &m_grid.getCell(m_gridNumberXY[0] + 1, m_gridNumberXY[1] + 2);
 }
 
 void CalcWindow::shiftUp() {
-  // Shift entire 9-cell window up
-  m_calcWindow[BOTTOM_LEFT] = m_calcWindow[CENTER_LEFT];
-  m_calcWindow[CENTER_LEFT] = m_calcWindow[TOP_LEFT];
+  // Shift entire 9-cell window up using move()
+  m_calcWindow[BOTTOM_LEFT] = std::move(m_calcWindow[CENTER_LEFT]);
+  m_calcWindow[CENTER_LEFT] = std::move(m_calcWindow[TOP_LEFT]);
   m_calcWindow[TOP_LEFT] =
       &m_grid.getCell(m_gridNumberXY[0] - 2, m_gridNumberXY[1] - 1);
 
-  m_calcWindow[BOTTOM_CENTER] = m_calcWindow[CENTER];
-  m_calcWindow[CENTER] = m_calcWindow[TOP_CENTER];
+  m_calcWindow[BOTTOM_CENTER] = std::move(m_calcWindow[CENTER]);
+  m_calcWindow[CENTER] = std::move(m_calcWindow[TOP_CENTER]);
   m_calcWindow[TOP_CENTER] =
       &m_grid.getCell(m_gridNumberXY[0] - 2, m_gridNumberXY[1]);
 
-  m_calcWindow[BOTTOM_RIGHT] = m_calcWindow[CENTER_RIGHT];
-  m_calcWindow[CENTER_RIGHT] = m_calcWindow[TOP_RIGHT];
+  m_calcWindow[BOTTOM_RIGHT] = std::move(m_calcWindow[CENTER_RIGHT]);
+  m_calcWindow[CENTER_RIGHT] = std::move(m_calcWindow[TOP_RIGHT]);
   m_calcWindow[TOP_RIGHT] =
       &m_grid.getCell(m_gridNumberXY[0] - 2, m_gridNumberXY[1] + 1);
 }
 
 void CalcWindow::shiftDown() {
-  // Shift entire 9-cell window down
-  m_calcWindow[TOP_LEFT] = m_calcWindow[CENTER_LEFT];
-  m_calcWindow[CENTER_LEFT] = m_calcWindow[BOTTOM_LEFT];
+  // Shift entire 9-cell window down using move()
+  m_calcWindow[TOP_LEFT] = std::move(m_calcWindow[CENTER_LEFT]);
+  m_calcWindow[CENTER_LEFT] = std::move(m_calcWindow[BOTTOM_LEFT]);
   m_calcWindow[BOTTOM_LEFT] =
       &m_grid.getCell(m_gridNumberXY[0] + 2, m_gridNumberXY[1] - 1);
 
-  m_calcWindow[TOP_CENTER] = m_calcWindow[CENTER];
-  m_calcWindow[CENTER] = m_calcWindow[BOTTOM_CENTER];
+  m_calcWindow[TOP_CENTER] = std::move(m_calcWindow[CENTER]);
+  m_calcWindow[CENTER] = std::move(m_calcWindow[BOTTOM_CENTER]);
   m_calcWindow[BOTTOM_CENTER] =
       &m_grid.getCell(m_gridNumberXY[0] + 2, m_gridNumberXY[1]);
 
-  m_calcWindow[TOP_RIGHT] = m_calcWindow[CENTER_RIGHT];
-  m_calcWindow[CENTER_RIGHT] = m_calcWindow[BOTTOM_RIGHT];
+  m_calcWindow[TOP_RIGHT] = std::move(m_calcWindow[CENTER_RIGHT]);
+  m_calcWindow[CENTER_RIGHT] = std::move(m_calcWindow[BOTTOM_RIGHT]);
   m_calcWindow[BOTTOM_RIGHT] =
       &m_grid.getCell(m_gridNumberXY[0] + 2, m_gridNumberXY[1] + 1);
 }
+
 // Shift logic, right->right->border->down->left->left->border->down->right etc
 // to use previous cells, to not to allocate memory each time
 // fancy code, to be sure that it is not a problem during the debug stage.
@@ -326,7 +287,7 @@ bool CalcWindow::Shift() {
   return false; // if not possible to move,(if no bugs, means that it is the end
                 // of the grid)
 }
-//
+// Not so fancy  Shift() logic, +- 5% less efficient
 /*
 bool CalcWindow::Shift() {
   // If we are moving right:

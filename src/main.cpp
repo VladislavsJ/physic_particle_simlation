@@ -48,7 +48,7 @@ int main() {
   UserInteractions ui;
   // Create ParticleSystem
   ParticleSystem particleSystem(gv.getFieldSizeX(), gv.getFieldSizeY(),
-                                25); // TODO0: DEBUG VALUE
+                                20); // TODO0: DEBUG VALUE
   // Test particles
   make_test1(particleSystem);
   // Setup timing, idea is to hold constant frame rate, while possible and CPU
@@ -101,7 +101,7 @@ int main() {
             Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
         if (cnt % 250 == 1) {
           particleSystem.addParticle(
-              Particle(Vector2D(40, 80), Vector2D(545, 138), 25, 1));
+              Particle(Vector2D(40, 80), Vector2D(745, 138), 25, 1));
         }
       }
 

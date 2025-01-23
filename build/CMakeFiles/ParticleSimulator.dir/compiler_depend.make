@@ -1521,6 +1521,7 @@ CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o: /media/vlad/Shared_w_
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
@@ -3820,6 +3821,8 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/simulation_examples.hpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.cpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp:
 

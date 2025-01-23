@@ -267,4 +267,5 @@ tests/CMakeFiles/physics_lib.dir/__/src/ParticleSystem.cpp.o: \
  /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/array \
  /usr/include/c++/13/compare \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h

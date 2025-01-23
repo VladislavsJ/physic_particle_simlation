@@ -1254,18 +1254,12 @@ tests/CMakeFiles/tests.dir/test_Particles.cpp.o: /media/vlad/Shared_w_L/NTNU/new
 
 tests/CMakeFiles/tests.dir/test_complete_system.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_complete_system.cpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/simulation_examples.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.hpp \
-  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interface.hpp \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
   /usr/include/SFML/Graphics/BlendMode.hpp \
@@ -1381,8 +1375,6 @@ tests/CMakeFiles/tests.dir/test_complete_system.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
-  /usr/include/c++/13/bits/forward_list.h \
-  /usr/include/c++/13/bits/forward_list.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -1481,7 +1473,6 @@ tests/CMakeFiles/tests.dir/test_complete_system.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
-  /usr/include/c++/13/forward_list \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
@@ -2977,10 +2968,6 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp:
-
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp:
-
 /usr/include/c++/13/forward_list:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interface.hpp:
@@ -2988,6 +2975,10 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/simulation_examples.hpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp:
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_user_interractions.cpp:
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_physics.cpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_Particles.cpp:
 
