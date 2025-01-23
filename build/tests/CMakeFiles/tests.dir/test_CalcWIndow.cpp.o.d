@@ -1,13 +1,10 @@
-CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o: \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp \
+tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_CalcWIndow.cpp \
  /usr/include/stdc-predef.h \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/Grid.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/Particle.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/BorderInfo.hpp \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/Vector2D.hpp \
  /usr/include/c++/13/cstdint \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -268,9 +265,101 @@ CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o: \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/array \
  /usr/include/c++/13/compare \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interface.hpp \
- /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
- /usr/include/c++/13/bits/forward_list.tcc
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/Particle.hpp \
+ /usr/include/gtest/gtest.h /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /usr/include/gtest/gtest-assertion-result.h \
+ /usr/include/gtest/gtest-message.h \
+ /usr/include/gtest/internal/gtest-port.h /usr/include/c++/13/stdlib.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/gtest/internal/custom/gtest-port.h \
+ /usr/include/gtest/internal/gtest-port-arch.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/regex.h \
+ /usr/include/c++/13/condition_variable /usr/include/c++/13/bits/chrono.h \
+ /usr/include/c++/13/ratio /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/mutex \
+ /usr/include/c++/13/any /usr/include/c++/13/optional \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/variant /usr/include/gtest/gtest-death-test.h \
+ /usr/include/gtest/internal/gtest-death-test-internal.h \
+ /usr/include/gtest/gtest-matchers.h /usr/include/c++/13/atomic \
+ /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/gtest/gtest-printers.h /usr/include/c++/13/utility \
+ /usr/include/c++/13/bits/stl_relops.h \
+ /usr/include/gtest/internal/gtest-internal.h \
+ /usr/include/x86_64-linux-gnu/sys/wait.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/idtype_t.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/include/gtest/internal/gtest-filepath.h \
+ /usr/include/gtest/internal/gtest-string.h \
+ /usr/include/gtest/internal/gtest-type-util.h \
+ /usr/include/c++/13/cxxabi.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
+ /usr/include/gtest/internal/custom/gtest-printers.h \
+ /usr/include/gtest/gtest-param-test.h \
+ /usr/include/gtest/internal/gtest-param-util.h \
+ /usr/include/c++/13/cassert /usr/include/assert.h \
+ /usr/include/gtest/gtest-test-part.h \
+ /usr/include/gtest/gtest-typed-test.h \
+ /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h

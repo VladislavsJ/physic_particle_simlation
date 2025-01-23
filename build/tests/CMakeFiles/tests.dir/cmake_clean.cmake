@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/testGlobalVar.cpp.o"
   "CMakeFiles/tests.dir/testGlobalVar.cpp.o.d"
+  "CMakeFiles/tests.dir/test_CalcWIndow.cpp.o"
+  "CMakeFiles/tests.dir/test_CalcWIndow.cpp.o.d"
+  "CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o"
+  "CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o.d"
   "CMakeFiles/tests.dir/test_Particles.cpp.o"
   "CMakeFiles/tests.dir/test_Particles.cpp.o.d"
   "CMakeFiles/tests.dir/test_complete_system.cpp.o"

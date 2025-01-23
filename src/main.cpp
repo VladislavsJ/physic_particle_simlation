@@ -47,7 +47,8 @@ int main() {
   // 1) Instantiate UserInteractions
   UserInteractions ui;
   // Create ParticleSystem
-  ParticleSystem particleSystem;
+  ParticleSystem particleSystem(gv.getFieldSizeX(), gv.getFieldSizeY(),
+                                25); // TODO0: DEBUG VALUE
   // Test particles
   make_test1(particleSystem);
   // Setup timing, idea is to hold constant frame rate, while possible and CPU

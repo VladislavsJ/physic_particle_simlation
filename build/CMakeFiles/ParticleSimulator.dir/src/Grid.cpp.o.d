@@ -1,9 +1,6 @@
-CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o: \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp \
+CMakeFiles/ParticleSimulator.dir/src/Grid.cpp.o: \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.cpp \
  /usr/include/stdc-predef.h \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
@@ -267,10 +264,4 @@ CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/array \
- /usr/include/c++/13/compare \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/graphical_items.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.hpp \
- /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interface.hpp \
- /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
- /usr/include/c++/13/bits/forward_list.tcc
+ /usr/include/c++/13/compare
