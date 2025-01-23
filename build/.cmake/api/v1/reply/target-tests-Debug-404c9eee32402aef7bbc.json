@@ -131,7 +131,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -221,7 +223,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -231,6 +235,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "tests/testGlobalVar.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/test_CalcWIndow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/test_Grid_CalWindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

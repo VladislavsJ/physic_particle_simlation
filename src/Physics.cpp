@@ -1,5 +1,8 @@
 #include "Physics.hpp"
+#include <bit>
 #include <cmath>
+#include <cstring> // For std::memcpy
+
 GlobalVar &gv = GlobalVar::getInstance();
 namespace Physics {
 
@@ -14,109 +17,90 @@ void applyGravity(Particle &p, float deltaTime) {
   vel.y += GRAVITY * deltaTime;
   p.setVelocity(vel);
 }
-void handleCollisions(std::vector<Particle> &particles) {
-  // Iterate through all unique pairs of particles
-#pragma omp parallel for num_threads(                                          \
-        11) // 1 thread 1100particles, 6 threads
-            // 1700, 11 threads (I have 6 cores) 1900
-  for (size_t i = 0; i < particles.size(); ++i) {
-    Particle &p1 = particles[i];
 
-    for (size_t j = i + 1; j < particles.size(); ++j) {
+// Approximate inverse square root using bit manipulation (C++20)
+// Safe inverse square root approximation
+// OFC I took it from the internet
+inline float fastInvSqrt(float x) {
+  uint32_t i;
+  ::memcpy(&i, &x, sizeof(float));
+  i = 0x5f3759df - (i >> 1);
+  float y;
+  ::memcpy(&y, &i, sizeof(float));
+  y = y * (1.5f - 0.5f * x * y * y);
+  return y;
+}
+constexpr float POSITION_ADJUSTMENT =
+    0.03f; // I just like it, simulation is bit different
+// I would call is Viscosity, but it is not ofc
 
-      Particle &p2 = particles[j];
-      float r1 = p1.getRadius();
-      float r2 = p2.getRadius();
-      auto pos1 = p1.getPosition();
-      auto pos2 = p2.getPosition();
+void applyCollisionforP1(Particle &p1, const Particle &p2) {
+  // Cache properties to minimize access overhead
+  // compare to getters, public acces gives +-5% speedup
+  float r1 = p1.m_radius;
+  float r2 = p2.m_radius;
+  float px1 = p1.m_position.x;
+  float py1 = p1.m_position.y;
+  float px2 = p2.m_position.x;
+  float py2 = p2.m_position.y;
 
-      // Compute the vector difference
-      auto vect_diff = pos1 - pos2;
-      float dist = vect_diff.x * vect_diff.x + vect_diff.y * vect_diff.y;
+  // Compute vector difference and distance squared
+  float dx = px1 - px2;
+  float dy = py1 - py2;
+  float distSq = dx * dx + dy * dy;
+  float radiusSum = r1 + r2;
+  float radiusSumSq = radiusSum * radiusSum;
 
-      if (dist < (r1 + r2) * (r1 + r2)) {
-        // Collision detected
-        // Avoid  zero
-        dist = std::sqrt(dist);
-        if (dist == 0.0f) {
+  // Check for collision
+  if (distSq >= radiusSumSq)
+    return;
+  // Compute distance using fast inverse sqrt, as I don't need to be super
+  // precize,
+  // TODO3: should be possible to avoid it at all, if store the variables
+  // differently, (already precomputed)
+  float invDist = fastInvSqrt(distSq);
+  float dist = 1.0f / invDist;
 
-          //  direction to separate the particles, just 1.0 in x direction
-          vect_diff = {1.0f, 0.0f};
-          dist = 1.0f;
-        }
-
-        float overlap = (r1 + r2) - dist;
-
-        float nx = vect_diff.x / dist;
-        float ny = vect_diff.y / dist;
-
-        float m1 = p1.getMass();
-        float m2 = p2.getMass();
-        float totalMass = m1 + m2;
-
-        float ratio1 = m2 / totalMass;
-        float ratio2 = m1 / totalMass;
-
-        // Update positions
-        pos1.x += nx * overlap * ratio1;
-        pos1.y += ny * overlap * ratio1;
-        pos2.x -= nx * overlap * ratio2;
-        pos2.y -= ny * overlap * ratio2;
-
-        p1.setPosition(pos1);
-        p2.setPosition(pos2);
-
-        // Collision Response, Adjust Velocities
-
-        auto vel1 = p1.getVelocity();
-        auto vel2 = p2.getVelocity();
-
-        float rvx = vel1.x - vel2.x;
-        float rvy = vel1.y - vel2.y;
-
-        float velAlongNormal = rvx * nx + rvy * ny;
-
-        // Do not resolve if velocities are separating
-        if (velAlongNormal > 0.001) // floating point tolerance
-          continue;
-
-        // coliision elasticity
-        float restitution = (p1.getElasticity() + p2.getElasticity()) /
-                            2; // TODO3: Implement elasticity for each particle
-
-        float impulseScalar = -(1 + restitution) * velAlongNormal;
-        impulseScalar /= (1 / m1) + (1 / m2);
-
-        float impulseX = impulseScalar * nx;
-        float impulseY = impulseScalar * ny;
-        // if other particle are on the bottom, then top particle get 80% of
-        // impulse and bottom 20%, why? just because I want it
-        if (p1.border.isBorderSet(BORDER_BOTTOM)) {
-          if (pos1.y > pos2.y) { // p1 is on top
-            // TODO1: for loop is cutting half of pairs, where p1 is on top
-
-            vel1.x = -(impulseX / m1); // just numbers from my head
-            // idea is that top particle should bounce from the particle partile
-            // below if it is touching the ground, annd particle on the bottom
-            // should bounce a little
-            vel1.y = -(impulseY / m1) * 0.2;
-            vel2.x = -(impulseX / m2);
-            vel2.y = -(impulseY / m2) * 0.8;
-            p1.setVelocity(vel1);
-            p2.setVelocity(vel2);
-            continue;
-          }
-        }
-        vel1.x += (impulseX / m1);
-        vel1.y += (impulseY / m1);
-        vel2.x -= (impulseX / m2);
-        vel2.y -= (impulseY / m2);
-
-        p1.setVelocity(vel1);
-        p2.setVelocity(vel2);
-      }
-    }
+  // Handle zero or near-zero distance to avoid division by zero
+  if (dist < 1e-6f) {
+    dx = 1.0f;
+    dy = 0.0f;
+    dist = 1.0f;
+  } else {
+    dx *= invDist;
+    dy *= invDist;
   }
+
+  float overlap = radiusSum - dist;
+
+  // Mass ratio
+  float m1 = p1.m_mass;
+  float m2 = p2.m_mass;
+  float totalMass = m1 + m2;
+  float ratio1 = m2 / totalMass;
+
+  p1.m_position.x += dx * overlap * ratio1 + POSITION_ADJUSTMENT;
+  p1.m_position.y += dy * overlap * ratio1 + POSITION_ADJUSTMENT;
+  float rvx = p1.m_velocity.x - p2.m_velocity.x;
+  float rvy = p1.m_velocity.y - p2.m_velocity.y;
+
+  // Velocity along the normal
+  float velAlongNormal = rvx * dx + rvy * dy;
+
+  // Do not resolve if velocities are separating
+  if (velAlongNormal > 0.01f)
+    return;
+
+  // Average elasticity
+  float restitution = 0.5f * (p1.m_elasticity + p2.m_elasticity);
+
+  // Impulse scalar
+  float impulse = -(1.0f + restitution) * velAlongNormal;
+  impulse /= (1.0f / m1) + (1.0f / m2);
+
+  // Apply impulse to p1's velocity
+  p1.m_velocity.x += (impulse * dx) / m1;
+  p1.m_velocity.y += (impulse * dy) / m1;
 }
 
 void update_border_speed(Particle &p) {
@@ -157,3 +141,4 @@ void update_border_speed(Particle &p) {
   }
 }
 } // namespace Physics
+// namespace Physics

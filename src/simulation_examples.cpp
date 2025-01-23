@@ -21,7 +21,7 @@ void make_test1(ParticleSystem &particleSystem) {
       // Particle(radius=5, type=1, charge=0, density=1)
       particleSystem.addParticle(
           Particle(Vector2D(x, y), Vector2D(0, 0), // No initial velocity
-                   5.0f,                           // Smaller radius
+                   4.5f,                           // Smaller radius
                    1,                              // Type
                    0.0f,                           // Charge
                    1.0f)                           // Density

@@ -24,6 +24,8 @@ protected:
   ParticleSystem particleSystem;
   sf::RenderWindow window;
 
+  UserInteractionsTest() : particleSystem(800, 600, 50) {}
+
   virtual void SetUp() override {
     // Create (not copy) the SFML window directly here.
     window.create(sf::VideoMode(800, 600), "Test Window", sf::Style::Default);

@@ -26,7 +26,7 @@ int main() {
   // TODO3: should be another class
   Graph graphFPS;
   Graph graphParticleCnt;
-  std::vector<Graph> graphs;
+
   // two graphs to show FPS and particle count
   if (!graphFPS.init(gv.getFieldSizeX() /*inStartX*/, 50 /*inStartY*/,
                      180 /*inSizeX*/, 180 /*inSizeY*/)) {
@@ -40,14 +40,11 @@ int main() {
   }
   //
 
-  graphs.push_back(graphFPS);
-  graphs.push_back(graphParticleCnt);
-  // graphs.push_back(graphParticleCnt);
-
   // 1) Instantiate UserInteractions
   UserInteractions ui;
   // Create ParticleSystem
-  ParticleSystem particleSystem;
+  ParticleSystem particleSystem(gv.getFieldSizeX(), gv.getFieldSizeY(),
+                                gv.getMaxPartSize()); // TODO0: DEBUG VALUE
   // Test particles
   make_test1(particleSystem);
   // Setup timing, idea is to hold constant frame rate, while possible and CPU
@@ -61,7 +58,7 @@ int main() {
   auto frameEndTime = std::chrono::high_resolution_clock::now();
 
   int cnt = 0;
-
+  int returnMaxcnt = 0;
   while (renderer.getWindow().isOpen()) {
     auto frameStartTime = std::chrono::high_resolution_clock::now();
     // Handle window events
@@ -81,34 +78,41 @@ int main() {
       // seconds and particles will go crazy because speed = g*t
 
       // Periodic logging for frame duration
-      if (cnt % 10 == 0) {
+      if (cnt % 10 == 0 && returnMaxcnt < 10) {
         std::cout << "frame time: " << frameDuration.count() << std::endl;
-        if (frameDuration.count() > 0.016f) { // totals FPS < 60FPS
+        if (frameDuration.count() > 0.016f &&
+            returnMaxcnt < 10) { // totals FPS < 60FPS
+          returnMaxcnt++;
           std::cout << "frame time is too high, max particle count is"
                     << std::endl;
           std::cout << particleSystem.getParticleCount() << std::endl;
         }
       }
-      if (frameDuration.count() < 0.016f) {
-        // Limit frame rate to 60 fps
-        frameDuration = FRAME_TIME;
-      }
 
-      // test: inject new particles, to see how the system behaves
-      if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170) {
+      frameDuration = FRAME_TIME;
+
+      // test: inject new particles, to see how the system behaves, and it works
+      // like a benchmark
+      if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170 &&
+          particleSystem.getParticleCount() < 2500) {
         particleSystem.addParticle(
             Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
+        particleSystem.addParticle(
+            Particle(Vector2D(100, 150), Vector2D(300, 0), 5, 1));
         if (cnt % 250 == 1) {
           particleSystem.addParticle(
-              Particle(Vector2D(40, 80), Vector2D(545, 138), 25, 1));
+              Particle(Vector2D(40, 80), Vector2D(745, 138), 25, 1));
         }
       }
-
+      // this function is +-80-80% of the time, the rest is the rendering
       particleSystem.update(
           frameDuration.count()); // update particle system, frame duration is
                                   // passed to update the system
       // to calculate the new position of the particles
     }
+    std::vector<Graph> graphs;
+    graphs.push_back(graphFPS);
+    graphs.push_back(graphParticleCnt);
     renderer.RenderAll(particleSystem, ui, graphs);
     renderer.display();
 

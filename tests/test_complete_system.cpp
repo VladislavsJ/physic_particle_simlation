@@ -5,7 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <gtest/gtest.h>
 TEST(ParticleSystemTest, AddParticle) {
-  ParticleSystem ps;
+  ParticleSystem ps(800, 600, 50);
+  ;
   Particle p(Vector2D(100, 100), Vector2D(0, 0), 10, 1);
 
   ps.addParticle(p);
@@ -20,7 +21,7 @@ TEST(ParticleSystemTest, AddParticle) {
 }
 
 TEST(ParticleSystemTest, ParticlesAtDifferentLocations) {
-  ParticleSystem ps;
+  ParticleSystem ps(800, 600, 10);
   Particle p1(Vector2D(50, 50), Vector2D(1, 1), 5, 1);
   Particle p2(Vector2D(150, 150), Vector2D(-1, -1), 5, 1);
 
@@ -30,7 +31,8 @@ TEST(ParticleSystemTest, ParticlesAtDifferentLocations) {
 }
 
 TEST(ParticleSystemTest, TouchingParticles) {
-  ParticleSystem ps;
+  ParticleSystem ps(800, 600, 50);
+  ;
   Particle p1(Vector2D(100, 100), Vector2D(0, 0), 10, 1);
   Particle p2(Vector2D(119, 100), Vector2D(0, 0), 10,
               1); // Distance = 20, sum of radii = 20
@@ -41,7 +43,8 @@ TEST(ParticleSystemTest, TouchingParticles) {
 }
 
 TEST(ParticleSystemTest, OverlappingParticles) {
-  ParticleSystem ps;
+  ParticleSystem ps(800, 600, 50);
+  ;
   Particle p1(Vector2D(100, 100), Vector2D(0, 0), 10, 1);
   Particle p2(Vector2D(115, 100), Vector2D(0, 0), 10,
               1); // Distance = 15, sum of radii = 20
@@ -52,7 +55,8 @@ TEST(ParticleSystemTest, OverlappingParticles) {
 }
 
 TEST(ParticleSystemTest, ParticlesAtBorders) {
-  ParticleSystem ps;
+  ParticleSystem ps(800, 600, 50);
+  ;
   // Assuming window size is 800x600
   Particle pLeft(Vector2D(10, 300), Vector2D(-1, 0), 10, 1);
   Particle pRight(Vector2D(790, 300), Vector2D(1, 0), 10, 1);

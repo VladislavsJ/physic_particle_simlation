@@ -202,6 +202,30 @@ __/src/Graphs_new.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.s
 .PHONY : __/src/Graphs_new.cpp.s
 
+__/src/Grid.o: __/src/Grid.cpp.o
+.PHONY : __/src/Grid.o
+
+# target to build an object file
+__/src/Grid.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.o
+.PHONY : __/src/Grid.cpp.o
+
+__/src/Grid.i: __/src/Grid.cpp.i
+.PHONY : __/src/Grid.i
+
+# target to preprocess a source file
+__/src/Grid.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.i
+.PHONY : __/src/Grid.cpp.i
+
+__/src/Grid.s: __/src/Grid.cpp.s
+.PHONY : __/src/Grid.s
+
+# target to generate assembly for a file
+__/src/Grid.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.s
+.PHONY : __/src/Grid.cpp.s
+
 __/src/Particle.o: __/src/Particle.cpp.o
 .PHONY : __/src/Particle.o
 
@@ -442,6 +466,54 @@ testGlobalVar.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/testGlobalVar.cpp.s
 .PHONY : testGlobalVar.cpp.s
 
+test_CalcWIndow.o: test_CalcWIndow.cpp.o
+.PHONY : test_CalcWIndow.o
+
+# target to build an object file
+test_CalcWIndow.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o
+.PHONY : test_CalcWIndow.cpp.o
+
+test_CalcWIndow.i: test_CalcWIndow.cpp.i
+.PHONY : test_CalcWIndow.i
+
+# target to preprocess a source file
+test_CalcWIndow.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.i
+.PHONY : test_CalcWIndow.cpp.i
+
+test_CalcWIndow.s: test_CalcWIndow.cpp.s
+.PHONY : test_CalcWIndow.s
+
+# target to generate assembly for a file
+test_CalcWIndow.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.s
+.PHONY : test_CalcWIndow.cpp.s
+
+test_Grid_CalWindow.o: test_Grid_CalWindow.cpp.o
+.PHONY : test_Grid_CalWindow.o
+
+# target to build an object file
+test_Grid_CalWindow.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o
+.PHONY : test_Grid_CalWindow.cpp.o
+
+test_Grid_CalWindow.i: test_Grid_CalWindow.cpp.i
+.PHONY : test_Grid_CalWindow.i
+
+# target to preprocess a source file
+test_Grid_CalWindow.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.i
+.PHONY : test_Grid_CalWindow.cpp.i
+
+test_Grid_CalWindow.s: test_Grid_CalWindow.cpp.s
+.PHONY : test_Grid_CalWindow.s
+
+# target to generate assembly for a file
+test_Grid_CalWindow.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.s
+.PHONY : test_Grid_CalWindow.cpp.s
+
 test_Particles.o: test_Particles.cpp.o
 .PHONY : test_Particles.o
 
@@ -579,6 +651,9 @@ help:
 	@echo "... __/src/Graphs_new.o"
 	@echo "... __/src/Graphs_new.i"
 	@echo "... __/src/Graphs_new.s"
+	@echo "... __/src/Grid.o"
+	@echo "... __/src/Grid.i"
+	@echo "... __/src/Grid.s"
 	@echo "... __/src/Particle.o"
 	@echo "... __/src/Particle.i"
 	@echo "... __/src/Particle.s"
@@ -609,6 +684,12 @@ help:
 	@echo "... testGlobalVar.o"
 	@echo "... testGlobalVar.i"
 	@echo "... testGlobalVar.s"
+	@echo "... test_CalcWIndow.o"
+	@echo "... test_CalcWIndow.i"
+	@echo "... test_CalcWIndow.s"
+	@echo "... test_Grid_CalWindow.o"
+	@echo "... test_Grid_CalWindow.i"
+	@echo "... test_Grid_CalWindow.s"
 	@echo "... test_Particles.o"
 	@echo "... test_Particles.i"
 	@echo "... test_Particles.s"

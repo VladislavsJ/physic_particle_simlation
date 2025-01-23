@@ -53,10 +53,9 @@ public:
   // Update method
   void update(float deltaTime);
 
-public:
+public: // all public to increase the efficiency in the physics calculations
+        // (Physics.cpp) compare to getters, public acces gives +-5% speedup
   BorderInfo border;
-
-private:
   Vector2D m_position;
   Vector2D m_velocity;
   float m_radius;
