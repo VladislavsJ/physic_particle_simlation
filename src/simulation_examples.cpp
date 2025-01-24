@@ -6,9 +6,9 @@
 void make_test1(ParticleSystem &particleSystem) {
 
   // Parameters for the block of particles
-  int rows = 20; // 20 x 40 = 800
-  int cols = 40;
-  float spacing = 8.0f; // Distance between particle centers
+  int rows = 30; // 20 x 40 = 800
+  int cols = 50;
+  float spacing = 7.0f; // Distance between particle centers
   float startX = 300.0f - (cols * spacing) /
                               2.0f; // Center block horizontally around x=300
   float startY = 100.0f;            // Position the block in the upper area
@@ -21,7 +21,7 @@ void make_test1(ParticleSystem &particleSystem) {
       // Particle(radius=5, type=1, charge=0, density=1)
       particleSystem.addParticle(
           Particle(Vector2D(x, y), Vector2D(0, 0), // No initial velocity
-                   4.5f,                           // Smaller radius
+                   4.0f,                           // Smaller radius
                    1,                              // Type
                    0.0f,                           // Charge
                    1.0f)                           // Density

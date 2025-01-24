@@ -69,9 +69,9 @@ public:
   explicit CalcWindow(Grid &grid);
 
   // Initialize the 3x3 window (centered at row,col)
-  void InitWindow(int row, int col);
-  void InitWindow(int gridNumberXY[2]) {
-    InitWindow(gridNumberXY[0], gridNumberXY[1]);
+  void InitWindow(int row, int col, bool shiftPriorityToRight = true);
+  void InitWindow(int gridNumberXY[2], bool shiftPriorityToRight = true) {
+    InitWindow(gridNumberXY[0], gridNumberXY[1], shiftPriorityToRight);
   }
 
   // Shift window around for scanning
@@ -81,8 +81,15 @@ public:
   void shiftDown();
 
   // "snake-like" iteration, to reuse the previous cells
-  bool Shift();
-
+  bool ShiftPriorityRight();
+  bool ShiftPriorityLeft();
+  bool Shift() {
+    if (shiftPriorityToRight) {
+      return ShiftPriorityRight();
+    } else {
+      return ShiftPriorityLeft();
+    }
+  }
   // Access the array of pointers to neighbor cells
   std::array<std::vector<Particle *> *, 9> &getCalcWindow() {
     return m_calcWindow;
@@ -97,5 +104,7 @@ private:
   std::array<std::vector<Particle *> *, 9> m_calcWindow;
   Grid &m_grid; // reference to the grid, to get the cells
   bool m_movingRight;
+  bool shiftPriorityToRight; // If true then ShiftPriorityRight else
+                             // ShiftPriorityLeft
 };
 #endif

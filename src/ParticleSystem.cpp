@@ -91,3 +91,23 @@ std::vector<Particle> &ParticleSystem::getParticles() { return m_particles; }
 const std::vector<Particle> &ParticleSystem::getParticles() const {
   return m_particles;
 }
+
+///////////////////////////
+// MPI_PARTICLE_UPDATE //
+///////////////////////////
+// now the idea
+// i have many threads,
+// they can work in "pairs"
+// they have different movement priorty, rigt-left right-left
+// if one thread ended its job, it sends the sygnal to the master
+// master checks if thread "pair" is still working, if yes
+// it divides total cells to compute by two TODO(thread safe check)
+//
+// and gives this half to free thread
+// it is not perfect, but it is a good start
+// improves performance as not all cells have same amount of particles
+
+// possible race in the push_back to the vector, I am not sure if it is a
+// problem since all threads are working on different cells. possible race to
+// get data as near thread may ask for the same data,
+//(if button for one and top for another is the same cell)
