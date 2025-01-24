@@ -226,6 +226,30 @@ __/src/Grid.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.s
 .PHONY : __/src/Grid.cpp.s
 
+__/src/PS_ThreadManager.o: __/src/PS_ThreadManager.cpp.o
+.PHONY : __/src/PS_ThreadManager.o
+
+# target to build an object file
+__/src/PS_ThreadManager.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.o
+.PHONY : __/src/PS_ThreadManager.cpp.o
+
+__/src/PS_ThreadManager.i: __/src/PS_ThreadManager.cpp.i
+.PHONY : __/src/PS_ThreadManager.i
+
+# target to preprocess a source file
+__/src/PS_ThreadManager.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.i
+.PHONY : __/src/PS_ThreadManager.cpp.i
+
+__/src/PS_ThreadManager.s: __/src/PS_ThreadManager.cpp.s
+.PHONY : __/src/PS_ThreadManager.s
+
+# target to generate assembly for a file
+__/src/PS_ThreadManager.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.s
+.PHONY : __/src/PS_ThreadManager.cpp.s
+
 __/src/Particle.o: __/src/Particle.cpp.o
 .PHONY : __/src/Particle.o
 
@@ -321,6 +345,30 @@ __/src/Renderer.s: __/src/Renderer.cpp.s
 __/src/Renderer.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.s
 .PHONY : __/src/Renderer.cpp.s
+
+__/src/Threads_updateF.o: __/src/Threads_updateF.cpp.o
+.PHONY : __/src/Threads_updateF.o
+
+# target to build an object file
+__/src/Threads_updateF.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Threads_updateF.cpp.o
+.PHONY : __/src/Threads_updateF.cpp.o
+
+__/src/Threads_updateF.i: __/src/Threads_updateF.cpp.i
+.PHONY : __/src/Threads_updateF.i
+
+# target to preprocess a source file
+__/src/Threads_updateF.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Threads_updateF.cpp.i
+.PHONY : __/src/Threads_updateF.cpp.i
+
+__/src/Threads_updateF.s: __/src/Threads_updateF.cpp.s
+.PHONY : __/src/Threads_updateF.s
+
+# target to generate assembly for a file
+__/src/Threads_updateF.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/Threads_updateF.cpp.s
+.PHONY : __/src/Threads_updateF.cpp.s
 
 __/src/graphical_items.o: __/src/graphical_items.cpp.o
 .PHONY : __/src/graphical_items.o
@@ -654,6 +702,9 @@ help:
 	@echo "... __/src/Grid.o"
 	@echo "... __/src/Grid.i"
 	@echo "... __/src/Grid.s"
+	@echo "... __/src/PS_ThreadManager.o"
+	@echo "... __/src/PS_ThreadManager.i"
+	@echo "... __/src/PS_ThreadManager.s"
 	@echo "... __/src/Particle.o"
 	@echo "... __/src/Particle.i"
 	@echo "... __/src/Particle.s"
@@ -666,6 +717,9 @@ help:
 	@echo "... __/src/Renderer.o"
 	@echo "... __/src/Renderer.i"
 	@echo "... __/src/Renderer.s"
+	@echo "... __/src/Threads_updateF.o"
+	@echo "... __/src/Threads_updateF.i"
+	@echo "... __/src/Threads_updateF.s"
 	@echo "... __/src/graphical_items.o"
 	@echo "... __/src/graphical_items.i"
 	@echo "... __/src/graphical_items.s"

@@ -94,17 +94,11 @@ int main() {
       // test: inject new particles, to see how the system behaves, and it works
       // like a benchmark
       if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170 &&
-          particleSystem.getParticleCount() < 3500) {
+          particleSystem.getParticleCount() < 7000) {
         particleSystem.addParticle(
             Particle(Vector2D(100, 100), Vector2D(400, 0), 3, 1));
         particleSystem.addParticle(
             Particle(Vector2D(100, 150), Vector2D(300, 0), 5, 1));
-        if (particleSystem.getParticleCount() < 2500) {
-          particleSystem.addParticle(
-              Particle(Vector2D(50, 100), Vector2D(200, 0), 5, 1));
-          particleSystem.addParticle(
-              Particle(Vector2D(50, 100), Vector2D(200, 0), 5, 1));
-        }
         if (cnt % 250 == 1) {
           particleSystem.addParticle(
               Particle(Vector2D(40, 80), Vector2D(745, 138), 25, 1));

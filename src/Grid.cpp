@@ -37,12 +37,12 @@ void Grid::addParticle(Particle *particle, int gridNumberXY[2]) {
   row++;
   col++;
   // clamp just to be safe, that particle is not out of bounds
-  if (row < 0)
-    row = 0;
+  if (row < 1)
+    row = 1;
   if (row >= m_rows)
     row = m_rows - 1;
-  if (col < 0)
-    col = 0;
+  if (col < 1)
+    col = 1;
   if (col >= m_cols)
     col = m_cols - 1;
   if (particle->getType() != 1) {
@@ -57,17 +57,14 @@ void Grid::addParticle(Particle *particle) {
   int row = static_cast<int>(pos.y) / m_cellSize;
   col++;
   row++; // borders are "dummy" cells
-  if (row < 0)
-    row = 0;
-  if (row >= m_rows)
-    row = m_rows - 1;
-  if (col < 0)
-    col = 0;
-  if (col >= m_cols)
-    col = m_cols - 1;
-  if (particle->getType() != 1) {
-    //  std::cout << "DEBUG: " << row << " " << col << std::endl;
-  }
+  if (row < 1)
+    row = 1;
+  if (row >= m_rows - 2)
+    row = m_rows - 2;
+  if (col < 1)
+    col = 1;
+  if (col >= m_cols - 2)
+    col = m_cols - 2;
   m_grid_new[row][col].push_back(particle);
 }
 void Grid::addParticles(std::vector<Particle *> particles) {
@@ -91,15 +88,14 @@ std::vector<Particle *> &Grid::getCell(int row, int col) {
   // clamp
   row;
   col;
-  if (row < 0)
-    row = 0;
-  if (row >= m_rows)
-    row = m_rows - 1;
-  if (col < 0)
-    col = 0;
-  if (col >= m_cols)
-    col = m_cols - 1;
-
+  if (row < 1)
+    row = 1;
+  if (row >= m_rows - 2)
+    row = m_rows - 2;
+  if (col < 1)
+    col = 1;
+  if (col >= m_cols - 2)
+    col = m_cols - 2;
   return m_grid[row][col];
 }
 
@@ -146,7 +142,7 @@ std::array<std::vector<Particle *> *, 9> Grid::get9Cells(int gridNumberXY[2]) {
 // m_calcWindow Implementation
 // -------------------------------------------------
 
-CalcWindow::CalcWindow(Grid &grid) : m_grid(grid), m_movingRight(true) {
+CalcWindow::CalcWindow(Grid &grid) : m_grid(grid) {
   // initialize the 9 pointers to nullptr
   for (auto &cellPtr : m_calcWindow) {
     cellPtr = nullptr;
@@ -155,10 +151,11 @@ CalcWindow::CalcWindow(Grid &grid) : m_grid(grid), m_movingRight(true) {
   m_gridNumberXY[1] = 1;
 }
 
-void CalcWindow::InitWindow(int row, int col, bool shiftPriorityToRight) {
+void CalcWindow::InitWindow(int row, int col, bool shiftPriorityR) {
   m_gridNumberXY[0] = row;
   m_gridNumberXY[1] = col;
-  shiftPriorityToRight = shiftPriorityToRight;
+  shiftPriorityToRight = shiftPriorityR;
+  m_movingRight = shiftPriorityR;
   // get all 9 cells
   auto allCells = m_grid.get9Cells(m_gridNumberXY);
   // store them
@@ -166,7 +163,16 @@ void CalcWindow::InitWindow(int row, int col, bool shiftPriorityToRight) {
     m_calcWindow[i] = allCells[i];
   }
 }
-
+void CalcWindow::InitWindow(int gridNumberXY[2], bool shiftPriority) {
+  InitWindow(gridNumberXY[0], gridNumberXY[1], shiftPriority);
+}
+bool CalcWindow::Shift() {
+  if (shiftPriorityToRight) {
+    return ShiftPriorityRight();
+  } else {
+    return ShiftPriorityLeft();
+  }
+}
 std::vector<Particle *> *CalcWindow::getCell(CalcWindowIndex index) {
   return m_calcWindow[index];
 }
@@ -274,7 +280,7 @@ bool CalcWindow::ShiftPriorityRight() {
       return true;
     }
   } else {
-    if (m_gridNumberXY[1] > 0) {
+    if (m_gridNumberXY[1] > 1) {
       shiftLeft();
       m_gridNumberXY[1]--;
       return true;
@@ -292,7 +298,7 @@ bool CalcWindow::ShiftPriorityRight() {
 bool CalcWindow::ShiftPriorityLeft() {
   // Attempt horizontal moves first
   if (!m_movingRight) {
-    if (m_gridNumberXY[1] > 0) {
+    if (m_gridNumberXY[1] > 1) {
       shiftLeft();
       m_gridNumberXY[1]--;
       return true;
