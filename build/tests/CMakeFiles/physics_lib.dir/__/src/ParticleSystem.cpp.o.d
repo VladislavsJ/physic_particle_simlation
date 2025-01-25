@@ -283,4 +283,5 @@ tests/CMakeFiles/physics_lib.dir/__/src/ParticleSystem.cpp.o: \
  /usr/include/c++/13/bits/std_thread.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h \
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp

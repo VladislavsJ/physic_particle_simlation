@@ -65,6 +65,7 @@ void Grid::addParticle(Particle *particle) {
     col = 1;
   if (col >= m_cols - 2)
     col = m_cols - 2;
+
   m_grid_new[row][col].push_back(particle);
 }
 void Grid::addParticles(std::vector<Particle *> particles) {
@@ -96,6 +97,7 @@ std::vector<Particle *> &Grid::getCell(int row, int col) {
     col = 1;
   if (col >= m_cols - 2)
     col = m_cols - 2;
+
   return m_grid[row][col];
 }
 

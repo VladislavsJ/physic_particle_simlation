@@ -3,91 +3,77 @@
 #include <cmath>
 
 extern GlobalVar &gv;
-
-PS_ThreadManager::PS_ThreadManager(Grid &grid, int threadCount)
-    : m_grid(grid), m_stop(false), m_threadsReady(0), m_threadsDone(0),
-      m_runCollisions(false) {
-  // We will initialize the threads here
-  ThreadingInit(threadCount);
+PS_ThreadManager::PS_ThreadManager(Grid &grid, int thread_count)
+    : m_grid(grid), m_threadCnt(thread_count),
+      m_workerCount(thread_count - 1), // master thread
+      m_threadsReady(0), m_threadsDone(0), m_runCollisions(false) {
+  ThreadingInit(thread_count);
 }
-
-PS_ThreadManager::~PS_ThreadManager() {
-  // Signal all threads to stop
-  {
-    std::unique_lock<std::mutex> lock(m_startMutex);
-    m_stop = true;
-    m_runCollisions = true; // just to unblock them
-  }
-  m_startCV.notify_all();
-
-  // Join all threads
-  for (auto &t : m_workers) {
-    if (t.joinable()) {
-      t.join();
-    }
-  }
-}
-
-// This basically replaces the old MasterThread + ThreadingInit done each frame.
-// Instead, we do it once.
 void PS_ThreadManager::ThreadingInit(int thread_count) {
-  // This is the total number of threads we want (including  the main thread).
-  //  (thread_count - 1) worker threads.
-
-  m_workerCount = thread_count - 1;
-  // TODO3: NOT sure if not pair thread will work
+  // I am worried about non pair thread for now
+  // TODO1:
   if (m_workerCount % 2 != 0) {
     m_workerCount--;
   }
-
-  // We compute total cells (excluding border)
-  m_totalCells = (m_grid.getRows() - 2) * (m_grid.getCols() - 2);
-
-  //  thread data
   m_threadData.resize(m_workerCount);
+
+  m_totalCells =
+      (m_grid.getRows() - 2) * (m_grid.getCols() - 2); // real working size
+  int spareCells = m_totalCells % m_workerCount;
+  int cells_per_thread = m_totalCells / m_workerCount;
   m_remainingCells.resize(m_workerCount);
   m_bufferRemainingCells.resize(m_workerCount);
+  std::vector<std::thread> workers;
+  int startcell;
+  int startrow;
+  int startcoll;
+  int threadcells;
 
-  // logic for dividing cells among the worker threads
-  int spareCells = m_totalCells % m_workerCount;
-  int cellsPerThread = m_totalCells / m_workerCount;
   int assignedCells = 0;
+
   int innerCols = m_grid.getCols() - 2;
 
   for (int i = 0; i < m_workerCount; i++) {
-    int threadcells =
-        cellsPerThread +
-        ((i < spareCells) ? 1 : 0); // distribute any leftover cells
-    bool directionRight =
-        ((i % 2) == 0); // snake style, left->right, right->left
-    int startCellIndex =
-        (directionRight) ? assignedCells : (assignedCells + threadcells - 1);
+    int threadcells = cells_per_thread + ((i < spareCells) ? 1 : 0);
 
-    int startRow = (startCellIndex / innerCols) +
-                   1; // 1-based indexing, as 0 is "dummy cell"
-    int startCol = (startCellIndex % innerCols) +
-                   1; // 1-based indexing as 0 is "dummy cell"
+    // Decide direction: even i = left->right, odd i = right->left
+    bool directionRight = ((i % 2) == 0);
+
+    // Compute which linear cell this thread *starts* from
+    int startCellIndex = 0;
+    if (directionRight) {
+      // Start at the left edge of the chunk
+      startCellIndex = assignedCells;
+    } else {
+      // Start at the right edge of the chunk
+      // i.e. the last cell in [assignedCells, assignedCells + threadcells)
+      startCellIndex = assignedCells + threadcells - 1;
+    }
+
+    // Convert linear index -> row & col
+    int startRow = (startCellIndex / innerCols) + 1;
+    int startCol = (startCellIndex % innerCols) + 1;
+
+    // Update for the next thread
+    assignedCells += threadcells;
 
     m_threadData[i].startrow = startRow;
     m_threadData[i].startcoll = startCol;
     m_threadData[i].thread_id = i;
 
-    assignedCells += threadcells;
     m_remainingCells[i] = threadcells;
     m_bufferRemainingCells[i] = threadcells;
   }
-
+  // thread creation
+  //  They will wait on a condition variable for each frame's collision pass
   for (int i = 0; i < m_workerCount; i++) {
     m_workers.emplace_back(&PS_ThreadManager::workerLoop, this, i);
   }
 }
 
-//
 void PS_ThreadManager::doCollisions() {
-  // Reset some counters for this "frame"
-  // We'll copy back the buffer so each thread has the fresh remaining cell
-  // count
   {
+    int cnt = 0;
     std::unique_lock<std::mutex> lock(m_startMutex);
     for (int i = 0; i < m_workerCount; i++) {
       m_remainingCells[i] = m_bufferRemainingCells[i];
@@ -107,23 +93,17 @@ void PS_ThreadManager::doCollisions() {
   }
 }
 
-// The old "applyCollisions" code, adapted for an infinite worker loop
 void PS_ThreadManager::applyCollisions(ThreadData &td) {
   int thread_id = td.thread_id;
   int startrow = td.startrow;
   int startcoll = td.startcoll;
-  bool directionRight = (thread_id % 2 == 0);
-
-  // The local "window" struct from your code
+  bool directionRight = (thread_id % 2 == 0); // can be done in the init
   CalcWindow calcWindow(m_grid);
   calcWindow.InitWindow(startrow, startcoll, directionRight);
-
-  std::vector<Particle *> toSend;
-
-  while (true) {
-    int remainingcells = 0;
-
+  std::vector<Particle *> ToSend;
+  while (true) { // remainingcells <=1 break the loop
     // 1) Check how many cells remain for this thread to process
+    int remainingcells = 0;
     {
       std::lock_guard<std::mutex> lock(m_remainingCellsMutex);
       remainingcells = m_remainingCells[thread_id];
@@ -132,19 +112,7 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
       }
     }
 
-    // 2) If no cells left, break
-    if (remainingcells <= 0) {
-      // push all local updates back to the grid if needed
-      // (here we do it once at the end)
-      {
-        std::lock_guard<std::mutex> lock(m_writeToGrid);
-        m_grid.addParticles(toSend);
-      }
-      break;
-    }
-
-    // 3) Perform collisions for the current cell
-    //    (This is your old collision logic)
+    // Collision logic
     for (Particle *i : *(calcWindow.getCell(CalcWindowIndex::CENTER))) {
       for (auto &vecPtr : calcWindow.getCalcWindow()) {
         for (Particle *j : *vecPtr) {
@@ -153,47 +121,53 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
           }
         }
       }
-      // accumulate toSend
-      toSend.push_back(i);
+      ToSend.push_back(i);
     }
-
-    // 4) Move to the next cell
-    calcWindow.Shift();
+    // 2) If no cells remain, break the loop
+    if (remainingcells > 1) {
+      calcWindow.Shift();
+    } else {
+      m_writeToGrid.lock();
+      m_grid.addParticles(ToSend);
+      m_writeToGrid.unlock();
+      break;
+    }
   }
 }
 
-// The main function each thread runs in a loop
 void PS_ThreadManager::workerLoop(int threadId) {
-  // Local reference
-  ThreadData td = m_threadData[threadId];
-
   while (true) {
-    // Wait until we're told to do collisions or to stop
     {
+
       std::unique_lock<std::mutex> lock(m_startMutex);
-      // Increase 'ready' counter once we get here
-      m_threadsReady++;
 
-      // Wait for a new "run" signal or a "stop" signal
+      //  Wait until main calls doCollisions() -> m_runCollisions = true
+      //  or until we want to stop everything (m_stop == true).
       m_startCV.wait(lock, [this] { return (m_runCollisions || m_stop); });
+      m_threadsReady++;
+      if (m_threadsReady == m_workerCount) {
+        // Last one to become ready: wake everyone so we all pass the barrier
+        m_runCollisions = false;
+        m_barrierCV.notify_all();
 
-      if (m_stop) {
-        // Time to exit the thread permanently
-        return;
+      } else {
+        // Wait for the last thread to do notify_all
+        m_barrierCV.wait(lock,
+                         [this] { return m_threadsReady == m_workerCount; });
       }
     }
 
-    // Actually do collisions
-    applyCollisions(td);
+    // Actual collisions:
+    applyCollisions(m_threadData[threadId]);
 
-    // We're done. Increase "done" counter and possibly notify main
     {
+      // Done barrier
       std::unique_lock<std::mutex> lock(m_doneMutex);
       m_threadsDone++;
       if (m_threadsDone == m_workerCount) {
-        // All workers done => notify main
+        // Last worker to finish collisions. Wake main:
         m_doneCV.notify_one();
       }
     }
-  } // while(true)
+  }
 }

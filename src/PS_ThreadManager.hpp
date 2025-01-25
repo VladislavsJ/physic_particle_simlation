@@ -59,7 +59,7 @@ struct ThreadData {
 class PS_ThreadManager {
 
 public:
-  // Constructor takes references needed for collision logic
+  //  takes references needed for collision logic
   PS_ThreadManager(Grid &grid, int threadCount);
 
   ~PS_ThreadManager();
@@ -76,10 +76,17 @@ private:
   void applyCollisions(ThreadData &td);
 
 private:
-  // References to data from ParticleSystem
   Grid &m_grid;
   int m_totalCells;
+
+  // number of worker threads without master,
+  // Mostly counted from 1, because 1%2 == 0, so it is easier to count the pairs
+  // TODO3: this "Mostly counted from 1" created a real mess in the code
+  // as I had to add +1 to the thread_id, and it is not clear why
   int m_workerCount;
+
+  int m_threadCnt;
+  int m_workercnt;
 
   std::vector<std::thread> m_workers;
 
@@ -96,16 +103,17 @@ private:
   std::mutex m_writeToGrid;
 
   // Condition variables for "start" and "done" signals
-  std::condition_variable m_startCV;
-  std::condition_variable m_doneCV;
+  std::condition_variable m_startCV;   // wait collision to start
+  std::condition_variable m_doneCV;    // wait collision to end
+  std::condition_variable m_barrierCV; // wait all threads to start,
   std::mutex m_startMutex;
   std::mutex m_doneMutex;
 
   // We use these to coordinate the threads
   bool m_stop;
-  std::atomic<int> m_threadsReady;
-  std::atomic<int> m_threadsDone;
-  bool m_runCollisions;
+  std::atomic<int> m_threadsReady; // amount of ready threads
+  std::atomic<int> m_threadsDone;  // amount of done threads
+  bool m_runCollisions;            // if true, threads should do collisions
 };
 
 #endif // PS_THREADMANAGER_HPP

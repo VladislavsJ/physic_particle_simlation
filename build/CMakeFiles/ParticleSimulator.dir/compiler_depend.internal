@@ -1577,6 +1577,7 @@ CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.cpp
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp
+ /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/ParticleSystem.hpp
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp
