@@ -28,7 +28,7 @@ public:
                                         // grid is not updated
 
   // Adds a particle to the 'new' grid (m_grid_new) at a specific cell.
-  void addParticle(Particle *particle, int m_gridNumberXY[2]);
+  void addParticle(Particle *particle, int m_gridNumberRowCol[2]);
 
   // Adds multiple particles by calling addParticle() on each.
 
@@ -45,11 +45,11 @@ public:
   std::vector<Particle *> &getCell(int row, int col);
   std::vector<Particle *> &getCell(int gridNumberXY[2]);
 
-  std::array<std::vector<Particle *> *, 8>
-  getNeighbourCells(int m_gridNumberXY[2]); // 8 grids around the particle cell
+  std::array<std::vector<Particle *> *, 8> getNeighbourCells(
+      int m_gridNumberRowCol[2]); // 8 grids around the particle cell
 
   // Return references/pointers to the 9 cells (including the center)
-  std::array<std::vector<Particle *> *, 9> get9Cells(int m_gridNumberXY[2]);
+  std::array<std::vector<Particle *> *, 9> get9Cells(int m_gridNumberRowCol[2]);
   std::vector<std::vector<std::vector<Particle *>>> m_grid;
   std::vector<std::vector<std::vector<Particle *>>> m_grid_new;
 
@@ -82,16 +82,15 @@ public:
   bool ShiftPriorityLeft();
   bool Shift();
   // Access the array of pointers to neighbor cells
-  std::array<std::vector<Particle *> *, 9> &getCalcWindow() {
-    return m_calcWindow;
-  }
+
+  std::array<std::vector<Particle *> *, 9> &getCalcWindow();
 
   std::vector<Particle *> *getCell(CalcWindowIndex index);
-  void setCellNumber(int m_gridNumberXY[2]);
+  void setCellNumber(int m_gridNumberRowCol[2]);
   Grid &m_grid; // reference to the grid, to get the cells
+  int m_gridNumberRowCol[2];
 
 private:
-  int m_gridNumberXY[2];
   // Each of the 9 is a pointer to a vector<Particle*> in the grid.
   std::array<std::vector<Particle *> *, 9> m_calcWindow;
   bool m_movingRight;

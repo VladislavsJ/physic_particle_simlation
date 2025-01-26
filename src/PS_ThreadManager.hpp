@@ -74,6 +74,10 @@ private:
   void workerLoop(int threadId);
 
   void applyCollisions(ThreadData &td);
+  std::vector<std::pair<int, int>> GetThreadPath(const ThreadData &threadData,
+                                                 int threadCells,
+                                                 bool shiftPriorityToRight,
+                                                 int gridCols, int gridRows);
 
 private:
   Grid &m_grid;

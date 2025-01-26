@@ -106,15 +106,16 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
     int remainingcells = 0;
     {
       std::lock_guard<std::mutex> lock(m_remainingCellsMutex);
+      m_remainingCells[thread_id]--;
       remainingcells = m_remainingCells[thread_id];
-      if (remainingcells > 0) {
-        m_remainingCells[thread_id]--;
-      }
     }
 
     // Collision logic
+
     for (Particle *i : *(calcWindow.getCell(CalcWindowIndex::CENTER))) {
+
       for (auto &vecPtr : calcWindow.getCalcWindow()) {
+
         for (Particle *j : *vecPtr) {
           if (i != j) {
             Physics::applyCollisionforP1(*i, *j);
@@ -124,12 +125,16 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
       ToSend.push_back(i);
     }
     // 2) If no cells remain, break the loop
-    if (remainingcells > 1) {
+    if (remainingcells > 0) {
+      m_writeToGrid.lock();
+      m_writeToGrid.unlock();
       calcWindow.Shift();
     } else {
       m_writeToGrid.lock();
       m_grid.addParticles(ToSend);
       m_writeToGrid.unlock();
+      if (ToSend.size() > 2) {
+      }
       break;
     }
   }
@@ -171,3 +176,32 @@ void PS_ThreadManager::workerLoop(int threadId) {
     }
   }
 }
+
+// get each thread cell numbers
+//  I did mistake with the "snake logic", and its much harder to start to go
+//  from left and from right,
+// as they may have crossing cells, Soooo, to "save" the idea about pair cell
+// work,
+//  I need to write into array all the cells, and then compare, if they are the
+//  same, just shift, do not compute the collisions
+//  TODO3: check efficiency, as all this is needed just to
+//  change the size
+/*
+std::vector < pair<int Row, int Col> GetthreadPath(m_threadData,
+                                                   int threadcells,
+                                                   bool shiftPriorityToRight,
+                                                   int gridcols, int gridrows) {
+  std::vector<pair<int, int>> path;
+  int startrow = m_threadData.startrow;
+  int startcoll = m_threadData.startcoll;
+  int innerCols = m_grid.getCols() - 2;
+  path.push_back(std::make_pair(startrow, startcoll));
+  int startCellIndex = 0;
+  if (ShiftPriorityRight) {
+    if (row <)
+  }
+
+
+
+                                                   }
+                                                   */

@@ -93,6 +93,7 @@ int main() {
 
       // test: inject new particles, to see how the system behaves, and it works
       // like a benchmark
+      ///////////////////////////
       if (cnt++ % 1 == 0 && cnt < 10000 && (cnt % 200) < 170 &&
           particleSystem.getParticleCount() < 7000) {
         particleSystem.addParticle(
@@ -104,6 +105,7 @@ int main() {
               Particle(Vector2D(40, 80), Vector2D(745, 138), 25, 1));
         }
       }
+
       // this function is +-80-80% of the time, the rest is the rendering
       particleSystem.update(
           frameDuration.count()); // update particle system, frame duration is
