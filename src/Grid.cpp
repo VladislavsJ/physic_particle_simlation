@@ -37,12 +37,12 @@ void Grid::addParticle(Particle *particle, int gridNumberXY[2]) {
   row++;
   col++;
   // clamp just to be safe, that particle is not out of bounds
-  if (row < 0)
-    row = 0;
+  if (row < 1)
+    row = 1;
   if (row >= m_rows)
     row = m_rows - 1;
-  if (col < 0)
-    col = 0;
+  if (col < 1)
+    col = 1;
   if (col >= m_cols)
     col = m_cols - 1;
   if (particle->getType() != 1) {
@@ -57,17 +57,15 @@ void Grid::addParticle(Particle *particle) {
   int row = static_cast<int>(pos.y) / m_cellSize;
   col++;
   row++; // borders are "dummy" cells
-  if (row < 0)
-    row = 0;
-  if (row >= m_rows)
-    row = m_rows - 1;
-  if (col < 0)
-    col = 0;
-  if (col >= m_cols)
-    col = m_cols - 1;
-  if (particle->getType() != 1) {
-    //  std::cout << "DEBUG: " << row << " " << col << std::endl;
-  }
+  if (row < 1)
+    row = 1;
+  if (row >= m_rows - 2)
+    row = m_rows - 2;
+  if (col < 1)
+    col = 1;
+  if (col >= m_cols - 2)
+    col = m_cols - 2;
+
   m_grid_new[row][col].push_back(particle);
 }
 void Grid::addParticles(std::vector<Particle *> particles) {
@@ -78,8 +76,7 @@ void Grid::addParticles(std::vector<Particle *> particles) {
 void Grid::updateGrid() {
   // Move m_grid_new into m_grid
   // Then re-init m_grid_new
-  m_grid = std::move(m_grid_new);
-
+  std::swap(m_grid, m_grid_new);
   // Re-allocate m_grid_new so it is empty but has correct structure
   m_grid_new.clear();
   m_grid_new.resize(m_rows);
@@ -92,14 +89,14 @@ std::vector<Particle *> &Grid::getCell(int row, int col) {
   // clamp
   row;
   col;
-  if (row < 0)
-    row = 0;
-  if (row >= m_rows)
-    row = m_rows - 1;
-  if (col < 0)
-    col = 0;
-  if (col >= m_cols)
-    col = m_cols - 1;
+  if (row < 1)
+    row = 1;
+  if (row >= m_rows - 2)
+    row = m_rows - 2;
+  if (col < 1)
+    col = 1;
+  if (col >= m_cols - 2)
+    col = m_cols - 2;
 
   return m_grid[row][col];
 }
@@ -147,7 +144,7 @@ std::array<std::vector<Particle *> *, 9> Grid::get9Cells(int gridNumberXY[2]) {
 // m_calcWindow Implementation
 // -------------------------------------------------
 
-CalcWindow::CalcWindow(Grid &grid) : m_grid(grid), m_movingRight(true) {
+CalcWindow::CalcWindow(Grid &grid) : m_grid(grid) {
   // initialize the 9 pointers to nullptr
   for (auto &cellPtr : m_calcWindow) {
     cellPtr = nullptr;
@@ -156,10 +153,11 @@ CalcWindow::CalcWindow(Grid &grid) : m_grid(grid), m_movingRight(true) {
   m_gridNumberXY[1] = 1;
 }
 
-void CalcWindow::InitWindow(int row, int col) {
+void CalcWindow::InitWindow(int row, int col, bool shiftPriorityR) {
   m_gridNumberXY[0] = row;
   m_gridNumberXY[1] = col;
-
+  shiftPriorityToRight = shiftPriorityR;
+  m_movingRight = shiftPriorityR;
   // get all 9 cells
   auto allCells = m_grid.get9Cells(m_gridNumberXY);
   // store them
@@ -167,11 +165,15 @@ void CalcWindow::InitWindow(int row, int col) {
     m_calcWindow[i] = allCells[i];
   }
 }
-
-void CalcWindow::setCellNumber(int gridNumberXY[2]) {
-  m_gridNumberXY[0] = gridNumberXY[0];
-  m_gridNumberXY[1] = gridNumberXY[1];
-  InitWindow(m_gridNumberXY);
+void CalcWindow::InitWindow(int gridNumberXY[2], bool shiftPriority) {
+  InitWindow(gridNumberXY[0], gridNumberXY[1], shiftPriority);
+}
+bool CalcWindow::Shift() {
+  if (shiftPriorityToRight) {
+    return ShiftPriorityRight();
+  } else {
+    return ShiftPriorityLeft();
+  }
 }
 std::vector<Particle *> *CalcWindow::getCell(CalcWindowIndex index) {
   return m_calcWindow[index];
@@ -259,7 +261,14 @@ void CalcWindow::shiftDown() {
 // to use previous cells, to not to allocate memory each time
 // fancy code, to be sure that it is not a problem during the debug stage.
 
-bool CalcWindow::Shift() {
+// I need ShiftPriorityRight and ShiftPriorityLeft
+//  becaune in MPI version, idea is that some cells had more particles than
+//  others and if 2 threads start from left and right then if one ended earlier
+//  I can add more cells to compute.
+//  it is not perfect solution, as there is around 10 threads, most particles
+//  are on the bottom (thanks to the gravity) but it is a good start,
+
+bool CalcWindow::ShiftPriorityRight() {
   // Attempt horizontal moves first
   if (m_movingRight) {
     if (m_gridNumberXY[1] < m_grid.getCols() - 1) {
@@ -273,7 +282,7 @@ bool CalcWindow::Shift() {
       return true;
     }
   } else {
-    if (m_gridNumberXY[1] > 0) {
+    if (m_gridNumberXY[1] > 1) {
       shiftLeft();
       m_gridNumberXY[1]--;
       return true;
@@ -281,6 +290,35 @@ bool CalcWindow::Shift() {
       m_gridNumberXY[0]++;
       shiftDown();
       m_movingRight = true;
+      return true;
+    }
+  }
+  return false; // if not possible to move,(if no bugs, means that it is the end
+                // of the grid)
+}
+
+bool CalcWindow::ShiftPriorityLeft() {
+  // Attempt horizontal moves first
+  if (!m_movingRight) {
+    if (m_gridNumberXY[1] > 1) {
+      shiftLeft();
+      m_gridNumberXY[1]--;
+      return true;
+    } else if (m_gridNumberXY[0] < m_grid.getRows() - 1) {
+      m_gridNumberXY[0]++;
+      shiftDown();
+      m_movingRight = true;
+      return true;
+    }
+  } else {
+    if (m_gridNumberXY[1] < m_grid.getCols() - 1) {
+      shiftRight();
+      m_gridNumberXY[1]++;
+      return true;
+    } else if (m_gridNumberXY[0] < m_grid.getRows() - 1) {
+      m_gridNumberXY[0]++;
+      shiftDown();
+      m_movingRight = false;
       return true;
     }
   }

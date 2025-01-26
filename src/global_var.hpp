@@ -13,7 +13,7 @@ public:
 
   // Initializes variables with default values.
   void init() {
-    gravity = 9.81;        // Gravitational acceleration (m/s^2).
+    gravity = 09.81;       // Gravitational acceleration (m/s^2).
     fieldSizeX_Y[0] = 500; // Default field size X.
     fieldSizeX_Y[1] = 500; // Default field size Y.
     particleMaxR = 25;     // Default particle radius.

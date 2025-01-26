@@ -366,6 +366,10 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/global_var.hpp \
+ /usr/include/c++/13/future /usr/include/c++/13/bits/atomic_futex.h \
+ /usr/include/c++/13/bits/std_thread.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/graphical_items.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/user_interactions_new.hpp \
  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src/user_interface.hpp \

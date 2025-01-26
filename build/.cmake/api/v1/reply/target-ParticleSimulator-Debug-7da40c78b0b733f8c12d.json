@@ -74,11 +74,13 @@
 				8,
 				10,
 				12,
-				16,
+				15,
 				18,
-				19,
-				21,
-				23
+				22,
+				24,
+				25,
+				27,
+				29
 			]
 		}
 	],
@@ -143,11 +145,13 @@
 				8,
 				10,
 				12,
-				16,
+				15,
 				18,
-				19,
-				21,
-				23
+				22,
+				24,
+				25,
+				27,
+				29
 			]
 		},
 		{
@@ -162,11 +166,15 @@
 				11,
 				13,
 				14,
-				15,
+				16,
 				17,
+				19,
 				20,
-				22,
-				24
+				21,
+				23,
+				26,
+				28,
+				30
 			]
 		}
 	],
@@ -208,6 +216,17 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/PS_ThreadManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/PS_ThreadManager.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/Particle.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -240,6 +259,11 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "src/Profiler.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Renderer.cpp",
 			"sourceGroupIndex" : 0
@@ -247,6 +271,22 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/Renderer.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Report.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Threads_updateF.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Threads_updateF.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

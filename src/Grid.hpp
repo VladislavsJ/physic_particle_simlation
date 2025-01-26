@@ -50,6 +50,8 @@ public:
 
   // Return references/pointers to the 9 cells (including the center)
   std::array<std::vector<Particle *> *, 9> get9Cells(int m_gridNumberXY[2]);
+  std::vector<std::vector<std::vector<Particle *>>> m_grid;
+  std::vector<std::vector<std::vector<Particle *>>> m_grid_new;
 
 private:
   int m_width;    // Display width
@@ -61,19 +63,14 @@ private:
   // Each cell is a vector of pointers to Particle objects.
 
   // So m_grid is [rows][cols] -> vector<Particle*>
-  std::vector<std::vector<std::vector<Particle *>>> m_grid;
-  std::vector<std::vector<std::vector<Particle *>>> m_grid_new;
 };
 class CalcWindow {
 public:
   explicit CalcWindow(Grid &grid);
 
   // Initialize the 3x3 window (centered at row,col)
-  void InitWindow(int row, int col);
-  void InitWindow(int gridNumberXY[2]) {
-    InitWindow(gridNumberXY[0], gridNumberXY[1]);
-  }
-
+  void InitWindow(int row, int col, bool shiftPriorityToRight = true);
+  void InitWindow(int gridNumberXY[2], bool shiftPriority = true);
   // Shift window around for scanning
   void shiftLeft();
   void shiftRight();
@@ -81,8 +78,9 @@ public:
   void shiftDown();
 
   // "snake-like" iteration, to reuse the previous cells
+  bool ShiftPriorityRight();
+  bool ShiftPriorityLeft();
   bool Shift();
-
   // Access the array of pointers to neighbor cells
   std::array<std::vector<Particle *> *, 9> &getCalcWindow() {
     return m_calcWindow;
@@ -90,12 +88,14 @@ public:
 
   std::vector<Particle *> *getCell(CalcWindowIndex index);
   void setCellNumber(int m_gridNumberXY[2]);
+  Grid &m_grid; // reference to the grid, to get the cells
 
 private:
   int m_gridNumberXY[2];
   // Each of the 9 is a pointer to a vector<Particle*> in the grid.
   std::array<std::vector<Particle *> *, 9> m_calcWindow;
-  Grid &m_grid; // reference to the grid, to get the cells
   bool m_movingRight;
+  bool shiftPriorityToRight; // If true then ShiftPriorityRight else
+                             // ShiftPriorityLeft
 };
 #endif

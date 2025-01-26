@@ -4,8 +4,18 @@
 #include "Grid.hpp"
 #include "Particle.hpp"
 #include "global_var.hpp"
+#include <atomic>
+#include <cmath>
+#include <condition_variable>
+#include <future>
+#include <mutex>
+#include <omp.h>
+#include <thread>
 #include <vector>
 extern GlobalVar &gv;
+class PS_ThreadManager;
+
+struct ThreadData;
 
 class ParticleSystem {
 public:
@@ -22,11 +32,19 @@ public:
   const std::vector<Particle> &getParticles() const;
   int getParticleCount() const;
 
-private:
-  Grid m_grid;
+  void applyCollisions(ThreadData &ThreadData, std::vector<int> &RemainingCells,
+                       Grid &grid, std::mutex &CellsToCompute,
+                       std::promise<int> prom);
 
+public: // needs to be oublic for the threading
+  // TODO2: should be better way how to give the data to the other class,
+
+  Grid m_grid;
   // This system owns actual Particle objects in a vector:
   std::vector<Particle> m_particles;
+  PS_ThreadManager *m_threadManager;
+
+private:
 };
 
 #endif

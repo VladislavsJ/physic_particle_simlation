@@ -1,15 +1,22 @@
 #include "ParticleSystem.hpp"
+#include "PS_ThreadManager.hpp"
 #include "Physics.hpp"
 #include "global_var.hpp"
 #include <cmath>
+#include <future>
 #include <omp.h>
-
+#include <thread>
 extern GlobalVar &gv;
 enum CalcWindowIndex;
+class PS_ThreadManager;
 ParticleSystem::ParticleSystem(int dispWidth, int dispHeight,
                                int maxParticleSize)
-    : m_grid(dispWidth, dispHeight, maxParticleSize) {
-  m_particles.reserve(10000);
+    : m_grid(dispWidth, dispHeight, maxParticleSize), m_threadManager(nullptr) {
+  m_particles.reserve(
+      10000); // TODO2: MAX_PARTICLES, cant be changed during the runtime
+  // if >10 000 reallocation happens and bye bye program
+  m_threadManager = new PS_ThreadManager(m_grid, /*threadCount=*/11);
+  // one is master,
 }
 
 void ParticleSystem::addParticle(const Particle &particle) {
@@ -31,45 +38,19 @@ void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
 }
 
 void ParticleSystem::update(float deltaTime) {
-  for (Particle &p :
-       m_particles) { // WHY AUTO is less efficient??? 1700 particles vs 2100
+  // 1) Apply physics (gravity, border collision, etc.)
+  for (Particle &p : m_particles) {
     Physics::applyGravity(p, deltaTime);
     p.update(deltaTime);
     Physics::update_border_speed(p);
   }
+
+  // 3) Perform collisions using the thread manager
+  if (m_threadManager) {
+    m_threadManager->doCollisions();
+  }
   m_grid.updateGrid();
-  CalcWindow calcWindow(m_grid); // for now one thread, one CalcWindow
-  calcWindow.InitWindow(1, 1);
-  // start from the top left corner, there is empty cells
-  // 1:1 because 0:0 is "dummy" grid, to calculate borders particles
-  int cnt = 0;
-  int partcnt = 0;
-
-  do {
-    for (Particle *i : *(calcWindow.getCell(CalcWindowIndex::CENTER))) {
-      // 1) Update position/velocity
-
-      /* simulation is not the same if this is inside or outside the loop
-            Physics::applyGravity(*i, deltaTime);
-            i->update(deltaTime);
-            Physics::update_border_speed(*i);
-        */
-      // 2) Collisions
-      for (auto &vecPtr : calcWindow.getCalcWindow()) {
-        for (Particle *j : *vecPtr) {
-          if (i != j) {
-            Physics::applyCollisionforP1(*i, *j);
-          }
-        }
-      }
-      partcnt++;
-      // std::cout << "partcnt: " << partcnt << std::endl;
-      m_grid.addParticle(i);
-    }
-  } while (calcWindow.Shift());
-  // std::cout << "partcnt: " << partcnt << std::endl;
 }
-
 // may be used in tests
 bool ParticleSystem::checkCollision(const Particle &p1,
                                     const Particle &p2) const {

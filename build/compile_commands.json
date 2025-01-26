@@ -19,6 +19,12 @@
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -fopenmp -o CMakeFiles/ParticleSimulator.dir/src/PS_ThreadManager.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.cpp",
+  "output": "CMakeFiles/ParticleSimulator.dir/src/PS_ThreadManager.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
   "command": "/usr/bin/g++   -g -std=gnu++17 -fopenmp -o CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "output": "CMakeFiles/ParticleSimulator.dir/src/Particle.cpp.o"
@@ -40,6 +46,12 @@
   "command": "/usr/bin/g++   -g -std=gnu++17 -fopenmp -o CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp",
   "output": "CMakeFiles/ParticleSimulator.dir/src/Renderer.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -fopenmp -o CMakeFiles/ParticleSimulator.dir/src/Threads_updateF.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Threads_updateF.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Threads_updateF.cpp",
+  "output": "CMakeFiles/ParticleSimulator.dir/src/Threads_updateF.cpp.o"
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build",
@@ -91,6 +103,12 @@
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
+  "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=c++17 -fopenmp -o CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.cpp",
+  "output": "tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
   "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=c++17 -fopenmp -o CMakeFiles/physics_lib.dir/__/src/Particle.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.cpp",
   "output": "tests/CMakeFiles/physics_lib.dir/__/src/Particle.cpp.o"
@@ -112,6 +130,12 @@
   "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=c++17 -fopenmp -o CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp",
   "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp",
   "output": "tests/CMakeFiles/physics_lib.dir/__/src/Renderer.cpp.o"
+},
+{
+  "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
+  "command": "/usr/bin/g++  -I/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/../src -g -std=c++17 -fopenmp -o CMakeFiles/physics_lib.dir/__/src/Threads_updateF.cpp.o -c /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Threads_updateF.cpp",
+  "file": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Threads_updateF.cpp",
+  "output": "tests/CMakeFiles/physics_lib.dir/__/src/Threads_updateF.cpp.o"
 },
 {
   "directory": "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build/tests",
