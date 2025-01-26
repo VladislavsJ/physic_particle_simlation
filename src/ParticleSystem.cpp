@@ -39,13 +39,15 @@ void ParticleSystem::addParticles(const std::vector<Particle> &particles) {
 
 void ParticleSystem::update(float deltaTime) {
   // 1) Apply physics (gravity, border collision, etc.)
+  // #pragma omp parallel for threadNum(10)
+  // no speedup from for loop
   for (Particle &p : m_particles) {
     Physics::applyGravity(p, deltaTime);
     p.update(deltaTime);
     Physics::update_border_speed(p);
   }
 
-  // 3) Perform collisions using the thread manager
+  // Perform collisions using the thread manager
   if (m_threadManager) {
     m_threadManager->doCollisions();
   }

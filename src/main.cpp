@@ -88,7 +88,6 @@ int main() {
           std::cout << particleSystem.getParticleCount() << std::endl;
         }
       }
-
       frameDuration = FRAME_TIME;
 
       // test: inject new particles, to see how the system behaves, and it works
@@ -106,7 +105,8 @@ int main() {
         }
       }
 
-      // this function is +-80-80% of the time, the rest is the rendering
+      // this function is +-80-80% of the computing time, the rest is the
+      // rendering
       particleSystem.update(
           frameDuration.count()); // update particle system, frame duration is
                                   // passed to update the system

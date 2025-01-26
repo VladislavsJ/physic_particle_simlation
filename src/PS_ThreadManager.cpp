@@ -126,14 +126,13 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
     }
     // 2) If no cells remain, break the loop
     if (remainingcells > 0) {
-      m_writeToGrid.lock();
-      m_writeToGrid.unlock();
       calcWindow.Shift();
     } else {
       m_writeToGrid.lock();
       m_grid.addParticles(ToSend);
       m_writeToGrid.unlock();
       if (ToSend.size() > 2) {
+        // std::cout << "ERROR: " << ToSend.size() << std::endl;
       }
       break;
     }
