@@ -9,6 +9,22 @@ PS_ThreadManager::PS_ThreadManager(Grid &grid, int thread_count)
       m_threadsReady(0), m_threadsDone(0), m_runCollisions(false) {
   ThreadingInit(thread_count);
 }
+PS_ThreadManager::~PS_ThreadManager() {
+  {
+    std::lock_guard<std::mutex> lock(m_startMutex);
+    m_stop = true; // Signal threads to exit their loops
+    m_runCollisions = false;
+  }
+
+  m_startCV.notify_all(); // Wake all threads to see the stop flag
+
+  for (auto &thread : m_workers) {
+    if (thread.joinable()) {
+      thread.join(); // Wait for threads to finish
+    }
+  }
+}
+
 void PS_ThreadManager::ThreadingInit(int thread_count) {
   // I am worried about non pair thread for now
   // TODO1:
@@ -162,12 +178,26 @@ void PS_ThreadManager::workerLoop(int threadId) {
     }
 
     // Actual collisions:
+    // time
+    std::chrono::steady_clock::time_point begin =
+        std::chrono::steady_clock::now();
+
     applyCollisions(m_threadData[threadId]);
+    std::chrono::steady_clock::time_point end =
+        std::chrono::steady_clock::now();
+    // get time
+    //
 
     {
       // Done barrier
       std::unique_lock<std::mutex> lock(m_doneMutex);
       m_threadsDone++;
+      auto time =
+          std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
+              .count();
+
+      std::cout << "thread" << threadId << " time  = " << time << std::endl;
+
       if (m_threadsDone == m_workerCount) {
         // Last worker to finish collisions. Wake main:
         m_doneCV.notify_one();

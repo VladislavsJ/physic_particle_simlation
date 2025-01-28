@@ -178,6 +178,30 @@ __/src/BorderInfo.cpp.s:
 	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.s
 .PHONY : __/src/BorderInfo.cpp.s
 
+__/src/CalcWindow.o: __/src/CalcWindow.cpp.o
+.PHONY : __/src/CalcWindow.o
+
+# target to build an object file
+__/src/CalcWindow.cpp.o:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.o
+.PHONY : __/src/CalcWindow.cpp.o
+
+__/src/CalcWindow.i: __/src/CalcWindow.cpp.i
+.PHONY : __/src/CalcWindow.i
+
+# target to preprocess a source file
+__/src/CalcWindow.cpp.i:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.i
+.PHONY : __/src/CalcWindow.cpp.i
+
+__/src/CalcWindow.s: __/src/CalcWindow.cpp.s
+.PHONY : __/src/CalcWindow.s
+
+# target to generate assembly for a file
+__/src/CalcWindow.cpp.s:
+	cd /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/physics_lib.dir/build.make tests/CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.s
+.PHONY : __/src/CalcWindow.cpp.s
+
 __/src/Graphs_new.o: __/src/Graphs_new.cpp.o
 .PHONY : __/src/Graphs_new.o
 
@@ -696,6 +720,9 @@ help:
 	@echo "... __/src/BorderInfo.o"
 	@echo "... __/src/BorderInfo.i"
 	@echo "... __/src/BorderInfo.s"
+	@echo "... __/src/CalcWindow.o"
+	@echo "... __/src/CalcWindow.i"
+	@echo "... __/src/CalcWindow.s"
 	@echo "... __/src/Graphs_new.o"
 	@echo "... __/src/Graphs_new.i"
 	@echo "... __/src/Graphs_new.s"

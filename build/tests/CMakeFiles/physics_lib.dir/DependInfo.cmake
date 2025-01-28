@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.cpp" "tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.o" "gcc" "tests/CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.o.d"
+  "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.cpp" "tests/CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.o" "gcc" "tests/CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp" "tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.o" "gcc" "tests/CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.cpp" "tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.o" "gcc" "tests/CMakeFiles/physics_lib.dir/__/src/Grid.cpp.o.d"
   "/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.cpp" "tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.o" "gcc" "tests/CMakeFiles/physics_lib.dir/__/src/PS_ThreadManager.cpp.o.d"

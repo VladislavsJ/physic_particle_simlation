@@ -189,6 +189,30 @@ src/BorderInfo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.s
 .PHONY : src/BorderInfo.cpp.s
 
+src/CalcWindow.o: src/CalcWindow.cpp.o
+.PHONY : src/CalcWindow.o
+
+# target to build an object file
+src/CalcWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o
+.PHONY : src/CalcWindow.cpp.o
+
+src/CalcWindow.i: src/CalcWindow.cpp.i
+.PHONY : src/CalcWindow.i
+
+# target to preprocess a source file
+src/CalcWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.i
+.PHONY : src/CalcWindow.cpp.i
+
+src/CalcWindow.s: src/CalcWindow.cpp.s
+.PHONY : src/CalcWindow.s
+
+# target to generate assembly for a file
+src/CalcWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticleSimulator.dir/build.make CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.s
+.PHONY : src/CalcWindow.cpp.s
+
 src/Graphs_new.o: src/Graphs_new.cpp.o
 .PHONY : src/Graphs_new.o
 
@@ -516,6 +540,9 @@ help:
 	@echo "... src/BorderInfo.o"
 	@echo "... src/BorderInfo.i"
 	@echo "... src/BorderInfo.s"
+	@echo "... src/CalcWindow.o"
+	@echo "... src/CalcWindow.i"
+	@echo "... src/CalcWindow.s"
 	@echo "... src/Graphs_new.o"
 	@echo "... src/Graphs_new.i"
 	@echo "... src/Graphs_new.s"

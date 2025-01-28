@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.o"
   "CMakeFiles/physics_lib.dir/__/src/BorderInfo.cpp.o.d"
+  "CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.o"
+  "CMakeFiles/physics_lib.dir/__/src/CalcWindow.cpp.o.d"
   "CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.o"
   "CMakeFiles/physics_lib.dir/__/src/Graphs_new.cpp.o.d"
   "CMakeFiles/physics_lib.dir/__/src/Grid.cpp.o"

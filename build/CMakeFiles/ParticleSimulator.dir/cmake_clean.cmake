@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/BorderInfo.cpp.o.d"
+  "CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o"
+  "CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o"
   "CMakeFiles/ParticleSimulator.dir/src/Graphs_new.cpp.o.d"
   "CMakeFiles/ParticleSimulator.dir/src/Grid.cpp.o"

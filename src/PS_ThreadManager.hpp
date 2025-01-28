@@ -8,10 +8,10 @@
 #include <thread>
 #include <vector>
 
+#include "CalcWindow.hpp"
 #include "Grid.hpp"
 #include "Particle.hpp"
 #include "global_var.hpp"
-
 ///////////////////////////
 // MULTITHREAD_PARTICLE_UPDATE //
 ///////////////////////////
