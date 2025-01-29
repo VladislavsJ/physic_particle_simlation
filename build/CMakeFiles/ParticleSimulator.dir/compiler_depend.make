@@ -199,8 +199,10 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
   /usr/include/SFML/Graphics/BlendMode.hpp \
@@ -282,17 +284,23 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/asm-generic/errno.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/array \
+  /usr/include/c++/13/atomic \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
@@ -324,14 +332,20 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -344,6 +358,7 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -353,7 +368,10 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_lock.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
@@ -363,6 +381,7 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
+  /usr/include/c++/13/condition_variable \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
@@ -376,9 +395,11 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
@@ -388,16 +409,19 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/limits \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
   /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -413,6 +437,7 @@ CMakeFiles/ParticleSimulator.dir/src/CalcWindow.cpp.o: /media/vlad/Shared_w_L/NT
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/utility \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
@@ -1382,6 +1407,7 @@ CMakeFiles/ParticleSimulator.dir/src/PS_ThreadManager.cpp.o: /media/vlad/Shared_
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -1460,6 +1486,7 @@ CMakeFiles/ParticleSimulator.dir/src/PS_ThreadManager.cpp.o: /media/vlad/Shared_
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/utility \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
@@ -2065,6 +2092,7 @@ CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o: /media/vlad/Shared_w_
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -2143,6 +2171,7 @@ CMakeFiles/ParticleSimulator.dir/src/ParticleSystem.cpp.o: /media/vlad/Shared_w_
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/utility \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
@@ -4652,59 +4681,25 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Physics.hpp:
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp:
-
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h:
 
-/usr/include/c++/13/thread:
-
-/usr/include/c++/13/ratio:
-
-/usr/include/c++/13/mutex:
-
 /usr/include/c++/13/forward_list:
 
-/usr/include/c++/13/ext/concurrence.h:
-
-/usr/include/c++/13/bits/unique_lock.h:
-
-/usr/include/c++/13/bits/this_thread_sleep.h:
-
-/usr/include/c++/13/bits/std_mutex.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
 /usr/include/c++/13/bits/forward_list.h:
-
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/13/bits/atomic_futex.h:
-
-/usr/include/c++/13/bits/atomic_base.h:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interface.hpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/user_interactions_new.hpp:
 
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp:
-
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.hpp:
-
-/usr/include/c++/13/atomic:
-
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.cpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
-
-/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
@@ -4736,9 +4731,17 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/c++/13/tr1/beta_function.tcc:
 
+/usr/include/c++/13/thread:
+
+/usr/include/c++/13/ratio:
+
 /usr/include/c++/13/pstl/execution_defs.h:
 
+/usr/include/c++/13/mutex:
+
 /usr/include/c++/13/locale:
+
+/usr/include/c++/13/ext/concurrence.h:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
@@ -4750,19 +4753,35 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/c++/13/bits/vector.tcc:
 
+/usr/include/c++/13/bits/unique_lock.h:
+
+/usr/include/c++/13/bits/this_thread_sleep.h:
+
 /usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Renderer.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
 /usr/include/c++/13/bits/stl_map.h:
+
+/usr/include/c++/13/utility:
 
 /usr/include/c++/13/bits/stl_heap.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
 /usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/c++/13/bits/std_mutex.h:
+
+/usr/include/c++/13/bits/shared_ptr.h:
 
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
@@ -4771,6 +4790,16 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/13/bits/atomic_futex.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Graphs_new.hpp:
+
+/usr/include/c++/13/atomic:
 
 /usr/include/c++/13/array:
 
@@ -4906,9 +4935,9 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/c++/13/istream:
 
-/usr/include/c++/13/bits/std_thread.h:
-
 /usr/include/c++/13/tr1/bessel_function.tcc:
+
+/usr/include/c++/13/bits/std_thread.h:
 
 /usr/include/c++/13/initializer_list:
 
@@ -4921,6 +4950,10 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/SFML/Window/Clipboard.hpp:
+
+/usr/include/c++/13/cctype:
 
 /usr/include/errno.h:
 
@@ -5072,6 +5105,10 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/c++/13/type_traits:
 
+/usr/include/SFML/Window/Context.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
 /usr/include/c++/13/bits/move.h:
 
 /usr/include/SFML/Graphics/RenderWindow.hpp:
@@ -5104,6 +5141,8 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp:
+
 /usr/include/ctype.h:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.cpp:
@@ -5129,6 +5168,8 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /usr/include/SFML/Graphics/CircleShape.hpp:
 
 /usr/include/c++/13/bits/ostream_insert.h:
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp:
 
 /usr/include/SFML/System/NonCopyable.hpp:
 
@@ -5270,10 +5311,6 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/SFML/Window/Context.hpp:
-
 /usr/include/SFML/Window/Mouse.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
@@ -5397,7 +5434,3 @@ CMakeFiles/ParticleSimulator.dir/src/user_interface.cpp.o: /media/vlad/Shared_w_
 /usr/include/SFML/System/FileInputStream.hpp:
 
 /usr/include/SFML/Window.hpp:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/SFML/Window/Clipboard.hpp:

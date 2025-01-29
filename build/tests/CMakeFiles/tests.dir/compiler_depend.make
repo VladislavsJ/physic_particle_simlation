@@ -349,9 +349,12 @@ tests/CMakeFiles/tests.dir/testGlobalVar.cpp.o: /media/vlad/Shared_w_L/NTNU/new_
 
 tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_CalcWIndow.cpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
   /usr/include/SFML/Graphics/BlendMode.hpp \
@@ -449,6 +452,7 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -507,6 +511,7 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -532,6 +537,7 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
@@ -566,6 +572,7 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -594,6 +601,7 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
   /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -800,9 +808,12 @@ tests/CMakeFiles/tests.dir/test_CalcWIndow.cpp.o: /media/vlad/Shared_w_L/NTNU/ne
 
 tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_Grid_CalWindow.cpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/BorderInfo.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Particle.hpp \
   /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Vector2D.hpp \
+  /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/global_var.hpp \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
   /usr/include/SFML/Graphics/BlendMode.hpp \
@@ -900,6 +911,7 @@ tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTN
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -958,6 +970,7 @@ tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTN
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -983,6 +996,7 @@ tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTN
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
@@ -1017,6 +1031,7 @@ tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTN
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -1045,6 +1060,7 @@ tests/CMakeFiles/tests.dir/test_Grid_CalWindow.cpp.o: /media/vlad/Shared_w_L/NTN
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
   /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -2994,12 +3010,6 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h:
 
-/usr/include/c++/13/thread:
-
-/usr/include/c++/13/bits/this_thread_sleep.h:
-
-/usr/include/c++/13/bits/atomic_futex.h:
-
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/tests/test_Particles.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
@@ -3026,7 +3036,13 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
 
 /usr/include/c++/13/tr1/beta_function.tcc:
 
+/usr/include/c++/13/thread:
+
 /usr/include/c++/13/cmath:
+
+/usr/include/c++/13/bits/this_thread_sleep.h:
+
+/usr/include/c++/13/bits/atomic_futex.h:
 
 /usr/include/c++/13/algorithm:
 
@@ -3108,9 +3124,13 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
 
 /usr/include/SFML/Config.hpp:
 
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/PS_ThreadManager.hpp:
+
 /usr/include/SFML/System/Vector2.hpp:
 
 /media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/Grid.hpp:
+
+/media/vlad/Shared_w_L/NTNU/new_cXX_folder/physic_balls_V0/src/CalcWindow.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
@@ -3704,9 +3724,9 @@ tests/CMakeFiles/tests.dir/test_user_interractions.cpp.o: /media/vlad/Shared_w_L
 
 /usr/include/c++/13/functional:
 
-/usr/include/c++/13/bits/std_thread.h:
-
 /usr/include/c++/13/tr1/bessel_function.tcc:
+
+/usr/include/c++/13/bits/std_thread.h:
 
 /usr/include/c++/13/initializer_list:
 
