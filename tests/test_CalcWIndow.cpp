@@ -1,7 +1,7 @@
+#include "CalcWindow.hpp"
 #include "Grid.hpp"
 #include "Particle.hpp"
 #include <gtest/gtest.h>
-
 static Particle *makeParticle(float x, float y, float radius = 5.f) {
   return new Particle({x, y}, {0, 0}, radius);
 }

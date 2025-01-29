@@ -1,7 +1,7 @@
+#include "CalcWindow.hpp"
 #include "Grid.hpp"
 #include "Particle.hpp"
 #include <gtest/gtest.h>
-
 // Example: A helper to quickly create Particles at given (x,y).
 static Particle *makeParticle(float x, float y, float radius = 5.f) {
   auto *p = new Particle({x, y}, {0, 0}, radius);

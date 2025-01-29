@@ -51,8 +51,10 @@
 
 // Reuse your struct (if needed for per-thread data)
 struct ThreadData {
-  int startrow;
-  int startcoll;
+  int startRow;
+  int startColl;
+  int endRow;
+  int endColl;
   int thread_id;
 };
 
@@ -118,6 +120,14 @@ private:
   std::atomic<int> m_threadsReady; // amount of ready threads
   std::atomic<int> m_threadsDone;  // amount of done threads
   bool m_runCollisions;            // if true, threads should do collisions
+
+  // store each thread path, threads will pop back the path if they start
+  // working on the cell if other thread is faster, it will take the path from
+  // the vector from the start, because pop.back is more efficient, than earse,
+  // thats why, I am starting from the end.
+
+  std::vector<std::vector<std::pair<int, int>>> m_threadPaths;
+  std::vector<std::vector<std::pair<int, int>>> m_threadPaths_buf;
 };
 
 #endif // PS_THREADMANAGER_HPP

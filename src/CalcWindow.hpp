@@ -1,13 +1,19 @@
 
-#include "Grid.hpp"
+#ifndef CALC_WINDOW_HPP
+#define CALC_WINDOW_HPP
 
+#include "Grid.hpp"
+#include "PS_ThreadManager.hpp"
+#include <utility>
+struct ThreadData;
 class CalcWindow {
+
 public:
   explicit CalcWindow(Grid &grid);
 
   // Initialize the 3x3 window (centered at row,col)
-  void InitWindow(int row, int col, bool shiftPriorityToRight = true);
-  void InitWindow(int gridNumberXY[2], bool shiftPriority = true);
+  void InitWindow(ThreadData td, bool shiftPriorityToRight = true);
+  void InitWindow(int row, int col);
   // Shift window around for scanning
   void shiftLeft();
   void shiftRight();
@@ -26,15 +32,15 @@ public:
   void setCellNumber(int m_gridNumberRowCol[2]);
   Grid &m_grid; // reference to the grid, to get the cells
   int m_gridNumberRowCol[2];
-  // std::vector < pair<int, int>> getThreadCells(int threadId, );
+  std::vector<std::pair<int, int>> getCalcPath(int threadId, ThreadData td,
+                                               int CellCnt);
+  bool ShiftOnlyLeft();
 
 private:
   // Each of the 9 is a pointer to a vector<Particle*> in the grid.
   std::array<std::vector<Particle *> *, 9> m_calcWindow;
   bool m_movingRight;
   bool shiftPriorityToRight; // If true then ShiftPriorityRight else
-                             // ShiftPriorityLeft
-
-  // std::vector<pair<int, int>> RowCol; // To get all cell list, for each
-  // thread
 };
+
+#endif // CALC_WINDOW_HPP

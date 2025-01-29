@@ -6,23 +6,9 @@ extern GlobalVar &gv;
 PS_ThreadManager::PS_ThreadManager(Grid &grid, int thread_count)
     : m_grid(grid), m_threadCnt(thread_count),
       m_workerCount(thread_count - 1), // master thread
-      m_threadsReady(0), m_threadsDone(0), m_runCollisions(false) {
+      m_threadsReady(0), m_threadsDone(0), m_runCollisions(false),
+      m_stop(false) {
   ThreadingInit(thread_count);
-}
-PS_ThreadManager::~PS_ThreadManager() {
-  {
-    std::lock_guard<std::mutex> lock(m_startMutex);
-    m_stop = true; // Signal threads to exit their loops
-    m_runCollisions = false;
-  }
-
-  m_startCV.notify_all(); // Wake all threads to see the stop flag
-
-  for (auto &thread : m_workers) {
-    if (thread.joinable()) {
-      thread.join(); // Wait for threads to finish
-    }
-  }
 }
 
 void PS_ThreadManager::ThreadingInit(int thread_count) {
@@ -39,6 +25,8 @@ void PS_ThreadManager::ThreadingInit(int thread_count) {
   int cells_per_thread = m_totalCells / m_workerCount;
   m_remainingCells.resize(m_workerCount);
   m_bufferRemainingCells.resize(m_workerCount);
+  m_threadPaths.resize(m_workerCount);
+  m_threadPaths_buf.resize(m_workerCount);
   std::vector<std::thread> workers;
   int startcell;
   int startrow;
@@ -48,7 +36,7 @@ void PS_ThreadManager::ThreadingInit(int thread_count) {
   int assignedCells = 0;
 
   int innerCols = m_grid.getCols() - 2;
-
+  CalcWindow calcWindow(m_grid);
   for (int i = 0; i < m_workerCount; i++) {
     int threadcells = cells_per_thread + ((i < spareCells) ? 1 : 0);
 
@@ -57,26 +45,26 @@ void PS_ThreadManager::ThreadingInit(int thread_count) {
 
     // Compute which linear cell this thread *starts* from
     int startCellIndex = 0;
-    if (directionRight) {
-      // Start at the left edge of the chunk
-      startCellIndex = assignedCells;
-    } else {
-      // Start at the right edge of the chunk
-      // i.e. the last cell in [assignedCells, assignedCells + threadcells)
-      startCellIndex = assignedCells + threadcells - 1;
-    }
+    // Start at the left edge of the chunk
+    startCellIndex = assignedCells;
 
     // Convert linear index -> row & col
+    int endRow = ((startCellIndex + threadcells - 1) / innerCols) + 1;
+    int endColl = ((startCellIndex + threadcells - 1) % innerCols) + 1;
     int startRow = (startCellIndex / innerCols) + 1;
     int startCol = (startCellIndex % innerCols) + 1;
-
     // Update for the next thread
     assignedCells += threadcells;
+    m_threadData[i].endRow = endRow;
 
-    m_threadData[i].startrow = startRow;
-    m_threadData[i].startcoll = startCol;
+    m_threadData[i].endColl = endColl;
+
+    m_threadData[i].startRow = startRow;
+    m_threadData[i].startColl = startCol;
+
     m_threadData[i].thread_id = i;
-
+    m_threadPaths[i] = calcWindow.getCalcPath(i, m_threadData[i], threadcells);
+    m_threadPaths_buf[i] = m_threadPaths[i];
     m_remainingCells[i] = threadcells;
     m_bufferRemainingCells[i] = threadcells;
   }
@@ -93,6 +81,7 @@ void PS_ThreadManager::doCollisions() {
     std::unique_lock<std::mutex> lock(m_startMutex);
     for (int i = 0; i < m_workerCount; i++) {
       m_remainingCells[i] = m_bufferRemainingCells[i];
+      m_threadPaths[i] = m_threadPaths_buf[i];
     }
     m_threadsReady = 0;
     m_threadsDone = 0;
@@ -111,11 +100,12 @@ void PS_ThreadManager::doCollisions() {
 
 void PS_ThreadManager::applyCollisions(ThreadData &td) {
   int thread_id = td.thread_id;
-  int startrow = td.startrow;
-  int startcoll = td.startcoll;
+  int startrow = td.startRow;
+  int startcoll = td.startColl;
+  int cellComputed = 0;
   bool directionRight = (thread_id % 2 == 0); // can be done in the init
   CalcWindow calcWindow(m_grid);
-  calcWindow.InitWindow(startrow, startcoll, directionRight);
+  calcWindow.InitWindow(td, directionRight);
   std::vector<Particle *> ToSend;
   while (true) { // remainingcells <=1 break the loop
     // 1) Check how many cells remain for this thread to process
@@ -142,14 +132,56 @@ void PS_ThreadManager::applyCollisions(ThreadData &td) {
     }
     // 2) If no cells remain, break the loop
     if (remainingcells > 0) {
+      cellComputed++;
       calcWindow.Shift();
-    } else {
+    } // else { // check if any thread has more than 2 cells
+      //  DEBUG
+    /*
+
+      int slowestThread = thread_id;
+      int slowestTCells = 0;
+      for (int thread = 0; thread < m_workerCount; thread++) {
+        if (m_remainingCells[thread] > slowestTCells &&
+            m_remainingCells[thread] > 2) {
+          slowestThread = thread;
+          slowestTCells = m_remainingCells[thread];
+        }
+      }
+      if (slowestTCells > 4) {
+        // bigger half goes to the slowest thread, smaller half goes to the
+        // current thread
+        std::pair<int, int> pos;
+        {
+          std::lock_guard<std::mutex> lock(m_remainingCellsMutex);
+          m_remainingCells[slowestThread] = (slowestTCells + 1) / 2;
+          m_remainingCells[thread_id] =
+              (slowestTCells / 2); // -1 as I will init window in this if()
+          for (int i = 0; i < slowestTCells / 2; i++) {
+            // split m_remainingCells[slowestThread] into two parts
+            m_threadPaths[thread_id].push_back(
+                m_threadPaths[slowestThread].front());
+            m_threadPaths[slowestThread].erase(
+                m_threadPaths[slowestThread].begin());
+          }
+          //  std::vector<std::vector<std::pair<int, int>>> m_threadPaths;
+
+          pos = m_threadPaths[thread_id].back();
+        }
+
+        calcWindow.InitWindow(pos.first, pos.second);
+
+      }
+*/
+    else {
       m_writeToGrid.lock();
       m_grid.addParticles(ToSend);
+      // std::cout << "DEBUG: " << ToSend.size() << std::endl;
       m_writeToGrid.unlock();
       if (ToSend.size() > 2) {
-        // std::cout << "ERROR: " << ToSend.size() << std::endl;
+        // std::cout << "DEBUG: " << ToSend.size() << std::endl;
       }
+      // std::cout << "thread" << thread_id
+      //           << " cells computed = " << cellComputed << std::endl;
       break;
     }
   }
@@ -179,24 +211,21 @@ void PS_ThreadManager::workerLoop(int threadId) {
 
     // Actual collisions:
     // time
-    std::chrono::steady_clock::time_point begin =
-        std::chrono::steady_clock::now();
 
     applyCollisions(m_threadData[threadId]);
-    std::chrono::steady_clock::time_point end =
-        std::chrono::steady_clock::now();
-    // get time
-    //
 
+    // std::cout << "thread" << threadId << " time  = "
+    //           << std::chrono::duration_cast<std::chrono::microseconds>(end -
+    //                                                                    begin)
+    //                  .count()
+    //           << std::endl;
     {
       // Done barrier
       std::unique_lock<std::mutex> lock(m_doneMutex);
       m_threadsDone++;
-      auto time =
-          std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
-              .count();
 
-      std::cout << "thread" << threadId << " time  = " << time << std::endl;
+      // std::cout << "thread" << threadId << " time  = " << time <<
+      // std::endl;
 
       if (m_threadsDone == m_workerCount) {
         // Last worker to finish collisions. Wake main:
@@ -211,24 +240,12 @@ void PS_ThreadManager::workerLoop(int threadId) {
 //  from left and from right,
 // as they may have crossing cells, Soooo, to "save" the idea about pair cell
 // work,
-//  I need to write into array all the cells, and then compare, if they are the
-//  same, just shift, do not compute the collisions
+//  I need to write into array all the cells, and then compare, if they are
+//  the same, just shift, do not compute the collisions
 //  TODO3: check efficiency, as all this is needed just to
 //  change the size
 /*
-std::vector < pair<int Row, int Col> GetthreadPath(m_threadData,
-                                                   int threadcells,
-                                                   bool shiftPriorityToRight,
-                                                   int gridcols, int gridrows) {
-  std::vector<pair<int, int>> path;
-  int startrow = m_threadData.startrow;
-  int startcoll = m_threadData.startcoll;
-  int innerCols = m_grid.getCols() - 2;
-  path.push_back(std::make_pair(startrow, startcoll));
-  int startCellIndex = 0;
-  if (ShiftPriorityRight) {
-    if (row <)
-  }
+
 
 
 
